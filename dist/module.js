@@ -7,5 +7,5 @@ exports.ConfigCtrl = undefined;
 
 var _config = require('./components/config');
 
-exports.ConfigCtrl = _config.ExampleAppConfigCtrl;
+exports.ConfigCtrl = _config.PerconaAppConfigCtrl;
 //# sourceMappingURL=module.js.map

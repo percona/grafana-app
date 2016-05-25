@@ -1,5 +1,5 @@
-import {ExampleAppConfigCtrl} from './components/config';
+import {PerconaAppConfigCtrl} from './components/config';
 
 export {
-  ExampleAppConfigCtrl as ConfigCtrl
+  PerconaAppConfigCtrl as ConfigCtrl
 };
