@@ -48,589 +48,29 @@
     "rows": [
         {
             "collapse": false, 
-            "height": "125px", 
+            "height": "250px", 
             "panels": [
                 {
-                    "cacheTimeout": null, 
-                    "colorBackground": false, 
-                    "colorValue": true, 
-                    "colors": [
-                        "rgba(245, 54, 54, 0.9)", 
-                        "rgba(237, 129, 40, 0.89)", 
-                        "rgba(50, 172, 45, 0.97)"
-                    ], 
-                    "datasource": "Prometheus", 
-                    "decimals": 1, 
-                    "editable": true, 
-                    "error": false, 
-                    "format": "s", 
-                    "gauge": {
-                        "maxValue": 100, 
-                        "minValue": 0, 
-                        "show": false, 
-                        "thresholdLabels": false, 
-                        "thresholdMarkers": true
-                    }, 
-                    "height": "125px", 
-                    "id": 19, 
-                    "interval": "$interval", 
-                    "links": [], 
-                    "mappingType": 1, 
-                    "mappingTypes": [
-                        {
-                            "name": "value to text", 
-                            "value": 1
-                        }, 
-                        {
-                            "name": "range to text", 
-                            "value": 2
-                        }
-                    ], 
-                    "maxDataPoints": 100, 
-                    "nullPointMode": "connected", 
-                    "nullText": null, 
-                    "postfix": "s", 
-                    "postfixFontSize": "80%", 
-                    "prefix": "", 
-                    "prefixFontSize": "80%", 
-                    "rangeMaps": [
-                        {
-                            "from": "null", 
-                            "text": "N/A", 
-                            "to": "null"
-                        }
-                    ], 
-                    "span": 3, 
-                    "sparkline": {
-                        "fillColor": "rgba(31, 118, 189, 0.18)", 
-                        "full": false, 
-                        "lineColor": "rgb(31, 120, 193)", 
-                        "show": false
-                    }, 
-                    "targets": [
-                        {
-                            "calculatedInterval": "10m", 
-                            "datasourceErrors": {}, 
-                            "errors": {}, 
-                            "expr": "node_time{instance=\"$host\"} - node_boot_time{instance=\"$host\"}", 
-                            "interval": "5m", 
-                            "intervalFactor": 1, 
-                            "legendFormat": "", 
-                            "metric": "", 
-                            "refId": "A", 
-                            "step": 300
-                        }
-                    ], 
-                    "thresholds": "300,3600", 
-                    "title": "System Uptime", 
-                    "transparent": false, 
-                    "type": "singlestat", 
-                    "valueFontSize": "80%", 
-                    "valueMaps": [], 
-                    "valueName": "current"
-                }, 
-                {
-                    "cacheTimeout": null, 
-                    "colorBackground": false, 
-                    "colorValue": false, 
-                    "colors": [
-                        "rgba(245, 54, 54, 0.9)", 
-                        "rgba(237, 129, 40, 0.89)", 
-                        "rgba(50, 172, 45, 0.97)"
-                    ], 
-                    "datasource": "Prometheus", 
-                    "editable": true, 
-                    "error": false, 
-                    "format": "none", 
-                    "gauge": {
-                        "maxValue": 100, 
-                        "minValue": 0, 
-                        "show": false, 
-                        "thresholdLabels": false, 
-                        "thresholdMarkers": true
-                    }, 
-                    "height": "125px", 
-                    "id": 25, 
-                    "interval": "$interval", 
-                    "links": [], 
-                    "mappingType": 1, 
-                    "mappingTypes": [
-                        {
-                            "name": "value to text", 
-                            "value": 1
-                        }, 
-                        {
-                            "name": "range to text", 
-                            "value": 2
-                        }
-                    ], 
-                    "maxDataPoints": 100, 
-                    "nullPointMode": "connected", 
-                    "nullText": null, 
-                    "postfix": "", 
-                    "postfixFontSize": "50%", 
-                    "prefix": "", 
-                    "prefixFontSize": "80%", 
-                    "rangeMaps": [
-                        {
-                            "from": "null", 
-                            "text": "N/A", 
-                            "to": "null"
-                        }
-                    ], 
-                    "span": 3, 
-                    "sparkline": {
-                        "fillColor": "rgba(31, 118, 189, 0.18)", 
-                        "full": false, 
-                        "lineColor": "rgb(31, 120, 193)", 
-                        "show": false
-                    }, 
-                    "targets": [
-                        {
-                            "expr": "count(node_cpu{mode=\"user\", instance=\"$host\"})", 
-                            "interval": "5m", 
-                            "intervalFactor": 1, 
-                            "refId": "A", 
-                            "step": 300
-                        }
-                    ], 
-                    "thresholds": "", 
-                    "title": "Virtual CPUs", 
-                    "type": "singlestat", 
-                    "valueFontSize": "80%", 
-                    "valueMaps": [
-                        {
-                            "op": "=", 
-                            "text": "N/A", 
-                            "value": "null"
-                        }
-                    ], 
-                    "valueName": "current"
-                }, 
-                {
-                    "cacheTimeout": null, 
-                    "colorBackground": false, 
-                    "colorValue": false, 
-                    "colors": [
-                        "rgba(245, 54, 54, 0.9)", 
-                        "rgba(237, 129, 40, 0.89)", 
-                        "rgba(50, 172, 45, 0.97)"
-                    ], 
+                    "aliasColors": {}, 
+                    "bars": false, 
                     "datasource": "Prometheus", 
                     "decimals": 2, 
                     "editable": true, 
                     "error": false, 
-                    "format": "bytes", 
-                    "gauge": {
-                        "maxValue": 100, 
-                        "minValue": 0, 
-                        "show": false, 
-                        "thresholdLabels": false, 
-                        "thresholdMarkers": true
-                    }, 
-                    "height": "125px", 
-                    "id": 26, 
-                    "interval": "$interval", 
-                    "links": [], 
-                    "mappingType": 1, 
-                    "mappingTypes": [
-                        {
-                            "name": "value to text", 
-                            "value": 1
-                        }, 
-                        {
-                            "name": "range to text", 
-                            "value": 2
-                        }
-                    ], 
-                    "maxDataPoints": 100, 
-                    "nullPointMode": "connected", 
-                    "nullText": null, 
-                    "postfix": "", 
-                    "postfixFontSize": "50%", 
-                    "prefix": "", 
-                    "prefixFontSize": "80%", 
-                    "rangeMaps": [
-                        {
-                            "from": "null", 
-                            "text": "N/A", 
-                            "to": "null"
-                        }
-                    ], 
-                    "span": 3, 
-                    "sparkline": {
-                        "fillColor": "rgba(31, 118, 189, 0.18)", 
-                        "full": false, 
-                        "lineColor": "rgb(31, 120, 193)", 
-                        "show": false
-                    }, 
-                    "targets": [
-                        {
-                            "expr": "node_memory_MemTotal{instance=\"$host\"}", 
-                            "interval": "5m", 
-                            "intervalFactor": 1, 
-                            "refId": "A", 
-                            "step": 300
-                        }
-                    ], 
-                    "thresholds": "", 
-                    "title": "RAM", 
-                    "type": "singlestat", 
-                    "valueFontSize": "80%", 
-                    "valueMaps": [
-                        {
-                            "op": "=", 
-                            "text": "N/A", 
-                            "value": "null"
-                        }
-                    ], 
-                    "valueName": "current"
-                }, 
-                {
-                    "cacheTimeout": null, 
-                    "colorBackground": false, 
-                    "colorValue": true, 
-                    "colors": [
-                        "rgba(50, 172, 45, 0.97)", 
-                        "rgba(237, 129, 40, 0.89)", 
-                        "rgba(245, 54, 54, 0.9)"
-                    ], 
-                    "datasource": "Prometheus", 
-                    "decimals": 0, 
-                    "editable": true, 
-                    "error": false, 
-                    "format": "percent", 
-                    "gauge": {
-                        "maxValue": 100, 
-                        "minValue": 0, 
-                        "show": false, 
-                        "thresholdLabels": false, 
-                        "thresholdMarkers": true
-                    }, 
-                    "height": "125px", 
-                    "id": 9, 
-                    "interval": "$interval", 
-                    "links": [], 
-                    "mappingType": 1, 
-                    "mappingTypes": [
-                        {
-                            "name": "value to text", 
-                            "value": 1
-                        }, 
-                        {
-                            "name": "range to text", 
-                            "value": 2
-                        }
-                    ], 
-                    "maxDataPoints": 100, 
-                    "nullPointMode": "connected", 
-                    "nullText": null, 
-                    "postfix": "", 
-                    "postfixFontSize": "50%", 
-                    "prefix": "", 
-                    "prefixFontSize": "80%", 
-                    "rangeMaps": [
-                        {
-                            "from": "null", 
-                            "text": "N/A", 
-                            "to": "null"
-                        }
-                    ], 
-                    "span": 3, 
-                    "sparkline": {
-                        "fillColor": "rgba(31, 118, 189, 0.18)", 
-                        "full": true, 
-                        "lineColor": "rgb(31, 120, 193)", 
-                        "show": true
-                    }, 
-                    "targets": [
-                        {
-                            "calculatedInterval": "10m", 
-                            "datasourceErrors": {}, 
-                            "errors": {}, 
-                            "expr": "(node_memory_MemAvailable{instance=\"$host\"} or (node_memory_MemFree{instance=\"$host\"} + node_memory_Buffers{instance=\"$host\"} + node_memory_Cached{instance=\"$host\"})) / node_memory_MemTotal{instance=\"$host\"} * 100", 
-                            "interval": "5m", 
-                            "intervalFactor": 1, 
-                            "legendFormat": "", 
-                            "metric": "node_mem", 
-                            "refId": "A", 
-                            "step": 300
-                        }
-                    ], 
-                    "thresholds": "90,95", 
-                    "title": "Memory Available", 
-                    "transparent": false, 
-                    "type": "singlestat", 
-                    "valueFontSize": "80%", 
-                    "valueMaps": [], 
-                    "valueName": "current"
-                }
-            ], 
-            "repeat": null, 
-            "repeatIteration": null, 
-            "repeatRowId": null, 
-            "showTitle": false, 
-            "title": "Widgets", 
-            "titleSize": "h6"
-        }, 
-        {
-            "collapse": false, 
-            "height": "250px", 
-            "panels": [
-                {
-                    "aliasColors": {}, 
-                    "bars": false, 
-                    "datasource": "Prometheus", 
-                    "decimals": null, 
-                    "editable": true, 
-                    "error": false, 
-                    "fill": 2, 
-                    "grid": {}, 
-                    "id": 18, 
-                    "legend": {
-                        "alignAsTable": true, 
-                        "avg": true, 
-                        "current": false, 
-                        "hideEmpty": false, 
-                        "max": true, 
-                        "min": true, 
-                        "rightSide": false, 
-                        "show": true, 
-                        "sortDesc": true, 
-                        "total": false, 
-                        "values": true
-                    }, 
-                    "lines": true, 
-                    "linewidth": 2, 
-                    "links": [], 
-                    "nullPointMode": "null", 
-                    "percentage": false, 
-                    "pointradius": 5, 
-                    "points": false, 
-                    "renderer": "flot", 
-                    "seriesOverrides": [
-                        {
-                            "alias": "Load 1m", 
-                            "color": "#E0752D"
-                        }
-                    ], 
-                    "span": 6, 
-                    "stack": false, 
-                    "steppedLine": false, 
-                    "targets": [
-                        {
-                            "calculatedInterval": "10s", 
-                            "datasourceErrors": {}, 
-                            "errors": {}, 
-                            "expr": "node_load1{instance=\"$host\"}", 
-                            "interval": "$interval", 
-                            "intervalFactor": 1, 
-                            "legendFormat": "Load 1m", 
-                            "metric": "", 
-                            "refId": "A", 
-                            "step": 300, 
-                            "target": ""
-                        }
-                    ], 
-                    "thresholds": [], 
-                    "timeFrom": null, 
-                    "timeShift": null, 
-                    "title": "Load Average", 
-                    "tooltip": {
-                        "msResolution": false, 
-                        "shared": true, 
-                        "sort": 0, 
-                        "value_type": "individual"
-                    }, 
-                    "transparent": false, 
-                    "type": "graph", 
-                    "xaxis": {
-                        "mode": "time", 
-                        "name": null, 
-                        "show": true, 
-                        "values": []
-                    }, 
-                    "yaxes": [
-                        {
-                            "format": "none", 
-                            "label": "", 
-                            "logBase": 1, 
-                            "max": null, 
-                            "min": 0, 
-                            "show": true
-                        }, 
-                        {
-                            "format": "none", 
-                            "logBase": 1, 
-                            "max": null, 
-                            "min": 0, 
-                            "show": true
-                        }
-                    ]
-                }, 
-                {
-                    "aliasColors": {}, 
-                    "bars": false, 
-                    "datasource": "Prometheus", 
-                    "decimals": null, 
-                    "editable": true, 
-                    "error": false, 
                     "fill": 6, 
-                    "grid": {}, 
-                    "height": "", 
-                    "id": 6, 
+                    "grid": {
+                        "leftLogBase": 1, 
+                        "leftMax": null, 
+                        "leftMin": 0, 
+                        "rightLogBase": 1, 
+                        "rightMax": null, 
+                        "rightMin": 0
+                    }, 
+                    "id": 43, 
                     "legend": {
                         "alignAsTable": true, 
                         "avg": true, 
                         "current": false, 
-                        "hideEmpty": false, 
-                        "max": true, 
-                        "min": true, 
-                        "rightSide": false, 
-                        "show": true, 
-                        "total": false, 
-                        "values": true
-                    }, 
-                    "lines": true, 
-                    "linewidth": 2, 
-                    "links": [], 
-                    "nullPointMode": "null", 
-                    "percentage": false, 
-                    "pointradius": 5, 
-                    "points": false, 
-                    "renderer": "flot", 
-                    "seriesOverrides": [
-                        {
-                            "alias": "Used", 
-                            "color": "#0A437C"
-                        }, 
-                        {
-                            "alias": "Available", 
-                            "color": "#5195CE"
-                        }, 
-                        {
-                            "alias": "Total", 
-                            "color": "#052B51", 
-                            "legend": false, 
-                            "stack": false
-                        }
-                    ], 
-                    "span": 6, 
-                    "stack": true, 
-                    "steppedLine": false, 
-                    "targets": [
-                        {
-                            "calculatedInterval": "2s", 
-                            "datasourceErrors": {}, 
-                            "errors": {}, 
-                            "expr": "node_memory_MemTotal{instance=\"$host\"}", 
-                            "interval": "$interval", 
-                            "intervalFactor": 1, 
-                            "legendFormat": "Total", 
-                            "metric": "", 
-                            "refId": "C", 
-                            "step": 300, 
-                            "target": ""
-                        }, 
-                        {
-                            "calculatedInterval": "2s", 
-                            "datasourceErrors": {}, 
-                            "errors": {}, 
-                            "expr": "node_memory_MemTotal{instance=\"$host\"} - (node_memory_MemAvailable{instance=\"$host\"} or (node_memory_MemFree{instance=\"$host\"} + node_memory_Buffers{instance=\"$host\"} + node_memory_Cached{instance=\"$host\"}))", 
-                            "interval": "$interval", 
-                            "intervalFactor": 1, 
-                            "legendFormat": "Used", 
-                            "metric": "", 
-                            "refId": "A", 
-                            "step": 300, 
-                            "target": ""
-                        }, 
-                        {
-                            "calculatedInterval": "2s", 
-                            "datasourceErrors": {}, 
-                            "errors": {}, 
-                            "expr": "node_memory_MemAvailable{instance=\"$host\"} or (node_memory_MemFree{instance=\"$host\"} + node_memory_Buffers{instance=\"$host\"} + node_memory_Cached{instance=\"$host\"})", 
-                            "interval": "$interval", 
-                            "intervalFactor": 1, 
-                            "legendFormat": "Available", 
-                            "metric": "", 
-                            "refId": "B", 
-                            "step": 300, 
-                            "target": ""
-                        }
-                    ], 
-                    "thresholds": [], 
-                    "timeFrom": null, 
-                    "timeShift": null, 
-                    "title": "Memory", 
-                    "tooltip": {
-                        "msResolution": false, 
-                        "shared": true, 
-                        "sort": 0, 
-                        "value_type": "individual"
-                    }, 
-                    "transparent": false, 
-                    "type": "graph", 
-                    "xaxis": {
-                        "mode": "time", 
-                        "name": null, 
-                        "show": true, 
-                        "values": []
-                    }, 
-                    "yaxes": [
-                        {
-                            "format": "bytes", 
-                            "label": "", 
-                            "logBase": 1, 
-                            "max": null, 
-                            "min": 0, 
-                            "show": true
-                        }, 
-                        {
-                            "format": "bytes", 
-                            "logBase": 1, 
-                            "max": null, 
-                            "min": 0, 
-                            "show": true
-                        }
-                    ]
-                }
-            ], 
-            "repeat": null, 
-            "repeatIteration": null, 
-            "repeatRowId": null, 
-            "showTitle": false, 
-            "title": "CPU", 
-            "titleSize": "h6"
-        }, 
-        {
-            "collapse": false, 
-            "height": "300px", 
-            "panels": [
-                {
-                    "aliasColors": {
-                        "idle": "#806EB7", 
-                        "iowait": "#E24D42", 
-                        "nice": "#1F78C1", 
-                        "softirq": "#806EB7", 
-                        "system": "#EAB839", 
-                        "user": "#508642"
-                    }, 
-                    "bars": false, 
-                    "datasource": "Prometheus", 
-                    "decimals": null, 
-                    "editable": true, 
-                    "error": false, 
-                    "fill": 6, 
-                    "grid": {}, 
-                    "height": "", 
-                    "id": 2, 
-                    "legend": {
-                        "alignAsTable": true, 
-                        "avg": true, 
-                        "current": false, 
-                        "hideEmpty": true, 
-                        "hideZero": true, 
                         "max": true, 
                         "min": true, 
                         "rightSide": false, 
@@ -640,36 +80,74 @@
                         "total": false, 
                         "values": true
                     }, 
-                    "lines": true, 
-                    "linewidth": 2, 
+                    "lines": false, 
+                    "linewidth": 1, 
                     "links": [], 
                     "nullPointMode": "null", 
                     "percentage": false, 
-                    "pointradius": 5, 
-                    "points": false, 
+                    "pointradius": 1, 
+                    "points": true, 
                     "renderer": "flot", 
-                    "seriesOverrides": [], 
+                    "seriesOverrides": [
+                        {
+                            "alias": "Ibuf Merge Ratio", 
+                            "yaxis": 2
+                        }
+                    ], 
                     "span": 6, 
-                    "stack": true, 
+                    "stack": false, 
                     "steppedLine": false, 
                     "targets": [
                         {
-                            "calculatedInterval": "2s", 
+                            "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "sum(rate(node_cpu{instance=\"$host\", mode!=\"idle\"}[$interval])) by (mode)* 100 / count_scalar(node_cpu{mode=\"user\", instance=\"$host\"}) or sum(irate(node_cpu{instance=\"$host\", mode!=\"idle\"}[5m])) by (mode) * 100 / count_scalar(node_cpu{mode=\"user\", instance=\"$host\"})", 
+                            "expr": "rate(mysql_info_schema_innodb_metrics_change_buffer_ibuf_merges_insert_total{instance=\"$host\"}[$interval]) or irate(mysql_info_schema_innodb_metrics_change_buffer_ibuf_merges_insert_total{instance=\"$host\"}[5m])", 
                             "interval": "$interval", 
                             "intervalFactor": 1, 
-                            "legendFormat": "{{ mode }}", 
+                            "legendFormat": "Ibuf Insert", 
+                            "metric": "", 
+                            "refId": "B", 
+                            "step": 300
+                        }, 
+                        {
+                            "expr": "rate(mysql_info_schema_innodb_metrics_change_buffer_ibuf_merges_delete_total{instance=\"$host\"}[$interval]) or irate(mysql_info_schema_innodb_metrics_change_buffer_ibuf_merges_delete_total{instance=\"$host\"}[5m])", 
+                            "interval": "$interval", 
+                            "intervalFactor": 1, 
+                            "legendFormat": "Ibuf Delete", 
                             "metric": "", 
                             "refId": "A", 
+                            "step": 300
+                        }, 
+                        {
+                            "expr": "rate(mysql_info_schema_innodb_metrics_change_buffer_ibuf_merges_delete_mark_total{instance=\"$host\"}[$interval]) or irate(mysql_info_schema_innodb_metrics_change_buffer_ibuf_merges_delete_mark_total{instance=\"$host\"}[5m])", 
+                            "interval": "$interval", 
+                            "intervalFactor": 1, 
+                            "legendFormat": "Ibuf Delete Mark", 
+                            "refId": "C", 
+                            "step": 300
+                        }, 
+                        {
+                            "expr": "rate(mysql_info_schema_innodb_metrics_change_buffer_ibuf_merges_total{instance=\"$host\"}[$interval]) or irate(mysql_info_schema_innodb_metrics_change_buffer_ibuf_merges_total{instance=\"$host\"}[5m])", 
+                            "interval": "$interval", 
+                            "intervalFactor": 1, 
+                            "legendFormat": "Ibuf Merges", 
+                            "refId": "D", 
+                            "step": 300
+                        }, 
+                        {
+                            "expr": "(rate(mysql_info_schema_innodb_metrics_change_buffer_ibuf_merges_insert_total{instance=\"$host\"}[$interval])+rate(mysql_info_schema_innodb_metrics_change_buffer_ibuf_merges_delete_total{instance=\"$host\"}[$interval])+rate(mysql_info_schema_innodb_metrics_change_buffer_ibuf_merges_delete_mark_total{instance=\"$host\"}[$interval]))/rate(mysql_info_schema_innodb_metrics_change_buffer_ibuf_merges_total{instance=\"$host\"}[$interval]) or (irate(mysql_info_schema_innodb_metrics_change_buffer_ibuf_merges_insert_total{instance=\"$host\"}[5m])+irate(mysql_info_schema_innodb_metrics_change_buffer_ibuf_merges_delete_total{instance=\"$host\"}[5m])+irate(mysql_info_schema_innodb_metrics_change_buffer_ibuf_merges_delete_mark_total{instance=\"$host\"}[5m]))/irate(mysql_info_schema_innodb_metrics_change_buffer_ibuf_merges_total{instance=\"$host\"}[5m])", 
+                            "interval": "$interval", 
+                            "intervalFactor": 1, 
+                            "legendFormat": "Ibuf Merge Ratio", 
+                            "refId": "E", 
                             "step": 300
                         }
                     ], 
                     "thresholds": [], 
                     "timeFrom": null, 
                     "timeShift": null, 
-                    "title": "CPU Usage", 
+                    "title": "Change Buffer Performance", 
                     "tooltip": {
                         "msResolution": false, 
                         "shared": true, 
@@ -677,23 +155,30 @@
                         "value_type": "individual"
                     }, 
                     "type": "graph", 
+                    "x-axis": true, 
                     "xaxis": {
                         "mode": "time", 
                         "name": null, 
                         "show": true, 
                         "values": []
                     }, 
+                    "y-axis": true, 
+                    "y_formats": [
+                        "short", 
+                        "short"
+                    ], 
                     "yaxes": [
                         {
-                            "format": "percent", 
-                            "label": "", 
+                            "format": "short", 
+                            "label": null, 
                             "logBase": 1, 
-                            "max": 100, 
+                            "max": null, 
                             "min": 0, 
                             "show": true
                         }, 
                         {
                             "format": "short", 
+                            "label": null, 
                             "logBase": 1, 
                             "max": null, 
                             "min": 0, 
@@ -705,18 +190,23 @@
                     "aliasColors": {}, 
                     "bars": false, 
                     "datasource": "Prometheus", 
-                    "decimals": null, 
+                    "decimals": 2, 
                     "editable": true, 
                     "error": false, 
-                    "fill": 6, 
-                    "grid": {}, 
-                    "height": "", 
-                    "id": 29, 
+                    "fill": 2, 
+                    "grid": {
+                        "leftLogBase": 1, 
+                        "leftMax": null, 
+                        "leftMin": 0, 
+                        "rightLogBase": 1, 
+                        "rightMax": null, 
+                        "rightMin": 0
+                    }, 
+                    "id": 44, 
                     "legend": {
                         "alignAsTable": true, 
                         "avg": true, 
                         "current": false, 
-                        "hideEmpty": false, 
                         "max": true, 
                         "min": true, 
                         "rightSide": false, 
@@ -731,639 +221,1079 @@
                     "links": [], 
                     "nullPointMode": "null", 
                     "percentage": false, 
-                    "pointradius": 5, 
+                    "pointradius": 1, 
                     "points": false, 
                     "renderer": "flot", 
                     "seriesOverrides": [], 
                     "span": 6, 
-                    "stack": true, 
+                    "stack": false, 
                     "steppedLine": false, 
                     "targets": [
                         {
-                            "calculatedInterval": "2s", 
+                            "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "node_memory_MemTotal{instance=\"$host\"} - (node_memory_MemFree{instance=\"$host\"} + node_memory_Buffers{instance=\"$host\"} + node_memory_Cached{instance=\"$host\"})", 
+                            "expr": "mysql_info_schema_innodb_metrics_recovery_log_lsn_current{instance=\"$host\"}*0 + on (instance) mysql_global_variables_innodb_log_buffer_size{instance=\"$host\"}", 
+                            "interval": "$interval", 
+                            "intervalFactor": 1, 
+                            "legendFormat": "Size", 
+                            "metric": "", 
+                            "refId": "B", 
+                            "step": 300
+                        }, 
+                        {
+                            "expr": "mysql_info_schema_innodb_metrics_recovery_log_lsn_current{instance=\"$host\"} - mysql_info_schema_innodb_metrics_recovery_log_lsn_last_flush{instance=\"$host\"}", 
                             "interval": "$interval", 
                             "intervalFactor": 1, 
                             "legendFormat": "Used", 
                             "metric": "", 
                             "refId": "A", 
-                            "step": 300, 
-                            "target": ""
-                        }, 
-                        {
-                            "calculatedInterval": "2s", 
-                            "datasourceErrors": {}, 
-                            "errors": {}, 
-                            "expr": "node_memory_MemFree{instance=\"$host\"}", 
-                            "interval": "$interval", 
-                            "intervalFactor": 1, 
-                            "legendFormat": "Free", 
-                            "metric": "", 
-                            "refId": "B", 
-                            "step": 300, 
-                            "target": ""
-                        }, 
-                        {
-                            "calculatedInterval": "2s", 
-                            "datasourceErrors": {}, 
-                            "errors": {}, 
-                            "expr": "node_memory_Buffers{instance=\"$host\"}", 
-                            "interval": "$interval", 
-                            "intervalFactor": 1, 
-                            "legendFormat": "Buffers", 
-                            "metric": "", 
-                            "refId": "D", 
-                            "step": 300, 
-                            "target": ""
-                        }, 
-                        {
-                            "calculatedInterval": "2s", 
-                            "datasourceErrors": {}, 
-                            "errors": {}, 
-                            "expr": "node_memory_Cached{instance=\"$host\"}", 
-                            "interval": "$interval", 
-                            "intervalFactor": 1, 
-                            "legendFormat": "Cached", 
-                            "metric": "", 
-                            "refId": "E", 
-                            "step": 300, 
-                            "target": ""
+                            "step": 300
                         }
                     ], 
                     "thresholds": [], 
                     "timeFrom": null, 
                     "timeShift": null, 
-                    "title": "Memory Distribution", 
+                    "title": "InnoDB Log Buffer Performance", 
                     "tooltip": {
                         "msResolution": false, 
                         "shared": true, 
                         "sort": 0, 
                         "value_type": "individual"
                     }, 
-                    "transparent": false, 
                     "type": "graph", 
+                    "x-axis": true, 
                     "xaxis": {
                         "mode": "time", 
                         "name": null, 
                         "show": true, 
                         "values": []
                     }, 
+                    "y-axis": true, 
+                    "y_formats": [
+                        "bytes", 
+                        "short"
+                    ], 
                     "yaxes": [
                         {
                             "format": "bytes", 
-                            "label": "", 
+                            "label": null, 
                             "logBase": 1, 
                             "max": null, 
                             "min": 0, 
                             "show": true
                         }, 
                         {
-                            "format": "bytes", 
-                            "logBase": 1, 
-                            "max": null, 
-                            "min": 0, 
-                            "show": true
-                        }
-                    ]
-                }
-            ], 
-            "repeat": null, 
-            "repeatIteration": null, 
-            "repeatRowId": null, 
-            "showTitle": false, 
-            "title": "Memory", 
-            "titleSize": "h6"
-        }, 
-        {
-            "collapse": false, 
-            "height": "250px", 
-            "panels": [
-                {
-                    "aliasColors": {}, 
-                    "bars": true, 
-                    "datasource": "Prometheus", 
-                    "decimals": null, 
-                    "editable": true, 
-                    "error": false, 
-                    "fill": 2, 
-                    "grid": {}, 
-                    "id": 24, 
-                    "legend": {
-                        "alignAsTable": true, 
-                        "avg": true, 
-                        "current": false, 
-                        "hideEmpty": false, 
-                        "max": true, 
-                        "min": true, 
-                        "rightSide": false, 
-                        "show": true, 
-                        "total": false, 
-                        "values": true
-                    }, 
-                    "lines": false, 
-                    "linewidth": 2, 
-                    "links": [], 
-                    "nullPointMode": "null", 
-                    "percentage": false, 
-                    "pointradius": 5, 
-                    "points": false, 
-                    "renderer": "flot", 
-                    "seriesOverrides": [
-                        {
-                            "alias": "Forks", 
-                            "color": "#EF843C"
-                        }
-                    ], 
-                    "span": 6, 
-                    "stack": false, 
-                    "steppedLine": false, 
-                    "targets": [
-                        {
-                            "calculatedInterval": "2m", 
-                            "datasourceErrors": {}, 
-                            "errors": {}, 
-                            "expr": "rate(node_forks{instance=\"$host\"}[$interval]) or irate(node_forks{instance=\"$host\"}[5m])", 
-                            "interval": "$interval", 
-                            "intervalFactor": 1, 
-                            "legendFormat": "Forks", 
-                            "metric": "", 
-                            "refId": "A", 
-                            "step": 300, 
-                            "target": ""
-                        }
-                    ], 
-                    "thresholds": [], 
-                    "timeFrom": null, 
-                    "timeShift": null, 
-                    "title": "Forks", 
-                    "tooltip": {
-                        "msResolution": false, 
-                        "shared": true, 
-                        "sort": 0, 
-                        "value_type": "individual"
-                    }, 
-                    "transparent": false, 
-                    "type": "graph", 
-                    "xaxis": {
-                        "mode": "time", 
-                        "name": null, 
-                        "show": true, 
-                        "values": []
-                    }, 
-                    "yaxes": [
-                        {
-                            "format": "none", 
-                            "label": "", 
-                            "logBase": 1, 
-                            "max": null, 
-                            "min": 0, 
-                            "show": true
-                        }, 
-                        {
-                            "format": "none", 
-                            "logBase": 1, 
-                            "max": null, 
-                            "min": 0, 
-                            "show": true
-                        }
-                    ]
-                }, 
-                {
-                    "aliasColors": {}, 
-                    "bars": true, 
-                    "datasource": "Prometheus", 
-                    "decimals": null, 
-                    "editable": true, 
-                    "error": false, 
-                    "fill": 2, 
-                    "grid": {}, 
-                    "id": 20, 
-                    "legend": {
-                        "alignAsTable": true, 
-                        "avg": true, 
-                        "current": false, 
-                        "hideEmpty": false, 
-                        "max": true, 
-                        "min": true, 
-                        "rightSide": false, 
-                        "show": true, 
-                        "sort": "avg", 
-                        "sortDesc": true, 
-                        "total": false, 
-                        "values": true
-                    }, 
-                    "lines": false, 
-                    "linewidth": 2, 
-                    "links": [], 
-                    "nullPointMode": "null", 
-                    "percentage": false, 
-                    "pointradius": 5, 
-                    "points": false, 
-                    "renderer": "flot", 
-                    "seriesOverrides": [
-                        {
-                            "alias": "Processes blocked waiting for I/O to complete", 
-                            "color": "#E24D42"
-                        }, 
-                        {
-                            "alias": "Processes in runnable state", 
-                            "color": "#6ED0E0"
-                        }
-                    ], 
-                    "span": 6, 
-                    "stack": true, 
-                    "steppedLine": false, 
-                    "targets": [
-                        {
-                            "calculatedInterval": "2m", 
-                            "datasourceErrors": {}, 
-                            "errors": {}, 
-                            "expr": "node_procs_running{instance=\"$host\"}", 
-                            "interval": "$interval", 
-                            "intervalFactor": 1, 
-                            "legendFormat": "Processes in runnable state", 
-                            "metric": "", 
-                            "refId": "A", 
-                            "step": 300, 
-                            "target": ""
-                        }, 
-                        {
-                            "calculatedInterval": "2m", 
-                            "datasourceErrors": {}, 
-                            "errors": {}, 
-                            "expr": "node_procs_blocked{instance=\"$host\"}", 
-                            "interval": "$interval", 
-                            "intervalFactor": 1, 
-                            "legendFormat": "Processes blocked waiting for I/O to complete", 
-                            "metric": "", 
-                            "refId": "B", 
-                            "step": 300, 
-                            "target": ""
-                        }
-                    ], 
-                    "thresholds": [], 
-                    "timeFrom": null, 
-                    "timeShift": null, 
-                    "title": "Processes", 
-                    "tooltip": {
-                        "msResolution": false, 
-                        "shared": true, 
-                        "sort": 0, 
-                        "value_type": "individual"
-                    }, 
-                    "transparent": false, 
-                    "type": "graph", 
-                    "xaxis": {
-                        "mode": "time", 
-                        "name": null, 
-                        "show": true, 
-                        "values": []
-                    }, 
-                    "yaxes": [
-                        {
-                            "format": "none", 
-                            "label": "", 
-                            "logBase": 1, 
-                            "max": null, 
-                            "min": 0, 
-                            "show": true
-                        }, 
-                        {
-                            "format": "none", 
-                            "logBase": 1, 
-                            "max": null, 
-                            "min": 0, 
-                            "show": true
-                        }
-                    ]
-                }
-            ], 
-            "repeat": null, 
-            "repeatIteration": null, 
-            "repeatRowId": null, 
-            "showTitle": false, 
-            "title": "Forks", 
-            "titleSize": "h6"
-        }, 
-        {
-            "collapse": false, 
-            "height": "250px", 
-            "panels": [
-                {
-                    "aliasColors": {}, 
-                    "bars": false, 
-                    "datasource": "Prometheus", 
-                    "decimals": null, 
-                    "editable": true, 
-                    "error": false, 
-                    "fill": 2, 
-                    "grid": {}, 
-                    "id": 27, 
-                    "legend": {
-                        "alignAsTable": true, 
-                        "avg": true, 
-                        "current": false, 
-                        "hideEmpty": false, 
-                        "max": true, 
-                        "min": true, 
-                        "rightSide": false, 
-                        "show": true, 
-                        "total": false, 
-                        "values": true
-                    }, 
-                    "lines": true, 
-                    "linewidth": 2, 
-                    "links": [], 
-                    "nullPointMode": "null", 
-                    "percentage": false, 
-                    "pointradius": 5, 
-                    "points": false, 
-                    "renderer": "flot", 
-                    "seriesOverrides": [], 
-                    "span": 6, 
-                    "stack": false, 
-                    "steppedLine": false, 
-                    "targets": [
-                        {
-                            "calculatedInterval": "2m", 
-                            "datasourceErrors": {}, 
-                            "errors": {}, 
-                            "expr": "rate(node_context_switches{instance=\"$host\"}[$interval]) or irate(node_context_switches{instance=\"$host\"}[5m])", 
-                            "interval": "$interval", 
-                            "intervalFactor": 1, 
-                            "legendFormat": "Context Switches", 
-                            "metric": "", 
-                            "refId": "A", 
-                            "step": 300, 
-                            "target": ""
-                        }
-                    ], 
-                    "thresholds": [], 
-                    "timeFrom": null, 
-                    "timeShift": null, 
-                    "title": "Context Switches", 
-                    "tooltip": {
-                        "msResolution": false, 
-                        "shared": true, 
-                        "sort": 0, 
-                        "value_type": "individual"
-                    }, 
-                    "transparent": false, 
-                    "type": "graph", 
-                    "xaxis": {
-                        "mode": "time", 
-                        "name": null, 
-                        "show": true, 
-                        "values": []
-                    }, 
-                    "yaxes": [
-                        {
-                            "format": "none", 
-                            "label": "", 
-                            "logBase": 1, 
-                            "max": null, 
-                            "min": 0, 
-                            "show": true
-                        }, 
-                        {
-                            "format": "none", 
-                            "logBase": 1, 
-                            "max": null, 
-                            "min": 0, 
-                            "show": true
-                        }
-                    ]
-                }, 
-                {
-                    "aliasColors": {}, 
-                    "bars": false, 
-                    "datasource": "Prometheus", 
-                    "decimals": null, 
-                    "editable": true, 
-                    "error": false, 
-                    "fill": 2, 
-                    "grid": {}, 
-                    "id": 28, 
-                    "legend": {
-                        "alignAsTable": true, 
-                        "avg": true, 
-                        "current": false, 
-                        "hideEmpty": false, 
-                        "max": true, 
-                        "min": true, 
-                        "rightSide": false, 
-                        "show": true, 
-                        "total": false, 
-                        "values": true
-                    }, 
-                    "lines": true, 
-                    "linewidth": 2, 
-                    "links": [], 
-                    "nullPointMode": "null", 
-                    "percentage": false, 
-                    "pointradius": 5, 
-                    "points": false, 
-                    "renderer": "flot", 
-                    "seriesOverrides": [
-                        {
-                            "alias": "Interrupts", 
-                            "color": "#D683CE"
-                        }
-                    ], 
-                    "span": 6, 
-                    "stack": false, 
-                    "steppedLine": false, 
-                    "targets": [
-                        {
-                            "calculatedInterval": "2m", 
-                            "datasourceErrors": {}, 
-                            "errors": {}, 
-                            "expr": "rate(node_intr{instance=\"$host\"}[$interval]) or irate(node_intr{instance=\"$host\"}[5m])", 
-                            "interval": "$interval", 
-                            "intervalFactor": 1, 
-                            "legendFormat": "Interrupts", 
-                            "metric": "", 
-                            "refId": "A", 
-                            "step": 300, 
-                            "target": ""
-                        }
-                    ], 
-                    "thresholds": [], 
-                    "timeFrom": null, 
-                    "timeShift": null, 
-                    "title": "Interrupts", 
-                    "tooltip": {
-                        "msResolution": true, 
-                        "shared": true, 
-                        "sort": 0, 
-                        "value_type": "individual"
-                    }, 
-                    "transparent": false, 
-                    "type": "graph", 
-                    "xaxis": {
-                        "mode": "time", 
-                        "name": null, 
-                        "show": true, 
-                        "values": []
-                    }, 
-                    "yaxes": [
-                        {
-                            "format": "none", 
-                            "label": "", 
-                            "logBase": 1, 
-                            "max": null, 
-                            "min": 0, 
-                            "show": true
-                        }, 
-                        {
-                            "format": "none", 
-                            "logBase": 1, 
-                            "max": null, 
-                            "min": 0, 
-                            "show": true
-                        }
-                    ]
-                }
-            ], 
-            "repeat": null, 
-            "repeatIteration": null, 
-            "repeatRowId": null, 
-            "showTitle": false, 
-            "title": "Context", 
-            "titleSize": "h6"
-        }, 
-        {
-            "collapse": false, 
-            "height": "250px", 
-            "panels": [
-                {
-                    "aliasColors": {}, 
-                    "bars": false, 
-                    "datasource": "Prometheus", 
-                    "decimals": null, 
-                    "editable": true, 
-                    "error": false, 
-                    "fill": 2, 
-                    "grid": {}, 
-                    "id": 21, 
-                    "legend": {
-                        "alignAsTable": true, 
-                        "avg": true, 
-                        "current": false, 
-                        "hideEmpty": false, 
-                        "max": true, 
-                        "min": true, 
-                        "rightSide": false, 
-                        "show": true, 
-                        "sort": null, 
-                        "sortDesc": null, 
-                        "total": false, 
-                        "values": true
-                    }, 
-                    "lines": true, 
-                    "linewidth": 2, 
-                    "links": [], 
-                    "nullPointMode": "null", 
-                    "percentage": false, 
-                    "pointradius": 5, 
-                    "points": false, 
-                    "renderer": "flot", 
-                    "seriesOverrides": [
-                        {
-                            "alias": "Outbound", 
-                            "transform": "negative-Y"
-                        }
-                    ], 
-                    "span": 6, 
-                    "stack": false, 
-                    "steppedLine": false, 
-                    "targets": [
-                        {
-                            "calculatedInterval": "2s", 
-                            "datasourceErrors": {}, 
-                            "errors": {}, 
-                            "expr": "sum(rate(node_network_receive_bytes{instance=\"$host\", device!=\"lo\"}[$interval]) or irate(node_network_receive_bytes{instance=\"$host\", device!=\"lo\"}[5m]))", 
-                            "interval": "$interval", 
-                            "intervalFactor": 1, 
-                            "legendFormat": "Inbound", 
-                            "metric": "", 
-                            "refId": "B", 
-                            "step": 300, 
-                            "target": ""
-                        }, 
-                        {
-                            "calculatedInterval": "2s", 
-                            "datasourceErrors": {}, 
-                            "errors": {}, 
-                            "expr": "sum(rate(node_network_transmit_bytes{instance=\"$host\", device!=\"lo\"}[$interval]) or irate(node_network_transmit_bytes{instance=\"$host\", device!=\"lo\"}[5m]))", 
-                            "interval": "$interval", 
-                            "intervalFactor": 1, 
-                            "legendFormat": "Outbound", 
-                            "metric": "", 
-                            "refId": "A", 
-                            "step": 300, 
-                            "target": ""
-                        }
-                    ], 
-                    "thresholds": [], 
-                    "timeFrom": null, 
-                    "timeShift": null, 
-                    "title": "Network Traffic", 
-                    "tooltip": {
-                        "msResolution": false, 
-                        "shared": true, 
-                        "sort": 0, 
-                        "value_type": "individual"
-                    }, 
-                    "transparent": false, 
-                    "type": "graph", 
-                    "xaxis": {
-                        "mode": "time", 
-                        "name": null, 
-                        "show": true, 
-                        "values": []
-                    }, 
-                    "yaxes": [
-                        {
-                            "format": "Bps", 
-                            "label": "", 
+                            "format": "short", 
+                            "label": null, 
                             "logBase": 1, 
                             "max": null, 
                             "min": null, 
                             "show": true
+                        }
+                    ]
+                }
+            ], 
+            "repeat": null, 
+            "repeatIteration": null, 
+            "repeatRowId": null, 
+            "showTitle": false, 
+            "title": "Change", 
+            "titleSize": "h6"
+        }, 
+        {
+            "collapse": false, 
+            "height": "250px", 
+            "panels": [
+                {
+                    "aliasColors": {}, 
+                    "bars": false, 
+                    "datasource": "Prometheus", 
+                    "decimals": 2, 
+                    "editable": true, 
+                    "error": false, 
+                    "fill": 2, 
+                    "grid": {
+                        "leftLogBase": 1, 
+                        "leftMax": null, 
+                        "leftMin": 0, 
+                        "rightLogBase": 1, 
+                        "rightMax": null, 
+                        "rightMin": 0
+                    }, 
+                    "id": 45, 
+                    "legend": {
+                        "alignAsTable": true, 
+                        "avg": true, 
+                        "current": false, 
+                        "max": true, 
+                        "min": true, 
+                        "rightSide": false, 
+                        "show": true, 
+                        "sort": "avg", 
+                        "sortDesc": true, 
+                        "total": false, 
+                        "values": true
+                    }, 
+                    "lines": true, 
+                    "linewidth": 2, 
+                    "links": [], 
+                    "nullPointMode": "null", 
+                    "percentage": false, 
+                    "pointradius": 1, 
+                    "points": false, 
+                    "renderer": "flot", 
+                    "seriesOverrides": [], 
+                    "span": 6, 
+                    "stack": false, 
+                    "steppedLine": true, 
+                    "targets": [
+                        {
+                            "calculatedInterval": "2m", 
+                            "datasourceErrors": {}, 
+                            "errors": {}, 
+                            "expr": "rate(mysql_info_schema_innodb_metrics_purge_purge_upd_exist_or_extern_records_total{instance=\"$host\"}[$interval]) or irate(mysql_info_schema_innodb_metrics_purge_purge_upd_exist_or_extern_records_total{instance=\"$host\"}[5m])", 
+                            "interval": "$interval", 
+                            "intervalFactor": 1, 
+                            "legendFormat": "Updates Purged", 
+                            "metric": "", 
+                            "refId": "B", 
+                            "step": 300
                         }, 
                         {
-                            "format": "bytes", 
+                            "expr": "rate(mysql_info_schema_innodb_metrics_purge_purge_del_mark_records_total{instance=\"$host\"}[$interval]) or irate(mysql_info_schema_innodb_metrics_purge_purge_del_mark_records_total{instance=\"$host\"}[5m])", 
+                            "interval": "$interval", 
+                            "intervalFactor": 1, 
+                            "legendFormat": "Deletes Purged", 
+                            "metric": "", 
+                            "refId": "A", 
+                            "step": 300
+                        }, 
+                        {
+                            "expr": "rate(mysql_info_schema_innodb_metrics_purge_purge_undo_log_pages_total{instance=\"$host\"}[$interval]) or irate(mysql_info_schema_innodb_metrics_purge_purge_undo_log_pages_total{instance=\"$host\"}[5m])", 
+                            "interval": "$interval", 
+                            "intervalFactor": 1, 
+                            "legendFormat": "Pages Purged", 
+                            "refId": "C", 
+                            "step": 300
+                        }
+                    ], 
+                    "thresholds": [], 
+                    "timeFrom": null, 
+                    "timeShift": null, 
+                    "title": "InnoDB Purge Performance", 
+                    "tooltip": {
+                        "msResolution": false, 
+                        "shared": true, 
+                        "sort": 0, 
+                        "value_type": "individual"
+                    }, 
+                    "type": "graph", 
+                    "x-axis": true, 
+                    "xaxis": {
+                        "mode": "time", 
+                        "name": null, 
+                        "show": true, 
+                        "values": []
+                    }, 
+                    "y-axis": true, 
+                    "y_formats": [
+                        "short", 
+                        "short"
+                    ], 
+                    "yaxes": [
+                        {
+                            "format": "short", 
+                            "label": null, 
                             "logBase": 1, 
                             "max": null, 
                             "min": 0, 
+                            "show": true
+                        }, 
+                        {
+                            "format": "short", 
+                            "label": null, 
+                            "logBase": 1, 
+                            "max": null, 
+                            "min": null, 
                             "show": true
                         }
                     ]
                 }, 
                 {
                     "aliasColors": {}, 
-                    "bars": true, 
+                    "bars": false, 
                     "datasource": "Prometheus", 
-                    "decimals": null, 
+                    "decimals": 2, 
                     "editable": true, 
                     "error": false, 
-                    "fill": 6, 
-                    "grid": {}, 
-                    "id": 22, 
+                    "fill": 2, 
+                    "grid": {
+                        "leftLogBase": 1, 
+                        "leftMax": null, 
+                        "leftMin": 0, 
+                        "rightLogBase": 1, 
+                        "rightMax": null, 
+                        "rightMin": 0
+                    }, 
+                    "id": 48, 
+                    "legend": {
+                        "alignAsTable": true, 
+                        "avg": true, 
+                        "current": false, 
+                        "max": true, 
+                        "min": true, 
+                        "rightSide": false, 
+                        "show": true, 
+                        "sort": "avg", 
+                        "sortDesc": true, 
+                        "total": false, 
+                        "values": true
+                    }, 
+                    "lines": true, 
+                    "linewidth": 2, 
+                    "links": [], 
+                    "nullPointMode": "null", 
+                    "percentage": false, 
+                    "pointradius": 1, 
+                    "points": false, 
+                    "renderer": "flot", 
+                    "seriesOverrides": [], 
+                    "span": 6, 
+                    "stack": false, 
+                    "steppedLine": true, 
+                    "targets": [
+                        {
+                            "calculatedInterval": "2m", 
+                            "datasourceErrors": {}, 
+                            "errors": {}, 
+                            "expr": "rate(mysql_info_schema_innodb_metrics_lock_lock_rec_lock_created_total{instance=\"$host\"}[$interval]) or irate(mysql_info_schema_innodb_metrics_lock_lock_rec_lock_created_total{instance=\"$host\"}[5m])", 
+                            "interval": "$interval", 
+                            "intervalFactor": 1, 
+                            "legendFormat": "Locks Created", 
+                            "metric": "", 
+                            "refId": "B", 
+                            "step": 300
+                        }, 
+                        {
+                            "expr": "rate(mysql_info_schema_innodb_metrics_lock_lock_rec_lock_removed_total{instance=\"$host\"}[$interval]) or irate(mysql_info_schema_innodb_metrics_lock_lock_rec_lock_removed_total{instance=\"$host\"}[5m])", 
+                            "interval": "$interval", 
+                            "intervalFactor": 1, 
+                            "legendFormat": "Locks Removed", 
+                            "metric": "", 
+                            "refId": "A", 
+                            "step": 300
+                        }, 
+                        {
+                            "expr": "rate(mysql_info_schema_innodb_metrics_lock_lock_rec_lock_requests_total{instance=\"$host\"}[$interval]) or irate(mysql_info_schema_innodb_metrics_lock_lock_rec_lock_requests_total{instance=\"$host\"}[5m])", 
+                            "interval": "$interval", 
+                            "intervalFactor": 1, 
+                            "legendFormat": "Locks Requested", 
+                            "refId": "C", 
+                            "step": 300
+                        }
+                    ], 
+                    "thresholds": [], 
+                    "timeFrom": null, 
+                    "timeShift": null, 
+                    "title": "InnoDB Locking", 
+                    "tooltip": {
+                        "msResolution": false, 
+                        "shared": true, 
+                        "sort": 0, 
+                        "value_type": "individual"
+                    }, 
+                    "type": "graph", 
+                    "x-axis": true, 
+                    "xaxis": {
+                        "mode": "time", 
+                        "name": null, 
+                        "show": true, 
+                        "values": []
+                    }, 
+                    "y-axis": true, 
+                    "y_formats": [
+                        "short", 
+                        "short"
+                    ], 
+                    "yaxes": [
+                        {
+                            "format": "short", 
+                            "label": null, 
+                            "logBase": 1, 
+                            "max": null, 
+                            "min": 0, 
+                            "show": true
+                        }, 
+                        {
+                            "format": "short", 
+                            "label": null, 
+                            "logBase": 1, 
+                            "max": null, 
+                            "min": null, 
+                            "show": true
+                        }
+                    ]
+                }
+            ], 
+            "repeat": null, 
+            "repeatIteration": null, 
+            "repeatRowId": null, 
+            "showTitle": false, 
+            "title": "Purge", 
+            "titleSize": "h6"
+        }, 
+        {
+            "collapse": false, 
+            "height": "250px", 
+            "panels": [
+                {
+                    "aliasColors": {}, 
+                    "bars": false, 
+                    "datasource": "Prometheus", 
+                    "decimals": 2, 
+                    "editable": true, 
+                    "error": false, 
+                    "fill": 2, 
+                    "grid": {
+                        "leftLogBase": 1, 
+                        "leftMax": null, 
+                        "leftMin": 0, 
+                        "rightLogBase": 1, 
+                        "rightMax": null, 
+                        "rightMin": 0
+                    }, 
+                    "id": 51, 
+                    "legend": {
+                        "alignAsTable": true, 
+                        "avg": true, 
+                        "current": false, 
+                        "max": true, 
+                        "min": true, 
+                        "rightSide": false, 
+                        "show": true, 
+                        "sort": "avg", 
+                        "sortDesc": true, 
+                        "total": false, 
+                        "values": true
+                    }, 
+                    "lines": true, 
+                    "linewidth": 2, 
+                    "links": [], 
+                    "nullPointMode": "null", 
+                    "percentage": false, 
+                    "pointradius": 1, 
+                    "points": false, 
+                    "renderer": "flot", 
+                    "seriesOverrides": [], 
+                    "span": 6, 
+                    "stack": false, 
+                    "steppedLine": true, 
+                    "targets": [
+                        {
+                            "calculatedInterval": "2m", 
+                            "datasourceErrors": {}, 
+                            "errors": {}, 
+                            "expr": "rate(mysql_info_schema_innodb_metrics_server_innodb_log_flush_usec_total{instance=\"$host\"}[$interval])/1000000 or irate(mysql_info_schema_innodb_metrics_server_innodb_log_flush_usec_total{instance=\"$host\"}[5m])/1000000", 
+                            "interval": "$interval", 
+                            "intervalFactor": 1, 
+                            "legendFormat": "Log Flushing", 
+                            "metric": "", 
+                            "refId": "B", 
+                            "step": 300
+                        }, 
+                        {
+                            "expr": "rate(mysql_info_schema_innodb_metrics_server_innodb_ibuf_merge_usec_total{instance=\"$host\"}[$interval])/1000000 or irate(mysql_info_schema_innodb_metrics_server_innodb_ibuf_merge_usec_total{instance=\"$host\"}[5m])/1000000", 
+                            "interval": "$interval", 
+                            "intervalFactor": 1, 
+                            "legendFormat": "Insert Buffer Merging", 
+                            "refId": "A", 
+                            "step": 300
+                        }, 
+                        {
+                            "expr": "rate(mysql_info_schema_innodb_metrics_server_innodb_checkpoint_usec_total{instance=\"$host\"}[$interval])/1000000 or irate(mysql_info_schema_innodb_metrics_server_innodb_checkpoint_usec_total{instance=\"$host\"}[5m])/1000000", 
+                            "interval": "$interval", 
+                            "intervalFactor": 1, 
+                            "legendFormat": "Checkpointing", 
+                            "refId": "C", 
+                            "step": 300
+                        }
+                    ], 
+                    "thresholds": [], 
+                    "timeFrom": null, 
+                    "timeShift": null, 
+                    "title": "InnoDB Main Thread Utilization", 
+                    "tooltip": {
+                        "msResolution": false, 
+                        "shared": true, 
+                        "sort": 0, 
+                        "value_type": "individual"
+                    }, 
+                    "type": "graph", 
+                    "x-axis": true, 
+                    "xaxis": {
+                        "mode": "time", 
+                        "name": null, 
+                        "show": true, 
+                        "values": []
+                    }, 
+                    "y-axis": true, 
+                    "y_formats": [
+                        "percentunit", 
+                        "short"
+                    ], 
+                    "yaxes": [
+                        {
+                            "format": "percentunit", 
+                            "label": null, 
+                            "logBase": 1, 
+                            "max": null, 
+                            "min": 0, 
+                            "show": true
+                        }, 
+                        {
+                            "format": "short", 
+                            "label": null, 
+                            "logBase": 1, 
+                            "max": null, 
+                            "min": null, 
+                            "show": true
+                        }
+                    ]
+                }, 
+                {
+                    "aliasColors": {}, 
+                    "bars": false, 
+                    "datasource": "Prometheus", 
+                    "decimals": 2, 
+                    "editable": true, 
+                    "error": false, 
+                    "fill": 2, 
+                    "grid": {
+                        "leftLogBase": 1, 
+                        "leftMax": null, 
+                        "leftMin": 0, 
+                        "rightLogBase": 1, 
+                        "rightMax": null, 
+                        "rightMin": 0
+                    }, 
+                    "id": 50, 
+                    "legend": {
+                        "alignAsTable": true, 
+                        "avg": true, 
+                        "current": false, 
+                        "max": true, 
+                        "min": true, 
+                        "rightSide": false, 
+                        "show": true, 
+                        "sort": "avg", 
+                        "sortDesc": true, 
+                        "total": false, 
+                        "values": true
+                    }, 
+                    "lines": true, 
+                    "linewidth": 2, 
+                    "links": [], 
+                    "nullPointMode": "null", 
+                    "percentage": false, 
+                    "pointradius": 1, 
+                    "points": false, 
+                    "renderer": "flot", 
+                    "seriesOverrides": [], 
+                    "span": 6, 
+                    "stack": false, 
+                    "steppedLine": true, 
+                    "targets": [
+                        {
+                            "calculatedInterval": "2m", 
+                            "datasourceErrors": {}, 
+                            "errors": {}, 
+                            "expr": "rate(mysql_info_schema_innodb_metrics_transaction_trx_rw_commits_total{instance=\"$host\"}[$interval]) or irate(mysql_info_schema_innodb_metrics_transaction_trx_rw_commits_total{instance=\"$host\"}[5m])", 
+                            "interval": "$interval", 
+                            "intervalFactor": 1, 
+                            "legendFormat": "RW Transacton Commits ", 
+                            "metric": "", 
+                            "refId": "B", 
+                            "step": 300
+                        }, 
+                        {
+                            "expr": "rate(mysql_info_schema_innodb_metrics_transaction_trx_rollbacks_total{instance=\"$host\"}[$interval]) or irate(mysql_info_schema_innodb_metrics_transaction_trx_rollbacks_total{instance=\"$host\"}[5m])", 
+                            "interval": "$interval", 
+                            "intervalFactor": 1, 
+                            "legendFormat": "Transaction Rollbacks", 
+                            "refId": "A", 
+                            "step": 300
+                        }, 
+                        {
+                            "expr": "rate(mysql_info_schema_innodb_metrics_transaction_trx_ro_commits_total{instance=\"$host\"}[$interval]) or irate(mysql_info_schema_innodb_metrics_transaction_trx_ro_commits_total{instance=\"$host\"}[5m])", 
+                            "interval": "$interval", 
+                            "intervalFactor": 1, 
+                            "legendFormat": "RO Transaction Commits", 
+                            "refId": "C", 
+                            "step": 300
+                        }, 
+                        {
+                            "expr": "rate(mysql_info_schema_innodb_metrics_transaction_trx_nl_ro_commits_total{instance=\"$host\"}[$interval]) or irate(mysql_info_schema_innodb_metrics_transaction_trx_nl_ro_commits_total{instance=\"$host\"}[5m])", 
+                            "interval": "$interval", 
+                            "intervalFactor": 1, 
+                            "legendFormat": "Non Locking RO Transaction Commits", 
+                            "refId": "D", 
+                            "step": 300
+                        }, 
+                        {
+                            "expr": "rate(mysql_info_schema_innodb_metrics_transaction_trx_commits_insert_update_total{instance=\"$host\"}[$interval]) or irate(mysql_info_schema_innodb_metrics_transaction_trx_commits_insert_update_total{instance=\"$host\"}[5m])", 
+                            "interval": "$interval", 
+                            "intervalFactor": 1, 
+                            "legendFormat": "Insert-Update Transaction Commits", 
+                            "refId": "E", 
+                            "step": 300
+                        }, 
+                        {
+                            "expr": "rate(mysql_global_status_innodb_max_trx_id{instance=\"$host\"}[$interval]) or irate(mysql_global_status_innodb_max_trx_id{instance=\"$host\"}[5m])", 
+                            "interval": "$interval", 
+                            "intervalFactor": 1, 
+                            "legendFormat": "Transaction IDs Assigned", 
+                            "refId": "F", 
+                            "step": 300
+                        }
+                    ], 
+                    "thresholds": [], 
+                    "timeFrom": null, 
+                    "timeShift": null, 
+                    "title": "InnoDB Transactions Information", 
+                    "tooltip": {
+                        "msResolution": false, 
+                        "shared": true, 
+                        "sort": 0, 
+                        "value_type": "individual"
+                    }, 
+                    "type": "graph", 
+                    "x-axis": true, 
+                    "xaxis": {
+                        "mode": "time", 
+                        "name": null, 
+                        "show": true, 
+                        "values": []
+                    }, 
+                    "y-axis": true, 
+                    "y_formats": [
+                        "short", 
+                        "short"
+                    ], 
+                    "yaxes": [
+                        {
+                            "format": "short", 
+                            "label": null, 
+                            "logBase": 1, 
+                            "max": null, 
+                            "min": 0, 
+                            "show": true
+                        }, 
+                        {
+                            "format": "short", 
+                            "label": null, 
+                            "logBase": 1, 
+                            "max": null, 
+                            "min": null, 
+                            "show": true
+                        }
+                    ]
+                }
+            ], 
+            "repeat": null, 
+            "repeatIteration": null, 
+            "repeatRowId": null, 
+            "showTitle": false, 
+            "title": "Main Thread", 
+            "titleSize": "h6"
+        }, 
+        {
+            "collapse": false, 
+            "height": "250px", 
+            "panels": [
+                {
+                    "aliasColors": {}, 
+                    "bars": false, 
+                    "datasource": "Prometheus", 
+                    "decimals": 2, 
+                    "editable": true, 
+                    "error": false, 
+                    "fill": 2, 
+                    "grid": {
+                        "leftLogBase": 1, 
+                        "leftMax": null, 
+                        "leftMin": 0, 
+                        "rightLogBase": 1, 
+                        "rightMax": null, 
+                        "rightMin": 0
+                    }, 
+                    "id": 49, 
+                    "legend": {
+                        "alignAsTable": true, 
+                        "avg": true, 
+                        "current": false, 
+                        "max": true, 
+                        "min": true, 
+                        "rightSide": false, 
+                        "show": true, 
+                        "sort": "avg", 
+                        "sortDesc": true, 
+                        "total": false, 
+                        "values": true
+                    }, 
+                    "lines": true, 
+                    "linewidth": 2, 
+                    "links": [], 
+                    "nullPointMode": "null", 
+                    "percentage": false, 
+                    "pointradius": 1, 
+                    "points": false, 
+                    "renderer": "flot", 
+                    "seriesOverrides": [], 
+                    "span": 6, 
+                    "stack": false, 
+                    "steppedLine": true, 
+                    "targets": [
+                        {
+                            "calculatedInterval": "2m", 
+                            "datasourceErrors": {}, 
+                            "errors": {}, 
+                            "expr": "mysql_info_schema_innodb_metrics_transaction_trx_rseg_current_size{instance=\"$host\"}*mysql_global_status_innodb_page_size{instance=\"$host\"}", 
+                            "interval": "$interval", 
+                            "intervalFactor": 1, 
+                            "legendFormat": "Innodb Undo Space Used ", 
+                            "metric": "", 
+                            "refId": "B", 
+                            "step": 300
+                        }
+                    ], 
+                    "thresholds": [], 
+                    "timeFrom": null, 
+                    "timeShift": null, 
+                    "title": "InnoDB Undo Space Usage", 
+                    "tooltip": {
+                        "msResolution": false, 
+                        "shared": true, 
+                        "sort": 0, 
+                        "value_type": "individual"
+                    }, 
+                    "type": "graph", 
+                    "x-axis": true, 
+                    "xaxis": {
+                        "mode": "time", 
+                        "name": null, 
+                        "show": true, 
+                        "values": []
+                    }, 
+                    "y-axis": true, 
+                    "y_formats": [
+                        "bytes", 
+                        "short"
+                    ], 
+                    "yaxes": [
+                        {
+                            "format": "bytes", 
+                            "label": null, 
+                            "logBase": 1, 
+                            "max": null, 
+                            "min": 0, 
+                            "show": true
+                        }, 
+                        {
+                            "format": "short", 
+                            "label": null, 
+                            "logBase": 1, 
+                            "max": null, 
+                            "min": null, 
+                            "show": true
+                        }
+                    ]
+                }, 
+                {
+                    "aliasColors": {
+                        "Innodb Activity": "#BA43A9"
+                    }, 
+                    "bars": false, 
+                    "datasource": "Prometheus", 
+                    "decimals": 2, 
+                    "editable": true, 
+                    "error": false, 
+                    "fill": 2, 
+                    "grid": {
+                        "leftLogBase": 1, 
+                        "leftMax": null, 
+                        "leftMin": 0, 
+                        "rightLogBase": 1, 
+                        "rightMax": null, 
+                        "rightMin": 0
+                    }, 
+                    "id": 53, 
+                    "legend": {
+                        "alignAsTable": true, 
+                        "avg": true, 
+                        "current": false, 
+                        "max": true, 
+                        "min": true, 
+                        "rightSide": false, 
+                        "show": true, 
+                        "sort": "avg", 
+                        "sortDesc": true, 
+                        "total": false, 
+                        "values": true
+                    }, 
+                    "lines": true, 
+                    "linewidth": 2, 
+                    "links": [], 
+                    "nullPointMode": "null", 
+                    "percentage": false, 
+                    "pointradius": 1, 
+                    "points": false, 
+                    "renderer": "flot", 
+                    "seriesOverrides": [], 
+                    "span": 6, 
+                    "stack": false, 
+                    "steppedLine": true, 
+                    "targets": [
+                        {
+                            "calculatedInterval": "2m", 
+                            "datasourceErrors": {}, 
+                            "errors": {}, 
+                            "expr": "rate(mysql_info_schema_innodb_metrics_server_innodb_activity_count_total{instance=\"$host\"}[$interval]) or irate(mysql_info_schema_innodb_metrics_server_innodb_activity_count_total{instance=\"$host\"}[5m])", 
+                            "interval": "$interval", 
+                            "intervalFactor": 1, 
+                            "legendFormat": "InnoDB Activity", 
+                            "metric": "", 
+                            "refId": "B", 
+                            "step": 300
+                        }
+                    ], 
+                    "thresholds": [], 
+                    "timeFrom": null, 
+                    "timeShift": null, 
+                    "title": "InnoDB Activity", 
+                    "tooltip": {
+                        "msResolution": false, 
+                        "shared": true, 
+                        "sort": 0, 
+                        "value_type": "individual"
+                    }, 
+                    "type": "graph", 
+                    "x-axis": true, 
+                    "xaxis": {
+                        "mode": "time", 
+                        "name": null, 
+                        "show": true, 
+                        "values": []
+                    }, 
+                    "y-axis": true, 
+                    "y_formats": [
+                        "short", 
+                        "short"
+                    ], 
+                    "yaxes": [
+                        {
+                            "format": "short", 
+                            "label": null, 
+                            "logBase": 1, 
+                            "max": null, 
+                            "min": 0, 
+                            "show": true
+                        }, 
+                        {
+                            "format": "short", 
+                            "label": null, 
+                            "logBase": 1, 
+                            "max": null, 
+                            "min": null, 
+                            "show": true
+                        }
+                    ]
+                }
+            ], 
+            "repeat": null, 
+            "repeatIteration": null, 
+            "repeatRowId": null, 
+            "showTitle": false, 
+            "title": "Undo", 
+            "titleSize": "h6"
+        }, 
+        {
+            "collapse": false, 
+            "height": "250px", 
+            "panels": [
+                {
+                    "aliasColors": {}, 
+                    "bars": false, 
+                    "datasource": "Prometheus", 
+                    "decimals": 2, 
+                    "editable": true, 
+                    "error": false, 
+                    "fill": 2, 
+                    "grid": {
+                        "leftLogBase": 1, 
+                        "leftMax": null, 
+                        "leftMin": 0, 
+                        "rightLogBase": 1, 
+                        "rightMax": null, 
+                        "rightMin": 0
+                    }, 
+                    "id": 55, 
                     "legend": {
                         "alignAsTable": true, 
                         "avg": true, 
                         "current": false, 
                         "hideEmpty": false, 
+                        "hideZero": false, 
                         "max": true, 
                         "min": true, 
                         "rightSide": false, 
                         "show": true, 
-                        "sort": null, 
-                        "sortDesc": null, 
+                        "sort": "avg", 
+                        "sortDesc": true, 
+                        "total": false, 
+                        "values": true
+                    }, 
+                    "lines": true, 
+                    "linewidth": 2, 
+                    "links": [], 
+                    "nullPointMode": "null", 
+                    "percentage": false, 
+                    "pointradius": 1, 
+                    "points": false, 
+                    "renderer": "flot", 
+                    "seriesOverrides": [], 
+                    "span": 6, 
+                    "stack": false, 
+                    "steppedLine": true, 
+                    "targets": [
+                        {
+                            "calculatedInterval": "2m", 
+                            "datasourceErrors": {}, 
+                            "errors": {}, 
+                            "expr": "rate(mysql_info_schema_innodb_metrics_server_innodb_rwlock_s_os_waits_total{instance=\"$host\"}[$interval]) or irate(mysql_info_schema_innodb_metrics_server_innodb_rwlock_s_os_waits_total{instance=\"$host\"}[5m])", 
+                            "interval": "$interval", 
+                            "intervalFactor": 1, 
+                            "legendFormat": "RW Locks S OS Waits", 
+                            "metric": "", 
+                            "refId": "B", 
+                            "step": 300
+                        }, 
+                        {
+                            "expr": "rate(mysql_info_schema_innodb_metrics_server_innodb_rwlock_sx_os_waits_total{instance=\"$host\"}[$interval]) or irate(mysql_info_schema_innodb_metrics_server_innodb_rwlock_sx_os_waits_total{instance=\"$host\"}[5m])", 
+                            "interval": "$interval", 
+                            "intervalFactor": 1, 
+                            "legendFormat": "RW Locks SX OS Waits", 
+                            "refId": "A", 
+                            "step": 300
+                        }, 
+                        {
+                            "expr": "rate(mysql_info_schema_innodb_metrics_server_innodb_rwlock_x_os_waits_total{instance=\"$host\"}[$interval]) or irate(mysql_info_schema_innodb_metrics_server_innodb_rwlock_x_os_waits_total{instance=\"$host\"}[5m])", 
+                            "interval": "$interval", 
+                            "intervalFactor": 1, 
+                            "legendFormat": "RW Locks X OS Waits", 
+                            "refId": "C", 
+                            "step": 300
+                        }
+                    ], 
+                    "thresholds": [], 
+                    "timeFrom": null, 
+                    "timeShift": null, 
+                    "title": "InnoDB Contention - OS Waits", 
+                    "tooltip": {
+                        "msResolution": false, 
+                        "shared": true, 
+                        "sort": 0, 
+                        "value_type": "individual"
+                    }, 
+                    "type": "graph", 
+                    "x-axis": true, 
+                    "xaxis": {
+                        "mode": "time", 
+                        "name": null, 
+                        "show": true, 
+                        "values": []
+                    }, 
+                    "y-axis": true, 
+                    "y_formats": [
+                        "short", 
+                        "short"
+                    ], 
+                    "yaxes": [
+                        {
+                            "format": "short", 
+                            "label": null, 
+                            "logBase": 1, 
+                            "max": null, 
+                            "min": 0, 
+                            "show": true
+                        }, 
+                        {
+                            "format": "short", 
+                            "label": null, 
+                            "logBase": 1, 
+                            "max": null, 
+                            "min": null, 
+                            "show": true
+                        }
+                    ]
+                }, 
+                {
+                    "aliasColors": {}, 
+                    "bars": false, 
+                    "datasource": "Prometheus", 
+                    "decimals": 2, 
+                    "editable": true, 
+                    "error": false, 
+                    "fill": 2, 
+                    "grid": {
+                        "leftLogBase": 1, 
+                        "leftMax": null, 
+                        "leftMin": 0, 
+                        "rightLogBase": 1, 
+                        "rightMax": null, 
+                        "rightMin": 0
+                    }, 
+                    "id": 54, 
+                    "legend": {
+                        "alignAsTable": true, 
+                        "avg": true, 
+                        "current": false, 
+                        "hideEmpty": false, 
+                        "hideZero": false, 
+                        "max": true, 
+                        "min": true, 
+                        "rightSide": false, 
+                        "show": true, 
+                        "sort": "avg", 
+                        "sortDesc": true, 
+                        "total": false, 
+                        "values": true
+                    }, 
+                    "lines": true, 
+                    "linewidth": 2, 
+                    "links": [], 
+                    "nullPointMode": "null", 
+                    "percentage": false, 
+                    "pointradius": 1, 
+                    "points": false, 
+                    "renderer": "flot", 
+                    "seriesOverrides": [], 
+                    "span": 6, 
+                    "stack": false, 
+                    "steppedLine": true, 
+                    "targets": [
+                        {
+                            "calculatedInterval": "2m", 
+                            "datasourceErrors": {}, 
+                            "errors": {}, 
+                            "expr": "rate(mysql_info_schema_innodb_metrics_server_innodb_rwlock_s_spin_rounds_total{instance=\"$host\"}[$interval]) or irate(mysql_info_schema_innodb_metrics_server_innodb_rwlock_s_spin_rounds_total{instance=\"$host\"}[5m])", 
+                            "interval": "$interval", 
+                            "intervalFactor": 1, 
+                            "legendFormat": "RW Locks S Spin Rounds", 
+                            "metric": "", 
+                            "refId": "B", 
+                            "step": 300
+                        }, 
+                        {
+                            "expr": "rate(mysql_info_schema_innodb_metrics_server_innodb_rwlock_sx_spin_rounds_total{instance=\"$host\"}[$interval]) or irate(mysql_info_schema_innodb_metrics_server_innodb_rwlock_sx_spin_rounds_total{instance=\"$host\"}[5m])", 
+                            "interval": "$interval", 
+                            "intervalFactor": 1, 
+                            "legendFormat": "RW Locks SX Spin Rounds", 
+                            "refId": "A", 
+                            "step": 300
+                        }, 
+                        {
+                            "expr": "rate(mysql_info_schema_innodb_metrics_server_innodb_rwlock_x_spin_rounds_total{instance=\"$host\"}[$interval]) or irate(mysql_info_schema_innodb_metrics_server_innodb_rwlock_x_spin_rounds_total{instance=\"$host\"}[5m])", 
+                            "interval": "$interval", 
+                            "intervalFactor": 1, 
+                            "legendFormat": "RW Locks X Spin Rounds", 
+                            "refId": "C", 
+                            "step": 300
+                        }
+                    ], 
+                    "thresholds": [], 
+                    "timeFrom": null, 
+                    "timeShift": null, 
+                    "title": "InnoDB Contention - Spin Rounds", 
+                    "tooltip": {
+                        "msResolution": false, 
+                        "shared": true, 
+                        "sort": 0, 
+                        "value_type": "individual"
+                    }, 
+                    "type": "graph", 
+                    "x-axis": true, 
+                    "xaxis": {
+                        "mode": "time", 
+                        "name": null, 
+                        "show": true, 
+                        "values": []
+                    }, 
+                    "y-axis": true, 
+                    "y_formats": [
+                        "short", 
+                        "short"
+                    ], 
+                    "yaxes": [
+                        {
+                            "format": "short", 
+                            "label": null, 
+                            "logBase": 1, 
+                            "max": null, 
+                            "min": 0, 
+                            "show": true
+                        }, 
+                        {
+                            "format": "short", 
+                            "label": null, 
+                            "logBase": 1, 
+                            "max": null, 
+                            "min": null, 
+                            "show": true
+                        }
+                    ]
+                }
+            ], 
+            "repeat": null, 
+            "repeatIteration": null, 
+            "repeatRowId": null, 
+            "showTitle": false, 
+            "title": "Contention", 
+            "titleSize": "h6"
+        }, 
+        {
+            "collapse": false, 
+            "height": "250px", 
+            "panels": [
+                {
+                    "aliasColors": {
+                        "Avg Row Lock Wait Time": "#BF1B00"
+                    }, 
+                    "bars": false, 
+                    "datasource": "Prometheus", 
+                    "decimals": 2, 
+                    "editable": true, 
+                    "error": false, 
+                    "fill": 1, 
+                    "grid": {
+                        "leftLogBase": 1, 
+                        "leftMax": null, 
+                        "leftMin": 0, 
+                        "rightLogBase": 1, 
+                        "rightMax": null, 
+                        "rightMin": 0
+                    }, 
+                    "id": 47, 
+                    "legend": {
+                        "alignAsTable": true, 
+                        "avg": true, 
+                        "current": false, 
+                        "max": true, 
+                        "min": true, 
+                        "rightSide": false, 
+                        "show": true, 
+                        "sort": "avg", 
+                        "sortDesc": true, 
                         "total": false, 
                         "values": true
                     }, 
@@ -1372,73 +1302,171 @@
                     "links": [], 
                     "nullPointMode": "null", 
                     "percentage": false, 
-                    "pointradius": 5, 
-                    "points": false, 
+                    "pointradius": 1, 
+                    "points": true, 
                     "renderer": "flot", 
                     "seriesOverrides": [], 
                     "span": 6, 
-                    "stack": true, 
-                    "steppedLine": false, 
+                    "stack": false, 
+                    "steppedLine": true, 
                     "targets": [
                         {
-                            "calculatedInterval": "2s", 
+                            "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "sum(increase(node_network_receive_bytes{instance=\"$host\", device!=\"lo\"}[1h]))", 
-                            "interval": "1h", 
+                            "expr": "rate(mysql_info_schema_innodb_metrics_transaction_trx_rw_commits_total{instance=\"$host\"}[$interval])/rate(mysql_global_status_innodb_log_writes{instance=\"$host\"}[$interval]) or irate(mysql_info_schema_innodb_metrics_transaction_trx_rw_commits_total{instance=\"$host\"}[5m])/irate(mysql_global_status_innodb_log_writes{instance=\"$host\"}[5m])", 
+                            "interval": "$interval", 
                             "intervalFactor": 1, 
-                            "legendFormat": "Received", 
-                            "metric": "", 
-                            "refId": "A", 
-                            "step": 3600, 
-                            "target": ""
-                        }, 
-                        {
-                            "calculatedInterval": "2s", 
-                            "datasourceErrors": {}, 
-                            "errors": {}, 
-                            "expr": "sum(increase(node_network_transmit_bytes{instance=\"$host\", device!=\"lo\"}[1h]))", 
-                            "interval": "1h", 
-                            "intervalFactor": 1, 
-                            "legendFormat": "Sent", 
+                            "legendFormat": "Group Commit Batch Size", 
                             "metric": "", 
                             "refId": "B", 
-                            "step": 3600, 
-                            "target": ""
+                            "step": 300
                         }
                     ], 
                     "thresholds": [], 
-                    "timeFrom": "24h", 
+                    "timeFrom": null, 
                     "timeShift": null, 
-                    "title": "Network Utilization Hourly", 
+                    "title": "InnoDB Group Commit Batch Size", 
                     "tooltip": {
                         "msResolution": false, 
                         "shared": true, 
                         "sort": 0, 
                         "value_type": "individual"
                     }, 
-                    "transparent": false, 
                     "type": "graph", 
+                    "x-axis": true, 
                     "xaxis": {
                         "mode": "time", 
                         "name": null, 
                         "show": true, 
                         "values": []
                     }, 
+                    "y-axis": true, 
+                    "y_formats": [
+                        "short", 
+                        "ms"
+                    ], 
                     "yaxes": [
                         {
-                            "format": "bytes", 
-                            "label": "", 
+                            "format": "short", 
+                            "label": null, 
                             "logBase": 1, 
                             "max": null, 
                             "min": 0, 
                             "show": true
                         }, 
                         {
-                            "format": "bytes", 
+                            "format": "short", 
+                            "label": null, 
+                            "logBase": 1, 
+                            "max": null, 
+                            "min": null, 
+                            "show": true
+                        }
+                    ]
+                }, 
+                {
+                    "aliasColors": {}, 
+                    "bars": false, 
+                    "datasource": "Prometheus", 
+                    "decimals": 2, 
+                    "editable": true, 
+                    "error": false, 
+                    "fill": 2, 
+                    "grid": {
+                        "leftLogBase": 1, 
+                        "leftMax": null, 
+                        "leftMin": 0, 
+                        "rightLogBase": 1, 
+                        "rightMax": null, 
+                        "rightMin": 0
+                    }, 
+                    "id": 52, 
+                    "legend": {
+                        "alignAsTable": true, 
+                        "avg": true, 
+                        "current": false, 
+                        "max": true, 
+                        "min": true, 
+                        "rightSide": false, 
+                        "show": true, 
+                        "sort": "avg", 
+                        "sortDesc": true, 
+                        "total": false, 
+                        "values": true
+                    }, 
+                    "lines": true, 
+                    "linewidth": 2, 
+                    "links": [], 
+                    "nullPointMode": "null", 
+                    "percentage": false, 
+                    "pointradius": 1, 
+                    "points": false, 
+                    "renderer": "flot", 
+                    "seriesOverrides": [], 
+                    "span": 6, 
+                    "stack": false, 
+                    "steppedLine": true, 
+                    "targets": [
+                        {
+                            "calculatedInterval": "2m", 
+                            "datasourceErrors": {}, 
+                            "errors": {}, 
+                            "expr": "mysql_info_schema_innodb_metrics_purge_purge_dml_delay_usec{instance=\"$host\"}", 
+                            "interval": "$interval", 
+                            "intervalFactor": 1, 
+                            "legendFormat": "Current Purge Delay", 
+                            "metric": "", 
+                            "refId": "B", 
+                            "step": 300
+                        }, 
+                        {
+                            "expr": "mysql_global_variables_innodb_max_purge_lag_delay{instance=\"$host\"}", 
+                            "interval": "$interval", 
+                            "intervalFactor": 1, 
+                            "legendFormat": "Max Purge Delay", 
+                            "refId": "A", 
+                            "step": 300
+                        }
+                    ], 
+                    "thresholds": [], 
+                    "timeFrom": null, 
+                    "timeShift": null, 
+                    "title": "InnoDB Purge Throttling", 
+                    "tooltip": {
+                        "msResolution": false, 
+                        "shared": true, 
+                        "sort": 0, 
+                        "value_type": "individual"
+                    }, 
+                    "type": "graph", 
+                    "x-axis": true, 
+                    "xaxis": {
+                        "mode": "time", 
+                        "name": null, 
+                        "show": true, 
+                        "values": []
+                    }, 
+                    "y-axis": true, 
+                    "y_formats": [
+                        "\u00b5s", 
+                        "short"
+                    ], 
+                    "yaxes": [
+                        {
+                            "format": "\u00b5s", 
+                            "label": null, 
                             "logBase": 1, 
                             "max": null, 
                             "min": 0, 
+                            "show": true
+                        }, 
+                        {
+                            "format": "short", 
+                            "label": null, 
+                            "logBase": 1, 
+                            "max": null, 
+                            "min": null, 
                             "show": true
                         }
                     ]
@@ -1448,7 +1476,7 @@
             "repeatIteration": null, 
             "repeatRowId": null, 
             "showTitle": false, 
-            "title": "Network", 
+            "title": "Group", 
             "titleSize": "h6"
         }, 
         {
@@ -1459,23 +1487,31 @@
                     "aliasColors": {}, 
                     "bars": false, 
                     "datasource": "Prometheus", 
-                    "decimals": null, 
+                    "decimals": 2, 
                     "editable": true, 
                     "error": false, 
-                    "fill": 6, 
-                    "grid": {}, 
-                    "id": 23, 
+                    "fill": 2, 
+                    "grid": {
+                        "leftLogBase": 1, 
+                        "leftMax": null, 
+                        "leftMin": 0, 
+                        "rightLogBase": 1, 
+                        "rightMax": null, 
+                        "rightMin": 0
+                    }, 
+                    "id": 57, 
                     "legend": {
                         "alignAsTable": true, 
                         "avg": true, 
                         "current": false, 
                         "hideEmpty": false, 
+                        "hideZero": false, 
                         "max": true, 
                         "min": true, 
                         "rightSide": false, 
                         "show": true, 
-                        "sort": null, 
-                        "sortDesc": null, 
+                        "sort": "avg", 
+                        "sortDesc": true, 
                         "total": false, 
                         "values": true
                     }, 
@@ -1484,79 +1520,83 @@
                     "links": [], 
                     "nullPointMode": "null", 
                     "percentage": false, 
-                    "pointradius": 5, 
+                    "pointradius": 1, 
                     "points": false, 
                     "renderer": "flot", 
                     "seriesOverrides": [
                         {
-                            "alias": "Used", 
-                            "color": "#584477"
-                        }, 
-                        {
-                            "alias": "Free", 
-                            "color": "#AEA2E0"
+                            "alias": "AHI - Hit Ratio", 
+                            "yaxis": 2
                         }
                     ], 
                     "span": 6, 
-                    "stack": true, 
-                    "steppedLine": false, 
+                    "stack": false, 
+                    "steppedLine": true, 
                     "targets": [
                         {
-                            "calculatedInterval": "2s", 
+                            "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "node_memory_SwapTotal{instance=\"$host\"} - node_memory_SwapFree{instance=\"$host\"}", 
+                            "expr": "rate(mysql_info_schema_innodb_metrics_adaptive_hash_index_adaptive_hash_searches_btree_total{instance=\"$host\"}[$interval]) or irate(mysql_info_schema_innodb_metrics_adaptive_hash_index_adaptive_hash_searches_btree_total{instance=\"$host\"}[5m])", 
                             "interval": "$interval", 
                             "intervalFactor": 1, 
-                            "legendFormat": "Used", 
-                            "metric": "", 
-                            "refId": "A", 
-                            "step": 300, 
-                            "target": ""
-                        }, 
-                        {
-                            "calculatedInterval": "2s", 
-                            "datasourceErrors": {}, 
-                            "errors": {}, 
-                            "expr": "node_memory_SwapFree{instance=\"$host\"}", 
-                            "interval": "$interval", 
-                            "intervalFactor": 1, 
-                            "legendFormat": "Free", 
+                            "legendFormat": "AHI - Searches", 
                             "metric": "", 
                             "refId": "B", 
-                            "step": 300, 
-                            "target": ""
+                            "step": 300
+                        }, 
+                        {
+                            "expr": "rate(mysql_info_schema_innodb_metrics_adaptive_hash_index_adaptive_hash_searches_total{instance=\"$host\"}[$interval]) or irate(mysql_info_schema_innodb_metrics_adaptive_hash_index_adaptive_hash_searches_total{instance=\"$host\"}[5m])", 
+                            "interval": "$interval", 
+                            "intervalFactor": 1, 
+                            "legendFormat": "AHI - Hits", 
+                            "refId": "A", 
+                            "step": 300
+                        }, 
+                        {
+                            "expr": "rate(mysql_info_schema_innodb_metrics_adaptive_hash_index_adaptive_hash_searches_total{instance=\"$host\"}[$interval])/rate(mysql_info_schema_innodb_metrics_adaptive_hash_index_adaptive_hash_searches_btree_total{instance=\"$host\"}[$interval]) or irate(mysql_info_schema_innodb_metrics_adaptive_hash_index_adaptive_hash_searches_total{instance=\"$host\"}[$interval])/rate(mysql_info_schema_innodb_metrics_adaptive_hash_index_adaptive_hash_searches_btree_total{instance=\"$host\"}[5m])", 
+                            "interval": "$interval", 
+                            "intervalFactor": 1, 
+                            "legendFormat": "AHI - Hit Ratio", 
+                            "refId": "C", 
+                            "step": 300
                         }
                     ], 
                     "thresholds": [], 
                     "timeFrom": null, 
                     "timeShift": null, 
-                    "title": "Swap", 
+                    "title": "InnoDB AHI Usage", 
                     "tooltip": {
                         "msResolution": false, 
                         "shared": true, 
                         "sort": 0, 
                         "value_type": "individual"
                     }, 
-                    "transparent": false, 
                     "type": "graph", 
+                    "x-axis": true, 
                     "xaxis": {
                         "mode": "time", 
                         "name": null, 
                         "show": true, 
                         "values": []
                     }, 
+                    "y-axis": true, 
+                    "y_formats": [
+                        "short", 
+                        "percentunit"
+                    ], 
                     "yaxes": [
                         {
-                            "format": "bytes", 
-                            "label": "", 
+                            "format": "short", 
+                            "label": null, 
                             "logBase": 1, 
                             "max": null, 
                             "min": 0, 
                             "show": true
                         }, 
                         {
-                            "format": "bytes", 
+                            "format": "percentunit", 
+                            "label": null, 
                             "logBase": 1, 
                             "max": null, 
                             "min": 0, 
@@ -1568,17 +1608,25 @@
                     "aliasColors": {}, 
                     "bars": false, 
                     "datasource": "Prometheus", 
-                    "decimals": null, 
+                    "decimals": 2, 
                     "editable": true, 
                     "error": false, 
                     "fill": 2, 
-                    "grid": {}, 
-                    "id": 30, 
+                    "grid": {
+                        "leftLogBase": 1, 
+                        "leftMax": null, 
+                        "leftMin": 0, 
+                        "rightLogBase": 1, 
+                        "rightMax": null, 
+                        "rightMin": 0
+                    }, 
+                    "id": 56, 
                     "legend": {
                         "alignAsTable": true, 
                         "avg": true, 
                         "current": false, 
                         "hideEmpty": false, 
+                        "hideZero": false, 
                         "max": true, 
                         "min": true, 
                         "rightSide": false, 
@@ -1593,73 +1641,97 @@
                     "links": [], 
                     "nullPointMode": "null", 
                     "percentage": false, 
-                    "pointradius": 5, 
+                    "pointradius": 1, 
                     "points": false, 
                     "renderer": "flot", 
                     "seriesOverrides": [], 
                     "span": 6, 
                     "stack": false, 
-                    "steppedLine": false, 
+                    "steppedLine": true, 
                     "targets": [
                         {
-                            "calculatedInterval": "2s", 
+                            "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "rate(node_vmstat_pswpin{instance=\"$host\"}[$interval]) * 4096 or irate(node_vmstat_pswpin{instance=\"$host\"}[5m]) * 4096", 
+                            "expr": "rate(mysql_info_schema_innodb_metrics_adaptive_hash_index_adaptive_hash_pages_added_total{instance=\"$host\"}[$interval]) or irate(mysql_info_schema_innodb_metrics_adaptive_hash_index_adaptive_hash_pages_added_total{instance=\"$host\"}[5m])", 
                             "interval": "$interval", 
                             "intervalFactor": 1, 
-                            "legendFormat": "Swap In", 
-                            "metric": "", 
-                            "refId": "A", 
-                            "step": 300, 
-                            "target": ""
-                        }, 
-                        {
-                            "calculatedInterval": "2s", 
-                            "datasourceErrors": {}, 
-                            "errors": {}, 
-                            "expr": "rate(node_vmstat_pswpout{instance=\"$host\"}[$interval]) * 4096 or irate(node_vmstat_pswpout{instance=\"$host\"}[5m]) * 4096", 
-                            "interval": "$interval", 
-                            "intervalFactor": 1, 
-                            "legendFormat": "Swap Out", 
+                            "legendFormat": "AHI - Pages Added", 
                             "metric": "", 
                             "refId": "B", 
-                            "step": 300, 
-                            "target": ""
+                            "step": 300
+                        }, 
+                        {
+                            "expr": "rate(mysql_info_schema_innodb_metrics_adaptive_hash_index_adaptive_hash_pages_removed_total{instance=\"$host\"}[$interval]) or irate(mysql_info_schema_innodb_metrics_adaptive_hash_index_adaptive_hash_pages_removed_total{instance=\"$host\"}[5m])", 
+                            "interval": "$interval", 
+                            "intervalFactor": 1, 
+                            "legendFormat": "AHI - Pages Removed", 
+                            "refId": "A", 
+                            "step": 300
+                        }, 
+                        {
+                            "expr": "rate( mysql_info_schema_innodb_metrics_adaptive_hash_index_adaptive_hash_rows_added_total{instance=\"$host\"}[$interval]) or irate( mysql_info_schema_innodb_metrics_adaptive_hash_index_adaptive_hash_rows_added_total{instance=\"$host\"}[5m])", 
+                            "interval": "$interval", 
+                            "intervalFactor": 1, 
+                            "legendFormat": "AHI - Rows Added", 
+                            "refId": "C", 
+                            "step": 300
+                        }, 
+                        {
+                            "expr": "rate(mysql_info_schema_innodb_metrics_adaptive_hash_index_adaptive_hash_rows_removed_total{instance=\"$host\"}[$interval]) or irate(mysql_info_schema_innodb_metrics_adaptive_hash_index_adaptive_hash_rows_removed_total{instance=\"$host\"}[5m])", 
+                            "interval": "$interval", 
+                            "intervalFactor": 1, 
+                            "legendFormat": "AHI - Rows Removed", 
+                            "refId": "D", 
+                            "step": 300
+                        }, 
+                        {
+                            "expr": "rate(mysql_info_schema_innodb_metrics_adaptive_hash_index_adaptive_hash_rows_updated_total{instance=\"$host\"}[$interval]) or irate(mysql_info_schema_innodb_metrics_adaptive_hash_index_adaptive_hash_rows_updated_total{instance=\"$host\"}[5m])", 
+                            "interval": "$interval", 
+                            "intervalFactor": 1, 
+                            "legendFormat": "AHI - Rows Updated", 
+                            "refId": "E", 
+                            "step": 300
                         }
                     ], 
                     "thresholds": [], 
                     "timeFrom": null, 
                     "timeShift": null, 
-                    "title": "Swap Activity", 
+                    "title": "InnoDB AHI Maintenance", 
                     "tooltip": {
                         "msResolution": false, 
                         "shared": true, 
                         "sort": 0, 
                         "value_type": "individual"
                     }, 
-                    "transparent": false, 
                     "type": "graph", 
+                    "x-axis": true, 
                     "xaxis": {
                         "mode": "time", 
                         "name": null, 
                         "show": true, 
                         "values": []
                     }, 
+                    "y-axis": true, 
+                    "y_formats": [
+                        "short", 
+                        "short"
+                    ], 
                     "yaxes": [
                         {
-                            "format": "Bps", 
-                            "label": "", 
+                            "format": "short", 
+                            "label": null, 
                             "logBase": 1, 
                             "max": null, 
                             "min": 0, 
                             "show": true
                         }, 
                         {
-                            "format": "bytes", 
+                            "format": "short", 
+                            "label": null, 
                             "logBase": 1, 
                             "max": null, 
-                            "min": 0, 
+                            "min": null, 
                             "show": true
                         }
                     ]
@@ -1669,222 +1741,7 @@
             "repeatIteration": null, 
             "repeatRowId": null, 
             "showTitle": false, 
-            "title": "Swap", 
-            "titleSize": "h6"
-        }, 
-        {
-            "collapse": false, 
-            "height": "250px", 
-            "panels": [
-                {
-                    "aliasColors": {}, 
-                    "bars": false, 
-                    "datasource": "Prometheus", 
-                    "decimals": null, 
-                    "editable": true, 
-                    "error": false, 
-                    "fill": 2, 
-                    "grid": {}, 
-                    "id": 31, 
-                    "legend": {
-                        "alignAsTable": true, 
-                        "avg": true, 
-                        "current": false, 
-                        "hideEmpty": false, 
-                        "max": true, 
-                        "min": true, 
-                        "rightSide": false, 
-                        "show": true, 
-                        "sort": "avg", 
-                        "sortDesc": true, 
-                        "total": false, 
-                        "values": true
-                    }, 
-                    "lines": true, 
-                    "linewidth": 2, 
-                    "links": [], 
-                    "nullPointMode": "null", 
-                    "percentage": false, 
-                    "pointradius": 5, 
-                    "points": false, 
-                    "renderer": "flot", 
-                    "seriesOverrides": [], 
-                    "span": 6, 
-                    "stack": false, 
-                    "steppedLine": false, 
-                    "targets": [
-                        {
-                            "calculatedInterval": "2s", 
-                            "datasourceErrors": {}, 
-                            "errors": {}, 
-                            "expr": "rate(node_vmstat_pgpgin{instance=\"$host\"}[$interval]) * 1024 or irate(node_vmstat_pgpgin{instance=\"$host\"}[5m]) * 1024", 
-                            "interval": "$interval", 
-                            "intervalFactor": 1, 
-                            "legendFormat": "Page In", 
-                            "metric": "", 
-                            "refId": "A", 
-                            "step": 300, 
-                            "target": ""
-                        }, 
-                        {
-                            "calculatedInterval": "2s", 
-                            "datasourceErrors": {}, 
-                            "errors": {}, 
-                            "expr": "rate(node_vmstat_pgpgout{instance=\"$host\"}[$interval]) * 1024 or irate(node_vmstat_pgpgout{instance=\"$host\"}[5m]) * 1024", 
-                            "interval": "$interval", 
-                            "intervalFactor": 1, 
-                            "legendFormat": "Page Out", 
-                            "metric": "", 
-                            "refId": "B", 
-                            "step": 300, 
-                            "target": ""
-                        }
-                    ], 
-                    "thresholds": [], 
-                    "timeFrom": null, 
-                    "timeShift": null, 
-                    "title": "I/O Activity", 
-                    "tooltip": {
-                        "msResolution": false, 
-                        "shared": true, 
-                        "sort": 0, 
-                        "value_type": "individual"
-                    }, 
-                    "transparent": false, 
-                    "type": "graph", 
-                    "xaxis": {
-                        "mode": "time", 
-                        "name": null, 
-                        "show": true, 
-                        "values": []
-                    }, 
-                    "yaxes": [
-                        {
-                            "format": "Bps", 
-                            "label": "", 
-                            "logBase": 1, 
-                            "max": null, 
-                            "min": 0, 
-                            "show": true
-                        }, 
-                        {
-                            "format": "bytes", 
-                            "logBase": 1, 
-                            "max": null, 
-                            "min": 0, 
-                            "show": true
-                        }
-                    ]
-                }, 
-                {
-                    "aliasColors": {
-                        "Allocated": "#E0752D", 
-                        "Limit": "#1F78C1"
-                    }, 
-                    "bars": false, 
-                    "datasource": "Prometheus", 
-                    "decimals": null, 
-                    "editable": true, 
-                    "error": false, 
-                    "fill": 2, 
-                    "grid": {}, 
-                    "id": 32, 
-                    "legend": {
-                        "alignAsTable": true, 
-                        "avg": true, 
-                        "current": false, 
-                        "hideEmpty": false, 
-                        "max": true, 
-                        "min": true, 
-                        "rightSide": false, 
-                        "show": true, 
-                        "sort": "avg", 
-                        "sortDesc": true, 
-                        "total": false, 
-                        "values": true
-                    }, 
-                    "lines": true, 
-                    "linewidth": 2, 
-                    "links": [], 
-                    "nullPointMode": "null", 
-                    "percentage": false, 
-                    "pointradius": 5, 
-                    "points": false, 
-                    "renderer": "flot", 
-                    "seriesOverrides": [], 
-                    "span": 6, 
-                    "stack": false, 
-                    "steppedLine": false, 
-                    "targets": [
-                        {
-                            "calculatedInterval": "2s", 
-                            "datasourceErrors": {}, 
-                            "errors": {}, 
-                            "expr": "node_filefd_maximum{instance=\"$host\"}", 
-                            "interval": "$interval", 
-                            "intervalFactor": 1, 
-                            "legendFormat": "Limit", 
-                            "metric": "", 
-                            "refId": "B", 
-                            "step": 300, 
-                            "target": ""
-                        }, 
-                        {
-                            "calculatedInterval": "2s", 
-                            "datasourceErrors": {}, 
-                            "errors": {}, 
-                            "expr": "node_filefd_allocated{instance=\"$host\"}", 
-                            "interval": "$interval", 
-                            "intervalFactor": 1, 
-                            "legendFormat": "Allocated", 
-                            "metric": "", 
-                            "refId": "A", 
-                            "step": 300, 
-                            "target": ""
-                        }
-                    ], 
-                    "thresholds": [], 
-                    "timeFrom": null, 
-                    "timeShift": null, 
-                    "title": "File Descriptors", 
-                    "tooltip": {
-                        "msResolution": false, 
-                        "shared": true, 
-                        "sort": 0, 
-                        "value_type": "individual"
-                    }, 
-                    "transparent": false, 
-                    "type": "graph", 
-                    "xaxis": {
-                        "mode": "time", 
-                        "name": null, 
-                        "show": true, 
-                        "values": []
-                    }, 
-                    "yaxes": [
-                        {
-                            "format": "short", 
-                            "label": "", 
-                            "logBase": 1, 
-                            "max": null, 
-                            "min": 0, 
-                            "show": true
-                        }, 
-                        {
-                            "format": "short", 
-                            "logBase": 1, 
-                            "max": null, 
-                            "min": 0, 
-                            "show": true
-                        }
-                    ]
-                }
-            ], 
-            "repeat": null, 
-            "repeatIteration": null, 
-            "repeatRowId": null, 
-            "showTitle": false, 
-            "title": "I/O", 
+            "title": "AHI", 
             "titleSize": "h6"
         }
     ], 
@@ -1892,7 +1749,7 @@
     "sharedCrosshair": true, 
     "style": "dark", 
     "tags": [
-        "OS", 
+        "MySQL", 
         "Percona"
     ], 
     "templating": {
@@ -1969,15 +1826,14 @@
                 "multi": false, 
                 "multiFormat": "regex values", 
                 "name": "host", 
-                "query": "label_values(node_load1, instance)", 
+                "query": "label_values(mysql_up, instance)", 
                 "refresh": 1, 
                 "refresh_on_load": false, 
                 "regex": "", 
                 "sort": 1, 
-                "tagValuesQuery": "instance", 
-                "tagsQuery": "up", 
-                "type": "query", 
-                "useTags": false
+                "tagValuesQuery": null, 
+                "tagsQuery": null, 
+                "type": "query"
             }
         ]
     }, 
@@ -2017,6 +1873,6 @@
         "type": "timepicker"
     }, 
     "timezone": "browser", 
-    "title": "System Overview", 
+    "title": "MySQL InnoDB Metrics Advanced", 
     "version": 0
 }

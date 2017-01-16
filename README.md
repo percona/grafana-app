@@ -5,22 +5,31 @@ The dashboards rely on `alias` label in the Prometheus config and depend from th
 
 ### Dashboards
 
+ * Amazon RDS OS metrics (CloudWatch datasource)
  * Cross Server Graphs
  * Disk Performance
  * Disk Space
- * Galera Graphs
+ * MongoDB Cluster Summary
+ * MongoDB Overview
+ * MongoDB ReplSet
+ * MongoDB RocksDB
+ * MongoDB WiredTiger
  * MySQL InnoDB Metrics
+ * MySQL InnoDB Metrics Advanced
  * MySQL MyISAM Metrics
  * MySQL Overview
  * MySQL Performance Schema
  * MySQL Query Response Time
  * MySQL Replication
  * MySQL Table Statistics
+ * MySQL TokuDB Graphs
  * MySQL User Statistics
+ * PXC/Galera Cluster Overview
+ * PXC/Galera Graphs
  * Prometheus
+ * ProxySQL Overview
  * Summary Dashboard
  * System Overview
- * TokuDB Graphs
  * Trends Dashboard
 
 ### Screenshots

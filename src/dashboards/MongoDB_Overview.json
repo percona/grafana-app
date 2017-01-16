@@ -25,22 +25,10 @@
             "includeVars": true, 
             "keepTime": true, 
             "tags": [
-                "MySQL"
+                "MongoDB"
             ], 
             "targetBlank": true, 
-            "title": "MySQL", 
-            "type": "dashboards"
-        }, 
-        {
-            "asDropdown": true, 
-            "icon": "external link", 
-            "includeVars": true, 
-            "keepTime": true, 
-            "tags": [
-                "HA"
-            ], 
-            "targetBlank": true, 
-            "title": "HA", 
+            "title": "MongoDB", 
             "type": "dashboards"
         }
     ], 
@@ -53,20 +41,26 @@
                     "aliasColors": {}, 
                     "bars": false, 
                     "datasource": "Prometheus", 
-                    "decimals": 2, 
+                    "decimals": 1, 
                     "editable": true, 
                     "error": false, 
                     "fill": 2, 
-                    "grid": {}, 
-                    "id": 47, 
+                    "grid": {
+                        "leftLogBase": 1, 
+                        "leftMax": null, 
+                        "leftMin": 0, 
+                        "rightLogBase": 1, 
+                        "rightMax": null, 
+                        "rightMin": null
+                    }, 
+                    "id": 15, 
                     "legend": {
                         "alignAsTable": true, 
                         "avg": true, 
                         "current": false, 
-                        "hideEmpty": true, 
                         "hideZero": true, 
                         "max": true, 
-                        "min": false, 
+                        "min": true, 
                         "rightSide": true, 
                         "show": true, 
                         "sort": "avg", 
@@ -88,10 +82,20 @@
                     "steppedLine": false, 
                     "targets": [
                         {
-                            "expr": "topk(10, rate(mysql_perf_schema_file_events_total{instance=\"$host\"}[$interval])>0) or topk(10, irate(mysql_perf_schema_file_events_total{instance=\"$host\"}[5m])>0)", 
+                            "expr": "rate(mongodb_mongod_op_counters_total{instance=\"$host\", type!=\"command\"}[$interval]) or irate(mongodb_mongod_op_counters_total{instance=\"$host\", type!=\"command\"}[5m])", 
+                            "hide": false, 
                             "interval": "$interval", 
                             "intervalFactor": 1, 
-                            "legendFormat": "{{event_name}} {{mode}}", 
+                            "legendFormat": "{{type}}", 
+                            "refId": "J", 
+                            "step": 300
+                        }, 
+                        {
+                            "expr": "rate(mongodb_mongod_op_counters_repl_total{instance=\"$host\", type!~\"(command|query|getmore)\"}[$interval]) or irate(mongodb_mongod_op_counters_repl_total{instance=\"$host\", type!~\"(command|query|getmore)\"}[5m])", 
+                            "hide": false, 
+                            "interval": "$interval", 
+                            "intervalFactor": 1, 
+                            "legendFormat": "repl_{{type}}", 
                             "refId": "A", 
                             "step": 300
                         }
@@ -99,7 +103,112 @@
                     "thresholds": [], 
                     "timeFrom": null, 
                     "timeShift": null, 
-                    "title": "Performance Schema File IO (Events)", 
+                    "title": "Command Operations", 
+                    "tooltip": {
+                        "msResolution": false, 
+                        "shared": true, 
+                        "sort": 0, 
+                        "value_type": "individual"
+                    }, 
+                    "type": "graph", 
+                    "x-axis": true, 
+                    "xaxis": {
+                        "mode": "time", 
+                        "name": null, 
+                        "show": true, 
+                        "values": []
+                    }, 
+                    "y-axis": true, 
+                    "y_formats": [
+                        "short", 
+                        "short"
+                    ], 
+                    "yaxes": [
+                        {
+                            "format": "ops", 
+                            "label": "", 
+                            "logBase": 1, 
+                            "max": null, 
+                            "min": 0, 
+                            "show": true
+                        }, 
+                        {
+                            "format": "short", 
+                            "logBase": 1, 
+                            "max": null, 
+                            "min": null, 
+                            "show": true
+                        }
+                    ]
+                }
+            ], 
+            "repeat": null, 
+            "repeatIteration": null, 
+            "repeatRowId": null, 
+            "showTitle": false, 
+            "title": "New row", 
+            "titleSize": "h6"
+        }, 
+        {
+            "collapse": false, 
+            "height": "250px", 
+            "panels": [
+                {
+                    "aliasColors": {}, 
+                    "bars": false, 
+                    "datasource": "Prometheus", 
+                    "decimals": null, 
+                    "editable": true, 
+                    "error": false, 
+                    "fill": 2, 
+                    "grid": {
+                        "leftLogBase": 1, 
+                        "leftMax": null, 
+                        "leftMin": 0, 
+                        "rightLogBase": 1, 
+                        "rightMax": null, 
+                        "rightMin": null
+                    }, 
+                    "height": "250px", 
+                    "id": 38, 
+                    "legend": {
+                        "alignAsTable": true, 
+                        "avg": true, 
+                        "current": false, 
+                        "max": true, 
+                        "min": true, 
+                        "rightSide": false, 
+                        "show": true, 
+                        "total": false, 
+                        "values": true
+                    }, 
+                    "lines": true, 
+                    "linewidth": 2, 
+                    "links": [], 
+                    "nullPointMode": "null", 
+                    "percentage": false, 
+                    "pointradius": 5, 
+                    "points": false, 
+                    "renderer": "flot", 
+                    "seriesOverrides": [], 
+                    "span": 6, 
+                    "stack": false, 
+                    "steppedLine": false, 
+                    "targets": [
+                        {
+                            "expr": "mongodb_mongod_connections{instance=\"$host\", state=\"current\"}", 
+                            "hide": false, 
+                            "interval": "$interval", 
+                            "intervalFactor": 1, 
+                            "legendFormat": "Connections", 
+                            "refId": "J", 
+                            "step": 300
+                        }
+                    ], 
+                    "thresholds": [], 
+                    "timeFrom": null, 
+                    "timeShift": null, 
+                    "title": "Connections", 
                     "tooltip": {
                         "msResolution": false, 
                         "shared": true, 
@@ -107,15 +216,22 @@
                         "value_type": "cumulative"
                     }, 
                     "type": "graph", 
+                    "x-axis": true, 
                     "xaxis": {
                         "mode": "time", 
                         "name": null, 
                         "show": true, 
                         "values": []
                     }, 
+                    "y-axis": true, 
+                    "y_formats": [
+                        "short", 
+                        "short"
+                    ], 
                     "yaxes": [
                         {
-                            "format": "short", 
+                            "format": "none", 
+                            "label": "", 
                             "logBase": 1, 
                             "max": null, 
                             "min": 0, 
@@ -125,7 +241,7 @@
                             "format": "short", 
                             "logBase": 1, 
                             "max": null, 
-                            "min": 0, 
+                            "min": null, 
                             "show": true
                         }
                     ]
@@ -134,21 +250,28 @@
                     "aliasColors": {}, 
                     "bars": false, 
                     "datasource": "Prometheus", 
-                    "decimals": 2, 
+                    "decimals": null, 
                     "editable": true, 
                     "error": false, 
                     "fill": 2, 
-                    "grid": {}, 
-                    "id": 48, 
+                    "grid": {
+                        "leftLogBase": 1, 
+                        "leftMax": null, 
+                        "leftMin": 0, 
+                        "rightLogBase": 1, 
+                        "rightMax": null, 
+                        "rightMin": null
+                    }, 
+                    "height": "250px", 
+                    "id": 25, 
                     "legend": {
                         "alignAsTable": true, 
                         "avg": true, 
                         "current": false, 
-                        "hideEmpty": true, 
                         "hideZero": true, 
                         "max": true, 
-                        "min": false, 
-                        "rightSide": true, 
+                        "min": true, 
+                        "rightSide": false, 
                         "show": true, 
                         "sort": "avg", 
                         "sortDesc": true, 
@@ -164,104 +287,24 @@
                     "points": false, 
                     "renderer": "flot", 
                     "seriesOverrides": [], 
-                    "span": 12, 
+                    "span": 6, 
                     "stack": false, 
                     "steppedLine": false, 
                     "targets": [
                         {
-                            "expr": "topk(10, rate(mysql_perf_schema_file_events_seconds_total{instance=\"$host\"}[$interval])>0) or topk(10, irate(mysql_perf_schema_file_events_seconds_total{instance=\"$host\"}[5m])>0)", 
+                            "expr": "mongodb_mongod_metrics_cursor_open{instance=\"$host\"} or mongodb_mongod_cursors{instance=\"$host\"}", 
+                            "hide": false, 
                             "interval": "$interval", 
                             "intervalFactor": 1, 
-                            "legendFormat": "{{event_name}} {{mode}}", 
-                            "refId": "A", 
+                            "legendFormat": "{{state}}", 
+                            "refId": "J", 
                             "step": 300
                         }
                     ], 
                     "thresholds": [], 
                     "timeFrom": null, 
                     "timeShift": null, 
-                    "title": "Performance Schema File IO (Load)", 
-                    "tooltip": {
-                        "msResolution": false, 
-                        "shared": true, 
-                        "sort": 0, 
-                        "value_type": "individual"
-                    }, 
-                    "type": "graph", 
-                    "xaxis": {
-                        "mode": "time", 
-                        "name": null, 
-                        "show": true, 
-                        "values": []
-                    }, 
-                    "yaxes": [
-                        {
-                            "format": "short", 
-                            "logBase": 1, 
-                            "max": null, 
-                            "min": 0, 
-                            "show": true
-                        }, 
-                        {
-                            "format": "short", 
-                            "logBase": 1, 
-                            "max": null, 
-                            "min": 0, 
-                            "show": true
-                        }
-                    ]
-                }, 
-                {
-                    "aliasColors": {}, 
-                    "bars": false, 
-                    "datasource": "Prometheus", 
-                    "decimals": 2, 
-                    "editable": true, 
-                    "error": false, 
-                    "fill": 2, 
-                    "grid": {}, 
-                    "id": 49, 
-                    "legend": {
-                        "alignAsTable": true, 
-                        "avg": true, 
-                        "current": false, 
-                        "hideEmpty": true, 
-                        "hideZero": true, 
-                        "max": true, 
-                        "min": false, 
-                        "rightSide": true, 
-                        "show": true, 
-                        "sort": "avg", 
-                        "sortDesc": true, 
-                        "total": false, 
-                        "values": true
-                    }, 
-                    "lines": true, 
-                    "linewidth": 2, 
-                    "links": [], 
-                    "nullPointMode": "null", 
-                    "percentage": false, 
-                    "pointradius": 5, 
-                    "points": false, 
-                    "renderer": "flot", 
-                    "seriesOverrides": [], 
-                    "span": 12, 
-                    "stack": false, 
-                    "steppedLine": false, 
-                    "targets": [
-                        {
-                            "expr": "topk(10, rate(mysql_perf_schema_file_events_bytes_total{instance=\"$host\"}[$interval])>0) or topk(10, irate(mysql_perf_schema_file_events_bytes_total{instance=\"$host\"}[5m])>0)", 
-                            "interval": "$interval", 
-                            "intervalFactor": 1, 
-                            "legendFormat": "{{event_name}} {{mode}}", 
-                            "refId": "A", 
-                            "step": 300
-                        }
-                    ], 
-                    "thresholds": [], 
-                    "timeFrom": null, 
-                    "timeShift": null, 
-                    "title": "Performance Schema File IO (Bytes)", 
+                    "title": "Cursors", 
                     "tooltip": {
                         "msResolution": false, 
                         "shared": true, 
@@ -269,15 +312,22 @@
                         "value_type": "cumulative"
                     }, 
                     "type": "graph", 
+                    "x-axis": true, 
                     "xaxis": {
                         "mode": "time", 
                         "name": null, 
                         "show": true, 
                         "values": []
                     }, 
+                    "y-axis": true, 
+                    "y_formats": [
+                        "short", 
+                        "short"
+                    ], 
                     "yaxes": [
                         {
-                            "format": "Bps", 
+                            "format": "short", 
+                            "label": "", 
                             "logBase": 1, 
                             "max": null, 
                             "min": 0, 
@@ -287,30 +337,48 @@
                             "format": "short", 
                             "logBase": 1, 
                             "max": null, 
-                            "min": 0, 
+                            "min": null, 
                             "show": true
                         }
                     ]
-                }, 
+                }
+            ], 
+            "repeat": null, 
+            "repeatIteration": null, 
+            "repeatRowId": null, 
+            "showTitle": false, 
+            "title": "New row", 
+            "titleSize": "h6"
+        }, 
+        {
+            "collapse": false, 
+            "height": "250px", 
+            "panels": [
                 {
                     "aliasColors": {}, 
                     "bars": false, 
                     "datasource": "Prometheus", 
-                    "decimals": 2, 
+                    "decimals": null, 
                     "editable": true, 
                     "error": false, 
                     "fill": 2, 
-                    "grid": {}, 
-                    "id": 51, 
+                    "grid": {
+                        "leftLogBase": 1, 
+                        "leftMax": null, 
+                        "leftMin": 0, 
+                        "rightLogBase": 1, 
+                        "rightMax": null, 
+                        "rightMin": null
+                    }, 
+                    "height": "250px", 
+                    "id": 36, 
                     "legend": {
                         "alignAsTable": true, 
                         "avg": true, 
                         "current": false, 
-                        "hideEmpty": true, 
                         "hideZero": true, 
                         "max": true, 
-                        "min": false, 
-                        "rightSide": true, 
+                        "min": true, 
                         "show": true, 
                         "sort": "avg", 
                         "sortDesc": true, 
@@ -326,23 +394,24 @@
                     "points": false, 
                     "renderer": "flot", 
                     "seriesOverrides": [], 
-                    "span": 12, 
+                    "span": 6, 
                     "stack": false, 
                     "steppedLine": false, 
                     "targets": [
                         {
-                            "expr": "topk(5, rate(mysql_perf_schema_events_waits_total{instance=\"$host\"}[$interval])>0) or topk(5, irate(mysql_perf_schema_events_waits_total{instance=\"$host\"}[5m])>0)", 
+                            "expr": "rate(mongodb_mongod_metrics_document_total{instance=\"$host\"}[$interval]) or irate(mongodb_mongod_metrics_document_total{instance=\"$host\"}[5m])", 
+                            "hide": false, 
                             "interval": "$interval", 
                             "intervalFactor": 1, 
-                            "legendFormat": "{{event_name}} ", 
-                            "refId": "A", 
+                            "legendFormat": "{{state}}", 
+                            "refId": "J", 
                             "step": 300
                         }
                     ], 
                     "thresholds": [], 
                     "timeFrom": null, 
                     "timeShift": null, 
-                    "title": "Performance Schema Waits (Events)", 
+                    "title": "Document Operations", 
                     "tooltip": {
                         "msResolution": false, 
                         "shared": true, 
@@ -350,15 +419,22 @@
                         "value_type": "cumulative"
                     }, 
                     "type": "graph", 
+                    "x-axis": true, 
                     "xaxis": {
                         "mode": "time", 
                         "name": null, 
                         "show": true, 
                         "values": []
                     }, 
+                    "y-axis": true, 
+                    "y_formats": [
+                        "short", 
+                        "short"
+                    ], 
                     "yaxes": [
                         {
-                            "format": "short", 
+                            "format": "ops", 
+                            "label": "", 
                             "logBase": 1, 
                             "max": null, 
                             "min": 0, 
@@ -368,7 +444,7 @@
                             "format": "short", 
                             "logBase": 1, 
                             "max": null, 
-                            "min": 0, 
+                            "min": null, 
                             "show": true
                         }
                     ]
@@ -377,21 +453,27 @@
                     "aliasColors": {}, 
                     "bars": false, 
                     "datasource": "Prometheus", 
-                    "decimals": 2, 
+                    "decimals": null, 
                     "editable": true, 
                     "error": false, 
-                    "fill": 1, 
-                    "grid": {}, 
-                    "id": 52, 
+                    "fill": 2, 
+                    "grid": {
+                        "leftLogBase": 1, 
+                        "leftMax": null, 
+                        "leftMin": 0, 
+                        "rightLogBase": 1, 
+                        "rightMax": null, 
+                        "rightMin": null
+                    }, 
+                    "height": "250px", 
+                    "id": 40, 
                     "legend": {
                         "alignAsTable": true, 
                         "avg": true, 
                         "current": false, 
-                        "hideEmpty": true, 
-                        "hideZero": true, 
+                        "hideZero": false, 
                         "max": true, 
-                        "min": false, 
-                        "rightSide": true, 
+                        "min": true, 
                         "show": true, 
                         "sort": "avg", 
                         "sortDesc": true, 
@@ -407,40 +489,47 @@
                     "points": false, 
                     "renderer": "flot", 
                     "seriesOverrides": [], 
-                    "span": 12, 
-                    "stack": true, 
-                    "steppedLine": true, 
+                    "span": 6, 
+                    "stack": false, 
+                    "steppedLine": false, 
                     "targets": [
                         {
-                            "expr": "topk(5, rate(mysql_perf_schema_events_waits_seconds_total{instance=\"$host\",event_name!='idle',event_name!='wait/io/table/sql/handler'}[$interval])>0) or topk(5, irate(mysql_perf_schema_events_waits_seconds_total{instance=\"$host\",event_name!='idle',event_name!='wait/io/table/sql/handler'}[5m])>0)", 
+                            "expr": "mongodb_mongod_global_lock_current_queue{instance=\"$host\"}", 
                             "hide": false, 
                             "interval": "$interval", 
                             "intervalFactor": 1, 
-                            "legendFormat": "{{event_name}} ", 
-                            "refId": "A", 
+                            "legendFormat": "{{type}}", 
+                            "refId": "J", 
                             "step": 300
                         }
                     ], 
                     "thresholds": [], 
                     "timeFrom": null, 
                     "timeShift": null, 
-                    "title": "Performance Schema Waits (Load)", 
+                    "title": "Queued Operations", 
                     "tooltip": {
                         "msResolution": false, 
                         "shared": true, 
                         "sort": 0, 
-                        "value_type": "individual"
+                        "value_type": "cumulative"
                     }, 
                     "type": "graph", 
+                    "x-axis": true, 
                     "xaxis": {
                         "mode": "time", 
                         "name": null, 
                         "show": true, 
                         "values": []
                     }, 
+                    "y-axis": true, 
+                    "y_formats": [
+                        "short", 
+                        "short"
+                    ], 
                     "yaxes": [
                         {
-                            "format": "short", 
+                            "format": "ops", 
+                            "label": "", 
                             "logBase": 1, 
                             "max": null, 
                             "min": 0, 
@@ -450,7 +539,110 @@
                             "format": "short", 
                             "logBase": 1, 
                             "max": null, 
+                            "min": null, 
+                            "show": true
+                        }
+                    ]
+                }
+            ], 
+            "repeat": null, 
+            "repeatIteration": null, 
+            "repeatRowId": null, 
+            "showTitle": false, 
+            "title": "New row", 
+            "titleSize": "h6"
+        }, 
+        {
+            "collapse": false, 
+            "height": "250px", 
+            "panels": [
+                {
+                    "aliasColors": {}, 
+                    "bars": false, 
+                    "datasource": "Prometheus", 
+                    "decimals": null, 
+                    "editable": true, 
+                    "error": false, 
+                    "fill": 2, 
+                    "grid": {
+                        "leftLogBase": 1, 
+                        "leftMax": null, 
+                        "leftMin": 0, 
+                        "rightLogBase": 1, 
+                        "rightMax": null, 
+                        "rightMin": null
+                    }, 
+                    "id": 41, 
+                    "legend": {
+                        "alignAsTable": true, 
+                        "avg": true, 
+                        "current": false, 
+                        "max": true, 
+                        "min": true, 
+                        "show": true, 
+                        "total": false, 
+                        "values": true
+                    }, 
+                    "lines": true, 
+                    "linewidth": 2, 
+                    "links": [], 
+                    "nullPointMode": "null", 
+                    "percentage": false, 
+                    "pointradius": 5, 
+                    "points": false, 
+                    "renderer": "flot", 
+                    "seriesOverrides": [], 
+                    "span": 6, 
+                    "stack": false, 
+                    "steppedLine": false, 
+                    "targets": [
+                        {
+                            "expr": "rate(mongodb_mongod_metrics_get_last_error_wtime_total_milliseconds{instance=\"$host\"}[$interval]) or irate(mongodb_mongod_metrics_get_last_error_wtime_total_milliseconds{instance=\"$host\"}[5m])", 
+                            "hide": false, 
+                            "interval": "$interval", 
+                            "intervalFactor": 1, 
+                            "legendFormat": "Write Wait Time", 
+                            "refId": "J", 
+                            "step": 300
+                        }
+                    ], 
+                    "thresholds": [], 
+                    "timeFrom": null, 
+                    "timeShift": null, 
+                    "title": "getLastError Write Time", 
+                    "tooltip": {
+                        "msResolution": false, 
+                        "shared": true, 
+                        "sort": 0, 
+                        "value_type": "cumulative"
+                    }, 
+                    "type": "graph", 
+                    "x-axis": true, 
+                    "xaxis": {
+                        "mode": "time", 
+                        "name": null, 
+                        "show": true, 
+                        "values": []
+                    }, 
+                    "y-axis": true, 
+                    "y_formats": [
+                        "short", 
+                        "short"
+                    ], 
+                    "yaxes": [
+                        {
+                            "format": "ms", 
+                            "label": "", 
+                            "logBase": 1, 
+                            "max": null, 
                             "min": 0, 
+                            "show": true
+                        }, 
+                        {
+                            "format": "short", 
+                            "logBase": 1, 
+                            "max": null, 
+                            "min": null, 
                             "show": true
                         }
                     ]
@@ -459,21 +651,27 @@
                     "aliasColors": {}, 
                     "bars": false, 
                     "datasource": "Prometheus", 
-                    "decimals": 2, 
+                    "decimals": null, 
                     "editable": true, 
                     "error": false, 
-                    "fill": 1, 
-                    "grid": {}, 
-                    "id": 77, 
+                    "fill": 2, 
+                    "grid": {
+                        "leftLogBase": 1, 
+                        "leftMax": null, 
+                        "leftMin": 0, 
+                        "rightLogBase": 1, 
+                        "rightMax": null, 
+                        "rightMin": null
+                    }, 
+                    "height": "250px", 
+                    "id": 62, 
                     "legend": {
                         "alignAsTable": true, 
                         "avg": true, 
                         "current": false, 
-                        "hideEmpty": true, 
                         "hideZero": true, 
                         "max": true, 
-                        "min": false, 
-                        "rightSide": true, 
+                        "min": true, 
                         "show": true, 
                         "sort": "avg", 
                         "sortDesc": true, 
@@ -483,22 +681,31 @@
                     "lines": true, 
                     "linewidth": 2, 
                     "links": [], 
-                    "nullPointMode": "null as zero", 
+                    "nullPointMode": "null", 
                     "percentage": false, 
                     "pointradius": 5, 
                     "points": false, 
                     "renderer": "flot", 
                     "seriesOverrides": [], 
-                    "span": 12, 
-                    "stack": true, 
-                    "steppedLine": true, 
+                    "span": 6, 
+                    "stack": false, 
+                    "steppedLine": false, 
                     "targets": [
                         {
-                            "expr": "topk(5, rate(mysql_perf_schema_index_io_waits_seconds_total{instance=\"$host\"}[$interval])>0) or topk(5, irate(mysql_perf_schema_index_io_waits_seconds_total{instance=\"$host\"}[5m])>0)", 
+                            "expr": "rate(mongodb_mongod_metrics_get_last_error_wtime_num_total{instance=\"$host\"}[$interval]) or irate(mongodb_mongod_metrics_get_last_error_wtime_num_total{instance=\"$host\"}[5m])", 
                             "hide": false, 
                             "interval": "$interval", 
                             "intervalFactor": 1, 
-                            "legendFormat": "{{operation}} {{index}} {{schema}}.{{name}}", 
+                            "legendFormat": "Total", 
+                            "refId": "J", 
+                            "step": 300
+                        }, 
+                        {
+                            "expr": "rate(mongodb_mongod_metrics_get_last_error_wtimeouts_total{instance=\"$host\"}[$interval]) or irate(mongodb_mongod_metrics_get_last_error_wtimeouts_total{instance=\"$host\"}[5m])", 
+                            "hide": false, 
+                            "interval": "$interval", 
+                            "intervalFactor": 1, 
+                            "legendFormat": "Timeouts", 
                             "refId": "A", 
                             "step": 300
                         }
@@ -506,23 +713,30 @@
                     "thresholds": [], 
                     "timeFrom": null, 
                     "timeShift": null, 
-                    "title": "Index Access Operations (Load)", 
+                    "title": "getLastError Write Operations", 
                     "tooltip": {
                         "msResolution": false, 
                         "shared": true, 
                         "sort": 0, 
-                        "value_type": "individual"
+                        "value_type": "cumulative"
                     }, 
                     "type": "graph", 
+                    "x-axis": true, 
                     "xaxis": {
                         "mode": "time", 
                         "name": null, 
                         "show": true, 
                         "values": []
                     }, 
+                    "y-axis": true, 
+                    "y_formats": [
+                        "short", 
+                        "short"
+                    ], 
                     "yaxes": [
                         {
-                            "format": "short", 
+                            "format": "ops", 
+                            "label": "", 
                             "logBase": 1, 
                             "max": null, 
                             "min": 0, 
@@ -532,30 +746,49 @@
                             "format": "short", 
                             "logBase": 1, 
                             "max": null, 
-                            "min": 0, 
+                            "min": null, 
                             "show": true
                         }
                     ]
-                }, 
+                }
+            ], 
+            "repeat": null, 
+            "repeatIteration": null, 
+            "repeatRowId": null, 
+            "showTitle": false, 
+            "title": "New row", 
+            "titleSize": "h6"
+        }, 
+        {
+            "collapse": false, 
+            "height": "250px", 
+            "panels": [
                 {
                     "aliasColors": {}, 
                     "bars": false, 
                     "datasource": "Prometheus", 
-                    "decimals": 2, 
+                    "decimals": null, 
                     "editable": true, 
                     "error": false, 
-                    "fill": 1, 
-                    "grid": {}, 
-                    "id": 78, 
+                    "fill": 2, 
+                    "grid": {
+                        "leftLogBase": 1, 
+                        "leftMax": null, 
+                        "leftMin": 0, 
+                        "rightLogBase": 1, 
+                        "rightMax": null, 
+                        "rightMin": null
+                    }, 
+                    "height": "250px", 
+                    "id": 37, 
                     "legend": {
                         "alignAsTable": true, 
                         "avg": true, 
                         "current": false, 
-                        "hideEmpty": true, 
                         "hideZero": true, 
                         "max": true, 
-                        "min": false, 
-                        "rightSide": true, 
+                        "min": true, 
+                        "rightSide": false, 
                         "show": true, 
                         "sort": "avg", 
                         "sortDesc": true, 
@@ -565,46 +798,53 @@
                     "lines": true, 
                     "linewidth": 2, 
                     "links": [], 
-                    "nullPointMode": "null as zero", 
+                    "nullPointMode": "null", 
                     "percentage": false, 
                     "pointradius": 5, 
                     "points": false, 
                     "renderer": "flot", 
                     "seriesOverrides": [], 
-                    "span": 12, 
-                    "stack": true, 
-                    "steppedLine": true, 
+                    "span": 6, 
+                    "stack": false, 
+                    "steppedLine": false, 
                     "targets": [
                         {
-                            "expr": "topk(5, rate(mysql_perf_schema_table_io_waits_seconds_total{instance=\"$host\"}[$interval])>0) or topk(5, irate(mysql_perf_schema_table_io_waits_seconds_total{instance=\"$host\"}[5m])>0)", 
+                            "expr": "rate(mongodb_mongod_asserts_total{instance=\"$host\"}[$interval]) or irate(mongodb_mongod_asserts_total{instance=\"$host\"}[5m])", 
                             "hide": false, 
                             "interval": "$interval", 
                             "intervalFactor": 1, 
-                            "legendFormat": "{{operation}} {{schema}}.{{name}}", 
-                            "refId": "A", 
+                            "legendFormat": "{{type}}", 
+                            "refId": "J", 
                             "step": 300
                         }
                     ], 
                     "thresholds": [], 
                     "timeFrom": null, 
                     "timeShift": null, 
-                    "title": "Table Access Operations (Load)", 
+                    "title": "Assert Events", 
                     "tooltip": {
                         "msResolution": false, 
                         "shared": true, 
                         "sort": 0, 
-                        "value_type": "individual"
+                        "value_type": "cumulative"
                     }, 
                     "type": "graph", 
+                    "x-axis": true, 
                     "xaxis": {
                         "mode": "time", 
                         "name": null, 
                         "show": true, 
                         "values": []
                     }, 
+                    "y-axis": true, 
+                    "y_formats": [
+                        "short", 
+                        "short"
+                    ], 
                     "yaxes": [
                         {
                             "format": "short", 
+                            "label": "", 
                             "logBase": 1, 
                             "max": null, 
                             "min": 0, 
@@ -614,7 +854,99 @@
                             "format": "short", 
                             "logBase": 1, 
                             "max": null, 
+                            "min": null, 
+                            "show": true
+                        }
+                    ]
+                }, 
+                {
+                    "aliasColors": {}, 
+                    "bars": false, 
+                    "datasource": "Prometheus", 
+                    "decimals": null, 
+                    "editable": true, 
+                    "error": false, 
+                    "fill": 2, 
+                    "grid": {
+                        "leftLogBase": 1, 
+                        "leftMax": null, 
+                        "leftMin": 0, 
+                        "rightLogBase": 1, 
+                        "rightMax": null, 
+                        "rightMin": null
+                    }, 
+                    "height": "250px", 
+                    "id": 39, 
+                    "legend": {
+                        "alignAsTable": true, 
+                        "avg": true, 
+                        "current": false, 
+                        "max": true, 
+                        "min": true, 
+                        "show": true, 
+                        "total": false, 
+                        "values": true
+                    }, 
+                    "lines": true, 
+                    "linewidth": 2, 
+                    "links": [], 
+                    "nullPointMode": "null", 
+                    "percentage": false, 
+                    "pointradius": 5, 
+                    "points": false, 
+                    "renderer": "flot", 
+                    "seriesOverrides": [], 
+                    "span": 6, 
+                    "stack": false, 
+                    "steppedLine": false, 
+                    "targets": [
+                        {
+                            "expr": "rate(mongodb_mongod_extra_info_page_faults_total{instance=\"$host\"}[$interval]) or irate(mongodb_mongod_extra_info_page_faults_total{instance=\"$host\"}[5m])", 
+                            "hide": false, 
+                            "interval": "$interval", 
+                            "intervalFactor": 1, 
+                            "legendFormat": "Faults", 
+                            "refId": "J", 
+                            "step": 300
+                        }
+                    ], 
+                    "thresholds": [], 
+                    "timeFrom": null, 
+                    "timeShift": null, 
+                    "title": "Memory Faults", 
+                    "tooltip": {
+                        "msResolution": false, 
+                        "shared": true, 
+                        "sort": 0, 
+                        "value_type": "cumulative"
+                    }, 
+                    "type": "graph", 
+                    "x-axis": true, 
+                    "xaxis": {
+                        "mode": "time", 
+                        "name": null, 
+                        "show": true, 
+                        "values": []
+                    }, 
+                    "y-axis": true, 
+                    "y_formats": [
+                        "short", 
+                        "short"
+                    ], 
+                    "yaxes": [
+                        {
+                            "format": "none", 
+                            "label": "", 
+                            "logBase": 1, 
+                            "max": null, 
                             "min": 0, 
+                            "show": true
+                        }, 
+                        {
+                            "format": "short", 
+                            "logBase": 1, 
+                            "max": null, 
+                            "min": null, 
                             "show": true
                         }
                     ]
@@ -632,7 +964,7 @@
     "sharedCrosshair": true, 
     "style": "dark", 
     "tags": [
-        "MySQL", 
+        "MongoDB", 
         "Percona"
     ], 
     "templating": {
@@ -700,23 +1032,41 @@
                 "type": "interval"
             }, 
             {
-                "allFormat": "glob", 
+                "allFormat": "blob", 
                 "allValue": null, 
                 "datasource": "Prometheus", 
                 "hide": 0, 
-                "includeAll": false, 
-                "label": "Host", 
+                "includeAll": true, 
+                "label": "Cluster", 
                 "multi": false, 
-                "multiFormat": "regex values", 
-                "name": "host", 
-                "query": "label_values(mysql_up, instance)", 
+                "multiFormat": "glob", 
+                "name": "cluster", 
+                "query": "label_values(cluster)", 
                 "refresh": 1, 
-                "refresh_on_load": false, 
                 "regex": "", 
                 "sort": 1, 
                 "tagValuesQuery": null, 
                 "tagsQuery": null, 
                 "type": "query"
+            }, 
+            {
+                "allFormat": "glob", 
+                "allValue": null, 
+                "datasource": "Prometheus", 
+                "hide": 0, 
+                "includeAll": false, 
+                "label": "Instance", 
+                "multi": false, 
+                "multiFormat": "glob", 
+                "name": "host", 
+                "query": "label_values(mongodb_mongod_connections{cluster=~\"$cluster\"}, instance)", 
+                "refresh": 1, 
+                "regex": "", 
+                "sort": 1, 
+                "tagValuesQuery": null, 
+                "tagsQuery": "", 
+                "type": "query", 
+                "useTags": false
             }
         ]
     }, 
@@ -725,9 +1075,6 @@
         "to": "now"
     }, 
     "timepicker": {
-        "collapse": false, 
-        "enable": true, 
-        "notice": false, 
         "now": true, 
         "refresh_intervals": [
             "5s", 
@@ -741,7 +1088,6 @@
             "2h", 
             "1d"
         ], 
-        "status": "Stable", 
         "time_options": [
             "5m", 
             "15m", 
@@ -752,10 +1098,9 @@
             "2d", 
             "7d", 
             "30d"
-        ], 
-        "type": "timepicker"
+        ]
     }, 
     "timezone": "browser", 
-    "title": "MySQL Performance Schema", 
+    "title": "MongoDB Overview", 
     "version": 0
 }

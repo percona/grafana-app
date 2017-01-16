@@ -3,15 +3,51 @@
         "list": []
     }, 
     "editable": true, 
-    "hideControls": false, 
+    "gnetId": null, 
+    "hideControls": true, 
     "id": null, 
-    "links": [], 
-    "originalTitle": "MySQL Performance Schema", 
+    "links": [
+        {
+            "asDropdown": true, 
+            "icon": "external link", 
+            "includeVars": true, 
+            "keepTime": true, 
+            "tags": [
+                "OS"
+            ], 
+            "targetBlank": true, 
+            "title": "OS", 
+            "type": "dashboards"
+        }, 
+        {
+            "asDropdown": true, 
+            "icon": "external link", 
+            "includeVars": true, 
+            "keepTime": true, 
+            "tags": [
+                "MySQL"
+            ], 
+            "targetBlank": true, 
+            "title": "MySQL", 
+            "type": "dashboards"
+        }, 
+        {
+            "asDropdown": true, 
+            "icon": "external link", 
+            "includeVars": true, 
+            "keepTime": true, 
+            "tags": [
+                "HA"
+            ], 
+            "targetBlank": true, 
+            "title": "HA", 
+            "type": "dashboards"
+        }
+    ], 
     "rows": [
         {
             "collapse": false, 
-            "editable": true, 
-            "height": "270px", 
+            "height": "250px", 
             "panels": [
                 {
                     "aliasColors": {}, 
@@ -21,94 +57,8 @@
                     "editable": true, 
                     "error": false, 
                     "fill": 2, 
-                    "grid": {
-                        "threshold1": null, 
-                        "threshold1Color": "rgba(216, 200, 27, 0.27)", 
-                        "threshold2": null, 
-                        "threshold2Color": "rgba(234, 112, 112, 0.22)"
-                    }, 
+                    "grid": {}, 
                     "id": 47, 
-                    "isNew": true, 
-                    "legend": {
-                        "alignAsTable": true, 
-                        "avg": true, 
-                        "current": false, 
-                        "hideEmpty": true, 
-                        "hideZero": true, 
-                        "max": true, 
-                        "min": false, 
-                        "rightSide": true, 
-                        "show": true, 
-                        "total": false, 
-                        "values": true
-                    }, 
-                    "lines": true, 
-                    "linewidth": 2, 
-                    "links": [], 
-                    "nullPointMode": "null", 
-                    "percentage": false, 
-                    "pointradius": 5, 
-                    "points": false, 
-                    "renderer": "flot", 
-                    "seriesOverrides": [], 
-                    "span": 12, 
-                    "stack": false, 
-                    "steppedLine": false, 
-                    "targets": [
-                        {
-                            "expr": "topk(10, rate(mysql_perf_schema_file_events_total{alias=\"$host\"}[$interval])>0) or topk(10, irate(mysql_perf_schema_file_events_total{alias=\"$host\"}[5m])>0)", 
-                            "interval": "$interval", 
-                            "intervalFactor": 1, 
-                            "legendFormat": "{{event_name}} {{mode}}", 
-                            "refId": "A", 
-                            "step": 300
-                        }
-                    ], 
-                    "timeFrom": null, 
-                    "timeShift": null, 
-                    "title": "Performance Schema File IO (Events)", 
-                    "tooltip": {
-                        "msResolution": false, 
-                        "shared": true, 
-                        "value_type": "cumulative"
-                    }, 
-                    "type": "graph", 
-                    "xaxis": {
-                        "show": true
-                    }, 
-                    "yaxes": [
-                        {
-                            "format": "short", 
-                            "logBase": 1, 
-                            "max": null, 
-                            "min": 0, 
-                            "show": true
-                        }, 
-                        {
-                            "format": "short", 
-                            "logBase": 1, 
-                            "max": null, 
-                            "min": 0, 
-                            "show": true
-                        }
-                    ]
-                }, 
-                {
-                    "aliasColors": {}, 
-                    "bars": false, 
-                    "datasource": "Prometheus", 
-                    "decimals": 2, 
-                    "editable": true, 
-                    "error": false, 
-                    "fill": 2, 
-                    "grid": {
-                        "threshold1": null, 
-                        "threshold1Color": "rgba(216, 200, 27, 0.27)", 
-                        "threshold2": null, 
-                        "threshold2Color": "rgba(234, 112, 112, 0.22)"
-                    }, 
-                    "id": 48, 
-                    "isNew": true, 
                     "legend": {
                         "alignAsTable": true, 
                         "avg": true, 
@@ -138,7 +88,7 @@
                     "steppedLine": false, 
                     "targets": [
                         {
-                            "expr": "topk(10, rate(mysql_perf_schema_file_events_seconds_total{alias=\"$host\"}[$interval])>0) or topk(10, irate(mysql_perf_schema_file_events_seconds_total{alias=\"$host\"}[5m])>0)", 
+                            "expr": "topk(10, rate(mysql_perf_schema_file_events_total{instance=\"$host\"}[$interval])>0) or topk(10, irate(mysql_perf_schema_file_events_total{instance=\"$host\"}[5m])>0)", 
                             "interval": "$interval", 
                             "intervalFactor": 1, 
                             "legendFormat": "{{event_name}} {{mode}}", 
@@ -146,17 +96,22 @@
                             "step": 300
                         }
                     ], 
+                    "thresholds": [], 
                     "timeFrom": null, 
                     "timeShift": null, 
-                    "title": "Performance Schema File IO (Load)", 
+                    "title": "Performance Schema File IO (Events)", 
                     "tooltip": {
                         "msResolution": false, 
                         "shared": true, 
-                        "value_type": "individual"
+                        "sort": 0, 
+                        "value_type": "cumulative"
                     }, 
                     "type": "graph", 
                     "xaxis": {
-                        "show": true
+                        "mode": "time", 
+                        "name": null, 
+                        "show": true, 
+                        "values": []
                     }, 
                     "yaxes": [
                         {
@@ -183,14 +138,8 @@
                     "editable": true, 
                     "error": false, 
                     "fill": 2, 
-                    "grid": {
-                        "threshold1": null, 
-                        "threshold1Color": "rgba(216, 200, 27, 0.27)", 
-                        "threshold2": null, 
-                        "threshold2Color": "rgba(234, 112, 112, 0.22)"
-                    }, 
-                    "id": 49, 
-                    "isNew": true, 
+                    "grid": {}, 
+                    "id": 48, 
                     "legend": {
                         "alignAsTable": true, 
                         "avg": true, 
@@ -201,7 +150,7 @@
                         "min": false, 
                         "rightSide": true, 
                         "show": true, 
-                        "sort": "max", 
+                        "sort": "avg", 
                         "sortDesc": true, 
                         "total": false, 
                         "values": true
@@ -220,7 +169,7 @@
                     "steppedLine": false, 
                     "targets": [
                         {
-                            "expr": "topk(10, rate(mysql_perf_schema_file_events_bytes_total{alias=\"$host\"}[$interval])>0) or topk(10, irate(mysql_perf_schema_file_events_bytes_total{alias=\"$host\"}[5m])>0)", 
+                            "expr": "topk(10, rate(mysql_perf_schema_file_events_seconds_total{instance=\"$host\"}[$interval])>0) or topk(10, irate(mysql_perf_schema_file_events_seconds_total{instance=\"$host\"}[5m])>0)", 
                             "interval": "$interval", 
                             "intervalFactor": 1, 
                             "legendFormat": "{{event_name}} {{mode}}", 
@@ -228,17 +177,103 @@
                             "step": 300
                         }
                     ], 
+                    "thresholds": [], 
+                    "timeFrom": null, 
+                    "timeShift": null, 
+                    "title": "Performance Schema File IO (Load)", 
+                    "tooltip": {
+                        "msResolution": false, 
+                        "shared": true, 
+                        "sort": 0, 
+                        "value_type": "individual"
+                    }, 
+                    "type": "graph", 
+                    "xaxis": {
+                        "mode": "time", 
+                        "name": null, 
+                        "show": true, 
+                        "values": []
+                    }, 
+                    "yaxes": [
+                        {
+                            "format": "short", 
+                            "logBase": 1, 
+                            "max": null, 
+                            "min": 0, 
+                            "show": true
+                        }, 
+                        {
+                            "format": "short", 
+                            "logBase": 1, 
+                            "max": null, 
+                            "min": 0, 
+                            "show": true
+                        }
+                    ]
+                }, 
+                {
+                    "aliasColors": {}, 
+                    "bars": false, 
+                    "datasource": "Prometheus", 
+                    "decimals": 2, 
+                    "editable": true, 
+                    "error": false, 
+                    "fill": 2, 
+                    "grid": {}, 
+                    "id": 49, 
+                    "legend": {
+                        "alignAsTable": true, 
+                        "avg": true, 
+                        "current": false, 
+                        "hideEmpty": true, 
+                        "hideZero": true, 
+                        "max": true, 
+                        "min": false, 
+                        "rightSide": true, 
+                        "show": true, 
+                        "sort": "avg", 
+                        "sortDesc": true, 
+                        "total": false, 
+                        "values": true
+                    }, 
+                    "lines": true, 
+                    "linewidth": 2, 
+                    "links": [], 
+                    "nullPointMode": "null", 
+                    "percentage": false, 
+                    "pointradius": 5, 
+                    "points": false, 
+                    "renderer": "flot", 
+                    "seriesOverrides": [], 
+                    "span": 12, 
+                    "stack": false, 
+                    "steppedLine": false, 
+                    "targets": [
+                        {
+                            "expr": "topk(10, rate(mysql_perf_schema_file_events_bytes_total{instance=\"$host\"}[$interval])>0) or topk(10, irate(mysql_perf_schema_file_events_bytes_total{instance=\"$host\"}[5m])>0)", 
+                            "interval": "$interval", 
+                            "intervalFactor": 1, 
+                            "legendFormat": "{{event_name}} {{mode}}", 
+                            "refId": "A", 
+                            "step": 300
+                        }
+                    ], 
+                    "thresholds": [], 
                     "timeFrom": null, 
                     "timeShift": null, 
                     "title": "Performance Schema File IO (Bytes)", 
                     "tooltip": {
                         "msResolution": false, 
                         "shared": true, 
+                        "sort": 0, 
                         "value_type": "cumulative"
                     }, 
                     "type": "graph", 
                     "xaxis": {
-                        "show": true
+                        "mode": "time", 
+                        "name": null, 
+                        "show": true, 
+                        "values": []
                     }, 
                     "yaxes": [
                         {
@@ -265,14 +300,8 @@
                     "editable": true, 
                     "error": false, 
                     "fill": 2, 
-                    "grid": {
-                        "threshold1": null, 
-                        "threshold1Color": "rgba(216, 200, 27, 0.27)", 
-                        "threshold2": null, 
-                        "threshold2Color": "rgba(234, 112, 112, 0.22)"
-                    }, 
+                    "grid": {}, 
                     "id": 51, 
-                    "isNew": true, 
                     "legend": {
                         "alignAsTable": true, 
                         "avg": true, 
@@ -302,7 +331,7 @@
                     "steppedLine": false, 
                     "targets": [
                         {
-                            "expr": "topk(5, rate(mysql_perf_schema_events_waits_total{alias=\"$host\"}[$interval])>0) or topk(5, irate(mysql_perf_schema_events_waits_total{alias=\"$host\"}[5m])>0)", 
+                            "expr": "topk(5, rate(mysql_perf_schema_events_waits_total{instance=\"$host\"}[$interval])>0) or topk(5, irate(mysql_perf_schema_events_waits_total{instance=\"$host\"}[5m])>0)", 
                             "interval": "$interval", 
                             "intervalFactor": 1, 
                             "legendFormat": "{{event_name}} ", 
@@ -310,17 +339,22 @@
                             "step": 300
                         }
                     ], 
+                    "thresholds": [], 
                     "timeFrom": null, 
                     "timeShift": null, 
                     "title": "Performance Schema Waits (Events)", 
                     "tooltip": {
                         "msResolution": false, 
                         "shared": true, 
+                        "sort": 0, 
                         "value_type": "cumulative"
                     }, 
                     "type": "graph", 
                     "xaxis": {
-                        "show": true
+                        "mode": "time", 
+                        "name": null, 
+                        "show": true, 
+                        "values": []
                     }, 
                     "yaxes": [
                         {
@@ -347,14 +381,8 @@
                     "editable": true, 
                     "error": false, 
                     "fill": 1, 
-                    "grid": {
-                        "threshold1": null, 
-                        "threshold1Color": "rgba(216, 200, 27, 0.27)", 
-                        "threshold2": null, 
-                        "threshold2Color": "rgba(234, 112, 112, 0.22)"
-                    }, 
+                    "grid": {}, 
                     "id": 52, 
-                    "isNew": true, 
                     "legend": {
                         "alignAsTable": true, 
                         "avg": true, 
@@ -384,7 +412,7 @@
                     "steppedLine": true, 
                     "targets": [
                         {
-                            "expr": "topk(5, rate(mysql_perf_schema_events_waits_seconds_total{alias=\"$host\",event_name!='idle',event_name!='wait/io/table/sql/handler'}[$interval])>0) or topk(5, irate(mysql_perf_schema_events_waits_seconds_total{alias=\"$host\",event_name!='idle',event_name!='wait/io/table/sql/handler'}[5m])>0)", 
+                            "expr": "topk(5, rate(mysql_perf_schema_events_waits_seconds_total{instance=\"$host\",event_name!='idle',event_name!='wait/io/table/sql/handler'}[$interval])>0) or topk(5, irate(mysql_perf_schema_events_waits_seconds_total{instance=\"$host\",event_name!='idle',event_name!='wait/io/table/sql/handler'}[5m])>0)", 
                             "hide": false, 
                             "interval": "$interval", 
                             "intervalFactor": 1, 
@@ -393,17 +421,22 @@
                             "step": 300
                         }
                     ], 
+                    "thresholds": [], 
                     "timeFrom": null, 
                     "timeShift": null, 
                     "title": "Performance Schema Waits (Load)", 
                     "tooltip": {
                         "msResolution": false, 
                         "shared": true, 
+                        "sort": 0, 
                         "value_type": "individual"
                     }, 
                     "type": "graph", 
                     "xaxis": {
-                        "show": true
+                        "mode": "time", 
+                        "name": null, 
+                        "show": true, 
+                        "values": []
                     }, 
                     "yaxes": [
                         {
@@ -430,14 +463,8 @@
                     "editable": true, 
                     "error": false, 
                     "fill": 1, 
-                    "grid": {
-                        "threshold1": null, 
-                        "threshold1Color": "rgba(216, 200, 27, 0.27)", 
-                        "threshold2": null, 
-                        "threshold2Color": "rgba(234, 112, 112, 0.22)"
-                    }, 
+                    "grid": {}, 
                     "id": 77, 
-                    "isNew": true, 
                     "legend": {
                         "alignAsTable": true, 
                         "avg": true, 
@@ -467,7 +494,7 @@
                     "steppedLine": true, 
                     "targets": [
                         {
-                            "expr": "topk(5, rate(mysql_perf_schema_index_io_waits_seconds_total{alias=\"$host\"}[$interval])>0) or topk(5, irate(mysql_perf_schema_index_io_waits_seconds_total{alias=\"$host\"}[5m])>0)", 
+                            "expr": "topk(5, rate(mysql_perf_schema_index_io_waits_seconds_total{instance=\"$host\"}[$interval])>0) or topk(5, irate(mysql_perf_schema_index_io_waits_seconds_total{instance=\"$host\"}[5m])>0)", 
                             "hide": false, 
                             "interval": "$interval", 
                             "intervalFactor": 1, 
@@ -476,17 +503,22 @@
                             "step": 300
                         }
                     ], 
+                    "thresholds": [], 
                     "timeFrom": null, 
                     "timeShift": null, 
                     "title": "Index Access Operations (Load)", 
                     "tooltip": {
                         "msResolution": false, 
                         "shared": true, 
+                        "sort": 0, 
                         "value_type": "individual"
                     }, 
                     "type": "graph", 
                     "xaxis": {
-                        "show": true
+                        "mode": "time", 
+                        "name": null, 
+                        "show": true, 
+                        "values": []
                     }, 
                     "yaxes": [
                         {
@@ -513,14 +545,8 @@
                     "editable": true, 
                     "error": false, 
                     "fill": 1, 
-                    "grid": {
-                        "threshold1": null, 
-                        "threshold1Color": "rgba(216, 200, 27, 0.27)", 
-                        "threshold2": null, 
-                        "threshold2Color": "rgba(234, 112, 112, 0.22)"
-                    }, 
+                    "grid": {}, 
                     "id": 78, 
-                    "isNew": true, 
                     "legend": {
                         "alignAsTable": true, 
                         "avg": true, 
@@ -550,7 +576,7 @@
                     "steppedLine": true, 
                     "targets": [
                         {
-                            "expr": "topk(5, rate(mysql_perf_schema_table_io_waits_seconds_total{alias=\"$host\"}[$interval])>0) or topk(5, irate(mysql_perf_schema_table_io_waits_seconds_total{alias=\"$host\"}[5m])>0)", 
+                            "expr": "topk(5, rate(mysql_perf_schema_table_io_waits_seconds_total{instance=\"$host\"}[$interval])>0) or topk(5, irate(mysql_perf_schema_table_io_waits_seconds_total{instance=\"$host\"}[5m])>0)", 
                             "hide": false, 
                             "interval": "$interval", 
                             "intervalFactor": 1, 
@@ -559,17 +585,22 @@
                             "step": 300
                         }
                     ], 
+                    "thresholds": [], 
                     "timeFrom": null, 
                     "timeShift": null, 
                     "title": "Table Access Operations (Load)", 
                     "tooltip": {
                         "msResolution": false, 
                         "shared": true, 
+                        "sort": 0, 
                         "value_type": "individual"
                     }, 
                     "type": "graph", 
                     "xaxis": {
-                        "show": true
+                        "mode": "time", 
+                        "name": null, 
+                        "show": true, 
+                        "values": []
                     }, 
                     "yaxes": [
                         {
@@ -589,10 +620,15 @@
                     ]
                 }
             ], 
-            "title": "New row"
+            "repeat": null, 
+            "repeatIteration": null, 
+            "repeatRowId": null, 
+            "showTitle": false, 
+            "title": "New row", 
+            "titleSize": "h6"
         }
     ], 
-    "schemaVersion": 12, 
+    "schemaVersion": 13, 
     "sharedCrosshair": true, 
     "style": "dark", 
     "tags": [
@@ -660,11 +696,12 @@
                     }
                 ], 
                 "query": "1s,5s,1m,5m,1h,6h,1d", 
-                "refresh": 0, 
+                "refresh": 2, 
                 "type": "interval"
             }, 
             {
                 "allFormat": "glob", 
+                "allValue": null, 
                 "datasource": "Prometheus", 
                 "hide": 0, 
                 "includeAll": false, 
@@ -672,10 +709,13 @@
                 "multi": false, 
                 "multiFormat": "regex values", 
                 "name": "host", 
-                "query": "label_values(alias)", 
+                "query": "label_values(mysql_up, instance)", 
                 "refresh": 1, 
                 "refresh_on_load": false, 
                 "regex": "", 
+                "sort": 1, 
+                "tagValuesQuery": null, 
+                "tagsQuery": null, 
                 "type": "query"
             }
         ]
@@ -716,6 +756,6 @@
         "type": "timepicker"
     }, 
     "timezone": "browser", 
-    "title": "MySQL Performance Schema | Percona App", 
+    "title": "MySQL Performance Schema", 
     "version": 0
 }
