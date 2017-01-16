@@ -3,32 +3,62 @@
         "list": []
     }, 
     "editable": true, 
-    "hideControls": false, 
+    "gnetId": null, 
+    "hideControls": true, 
     "id": null, 
-    "links": [], 
-    "originalTitle": "Trends Dashboard", 
+    "links": [
+        {
+            "asDropdown": true, 
+            "icon": "external link", 
+            "includeVars": true, 
+            "keepTime": true, 
+            "tags": [
+                "OS"
+            ], 
+            "targetBlank": true, 
+            "title": "OS", 
+            "type": "dashboards"
+        }, 
+        {
+            "asDropdown": true, 
+            "icon": "external link", 
+            "includeVars": true, 
+            "keepTime": true, 
+            "tags": [
+                "MySQL"
+            ], 
+            "targetBlank": true, 
+            "title": "MySQL", 
+            "type": "dashboards"
+        }, 
+        {
+            "asDropdown": true, 
+            "icon": "external link", 
+            "includeVars": true, 
+            "keepTime": true, 
+            "tags": [
+                "HA"
+            ], 
+            "targetBlank": true, 
+            "title": "HA", 
+            "type": "dashboards"
+        }
+    ], 
     "refresh": false, 
     "rows": [
         {
             "collapse": false, 
-            "editable": true, 
             "height": "250px", 
             "panels": [
                 {
                     "aliasColors": {}, 
                     "bars": false, 
                     "datasource": "Prometheus", 
-                    "decimals": 2, 
+                    "decimals": null, 
                     "editable": true, 
                     "error": false, 
                     "fill": 2, 
-                    "grid": {
-                        "threshold1": null, 
-                        "threshold1Color": "rgba(216, 200, 27, 0.27)", 
-                        "threshold2": null, 
-                        "threshold2Color": "rgba(234, 112, 112, 0.22)", 
-                        "thresholdLine": false
-                    }, 
+                    "grid": {}, 
                     "height": "", 
                     "id": 2, 
                     "legend": {
@@ -61,12 +91,11 @@
                             "calculatedInterval": "2s", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "sum(rate(node_cpu{alias=\"$host\", mode!=\"idle\"}[$interval])) * 100 / count_scalar(node_cpu{mode=\"user\", alias=\"$host\"}) or sum(irate(node_cpu{alias=\"$host\", mode!=\"idle\"}[5m])) * 100 / count_scalar(node_cpu{mode=\"user\", alias=\"$host\"})", 
+                            "expr": "sum(rate(node_cpu{instance=\"$host\", mode!=\"idle\"}[$interval])) * 100 / count_scalar(node_cpu{mode=\"user\", instance=\"$host\"}) or sum(irate(node_cpu{instance=\"$host\", mode!=\"idle\"}[5m])) * 100 / count_scalar(node_cpu{mode=\"user\", instance=\"$host\"})", 
                             "interval": "$interval", 
                             "intervalFactor": 1, 
                             "legendFormat": "Busy State", 
                             "metric": "", 
-                            "prometheusLink": "/api/datasources/proxy/1/graph#%5B%7B%22expr%22%3A%22sum(rate(node_cpu%7Balias%3D%5C%22%24host%5C%22%7D%5B%24interval%5D))%20by%20(mode)%20*%20100%22%2C%22range_input%22%3A%223600s%22%2C%22end_input%22%3A%222015-10-22%2015%3A27%22%2C%22step_input%22%3A%22%22%2C%22stacked%22%3Atrue%2C%22tab%22%3A0%7D%5D", 
                             "refId": "A", 
                             "step": 300
                         }, 
@@ -74,12 +103,11 @@
                             "calculatedInterval": "2s", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "sum(rate(node_cpu{alias=\"$host\", mode!=\"idle\"}[$interval] offset 1d)) * 100 / count_scalar(node_cpu{mode=\"user\", alias=\"$host\"}) or sum(irate(node_cpu{alias=\"$host\", mode!=\"idle\"}[5m] offset 1d)) * 100 / count_scalar(node_cpu{mode=\"user\", alias=\"$host\"})", 
+                            "expr": "sum(rate(node_cpu{instance=\"$host\", mode!=\"idle\"}[$interval] offset 1d)) * 100 / count_scalar(node_cpu{mode=\"user\", instance=\"$host\"}) or sum(irate(node_cpu{instance=\"$host\", mode!=\"idle\"}[5m] offset 1d)) * 100 / count_scalar(node_cpu{mode=\"user\", instance=\"$host\"})", 
                             "interval": "$interval", 
                             "intervalFactor": 1, 
                             "legendFormat": "Busy State 1d ago", 
                             "metric": "", 
-                            "prometheusLink": "/api/datasources/proxy/1/graph#%5B%7B%22expr%22%3A%22sum(rate(node_cpu%7Balias%3D%5C%22%24host%5C%22%7D%5B%24interval%5D))%20by%20(mode)%20*%20100%22%2C%22range_input%22%3A%223600s%22%2C%22end_input%22%3A%222015-10-22%2015%3A27%22%2C%22step_input%22%3A%22%22%2C%22stacked%22%3Atrue%2C%22tab%22%3A0%7D%5D", 
                             "refId": "B", 
                             "step": 300
                         }, 
@@ -87,27 +115,31 @@
                             "calculatedInterval": "2s", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "sum(rate(node_cpu{alias=\"$host\", mode!=\"idle\"}[$interval] offset 1w)) * 100 / count_scalar(node_cpu{mode=\"user\", alias=\"$host\"}) or sum(irate(node_cpu{alias=\"$host\", mode!=\"idle\"}[5m] offset 1w)) * 100 / count_scalar(node_cpu{mode=\"user\", alias=\"$host\"})", 
+                            "expr": "sum(rate(node_cpu{instance=\"$host\", mode!=\"idle\"}[$interval] offset 1w)) * 100 / count_scalar(node_cpu{mode=\"user\", instance=\"$host\"}) or sum(irate(node_cpu{instance=\"$host\", mode!=\"idle\"}[5m] offset 1w)) * 100 / count_scalar(node_cpu{mode=\"user\", instance=\"$host\"})", 
                             "interval": "$interval", 
                             "intervalFactor": 1, 
                             "legendFormat": "Busy State 1w ago", 
                             "metric": "", 
-                            "prometheusLink": "/api/datasources/proxy/1/graph#%5B%7B%22expr%22%3A%22sum(rate(node_cpu%7Balias%3D%5C%22%24host%5C%22%7D%5B%24interval%5D))%20by%20(mode)%20*%20100%22%2C%22range_input%22%3A%223600s%22%2C%22end_input%22%3A%222015-10-22%2015%3A27%22%2C%22step_input%22%3A%22%22%2C%22stacked%22%3Atrue%2C%22tab%22%3A0%7D%5D", 
                             "refId": "C", 
                             "step": 300
                         }
                     ], 
+                    "thresholds": [], 
                     "timeFrom": null, 
                     "timeShift": null, 
                     "title": "CPU Usage", 
                     "tooltip": {
                         "msResolution": false, 
                         "shared": true, 
+                        "sort": 0, 
                         "value_type": "individual"
                     }, 
                     "type": "graph", 
                     "xaxis": {
-                        "show": true
+                        "mode": "time", 
+                        "name": null, 
+                        "show": true, 
+                        "values": []
                     }, 
                     "yaxes": [
                         {
@@ -131,17 +163,11 @@
                     "aliasColors": {}, 
                     "bars": false, 
                     "datasource": "Prometheus", 
-                    "decimals": 2, 
+                    "decimals": null, 
                     "editable": true, 
                     "error": false, 
                     "fill": 2, 
-                    "grid": {
-                        "threshold1": null, 
-                        "threshold1Color": "rgba(216, 200, 27, 0.27)", 
-                        "threshold2": null, 
-                        "threshold2Color": "rgba(234, 112, 112, 0.22)", 
-                        "thresholdLine": false
-                    }, 
+                    "grid": {}, 
                     "id": 37, 
                     "legend": {
                         "alignAsTable": true, 
@@ -172,12 +198,11 @@
                             "calculatedInterval": "2s", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "rate(node_vmstat_pgpgin{alias=\"$host\"}[$interval]) * 1024 or irate(node_vmstat_pgpgin{alias=\"$host\"}[5m]) * 1024", 
+                            "expr": "rate(node_vmstat_pgpgin{instance=\"$host\"}[$interval]) * 1024 or irate(node_vmstat_pgpgin{instance=\"$host\"}[5m]) * 1024", 
                             "interval": "$interval", 
                             "intervalFactor": 1, 
                             "legendFormat": "Page In", 
                             "metric": "", 
-                            "prometheusLink": "/api/datasources/proxy/1/graph#%5B%7B%22expr%22%3A%22node_memory_MemTotal%7Balias%3D%5C%22%24host%5C%22%7D%20-%20(node_memory_MemFree%7Balias%3D%5C%22%24host%5C%22%7D%20%2B%20node_memory_Buffers%7Balias%3D%5C%22%24host%5C%22%7D%20%2B%20node_memory_Cached%7Balias%3D%5C%22%24host%5C%22%7D)%22%2C%22range_input%22%3A%22900s%22%2C%22end_input%22%3A%222015-10-22%2015%3A25%22%2C%22step_input%22%3A%22%22%2C%22stacked%22%3Atrue%2C%22tab%22%3A0%7D%5D", 
                             "refId": "A", 
                             "step": 300, 
                             "target": ""
@@ -186,12 +211,11 @@
                             "calculatedInterval": "2s", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "rate(node_vmstat_pgpgin{alias=\"$host\"}[$interval] offset 1d) * 1024 or irate(node_vmstat_pgpgin{alias=\"$host\"}[5m] offset 1d) * 1024", 
+                            "expr": "rate(node_vmstat_pgpgin{instance=\"$host\"}[$interval] offset 1d) * 1024 or irate(node_vmstat_pgpgin{instance=\"$host\"}[5m] offset 1d) * 1024", 
                             "interval": "$interval", 
                             "intervalFactor": 1, 
                             "legendFormat": "Page In 1d ago", 
                             "metric": "", 
-                            "prometheusLink": "/api/datasources/proxy/1/graph#%5B%7B%22expr%22%3A%22node_memory_MemTotal%7Balias%3D%5C%22%24host%5C%22%7D%20-%20(node_memory_MemFree%7Balias%3D%5C%22%24host%5C%22%7D%20%2B%20node_memory_Buffers%7Balias%3D%5C%22%24host%5C%22%7D%20%2B%20node_memory_Cached%7Balias%3D%5C%22%24host%5C%22%7D)%22%2C%22range_input%22%3A%22900s%22%2C%22end_input%22%3A%222015-10-22%2015%3A25%22%2C%22step_input%22%3A%22%22%2C%22stacked%22%3Atrue%2C%22tab%22%3A0%7D%5D", 
                             "refId": "B", 
                             "step": 300, 
                             "target": ""
@@ -200,29 +224,33 @@
                             "calculatedInterval": "2s", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "rate(node_vmstat_pgpgin{alias=\"$host\"}[$interval] offset 1w) * 1024 or irate(node_vmstat_pgpgin{alias=\"$host\"}[5m] offset 1w) * 1024", 
+                            "expr": "rate(node_vmstat_pgpgin{instance=\"$host\"}[$interval] offset 1w) * 1024 or irate(node_vmstat_pgpgin{instance=\"$host\"}[5m] offset 1w) * 1024", 
                             "interval": "$interval", 
                             "intervalFactor": 1, 
                             "legendFormat": "Page In 1w ago", 
                             "metric": "", 
-                            "prometheusLink": "/api/datasources/proxy/1/graph#%5B%7B%22expr%22%3A%22node_memory_MemTotal%7Balias%3D%5C%22%24host%5C%22%7D%20-%20(node_memory_MemFree%7Balias%3D%5C%22%24host%5C%22%7D%20%2B%20node_memory_Buffers%7Balias%3D%5C%22%24host%5C%22%7D%20%2B%20node_memory_Cached%7Balias%3D%5C%22%24host%5C%22%7D)%22%2C%22range_input%22%3A%22900s%22%2C%22end_input%22%3A%222015-10-22%2015%3A25%22%2C%22step_input%22%3A%22%22%2C%22stacked%22%3Atrue%2C%22tab%22%3A0%7D%5D", 
                             "refId": "C", 
                             "step": 300, 
                             "target": ""
                         }
                     ], 
+                    "thresholds": [], 
                     "timeFrom": null, 
                     "timeShift": null, 
                     "title": "I/O Read Activity", 
                     "tooltip": {
                         "msResolution": false, 
                         "shared": true, 
+                        "sort": 0, 
                         "value_type": "individual"
                     }, 
                     "transparent": false, 
                     "type": "graph", 
                     "xaxis": {
-                        "show": true
+                        "mode": "time", 
+                        "name": null, 
+                        "show": true, 
+                        "values": []
                     }, 
                     "yaxes": [
                         {
@@ -246,17 +274,11 @@
                     "aliasColors": {}, 
                     "bars": false, 
                     "datasource": "Prometheus", 
-                    "decimals": 2, 
+                    "decimals": null, 
                     "editable": true, 
                     "error": false, 
                     "fill": 2, 
-                    "grid": {
-                        "threshold1": null, 
-                        "threshold1Color": "rgba(216, 200, 27, 0.27)", 
-                        "threshold2": null, 
-                        "threshold2Color": "rgba(234, 112, 112, 0.22)", 
-                        "thresholdLine": false
-                    }, 
+                    "grid": {}, 
                     "id": 38, 
                     "legend": {
                         "alignAsTable": true, 
@@ -287,12 +309,11 @@
                             "calculatedInterval": "2s", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "rate(node_vmstat_pgpgout{alias=\"$host\"}[$interval]) * 1024 or irate(node_vmstat_pgpgout{alias=\"$host\"}[5m]) * 1024", 
+                            "expr": "rate(node_vmstat_pgpgout{instance=\"$host\"}[$interval]) * 1024 or irate(node_vmstat_pgpgout{instance=\"$host\"}[5m]) * 1024", 
                             "interval": "$interval", 
                             "intervalFactor": 1, 
                             "legendFormat": "Page Out", 
                             "metric": "", 
-                            "prometheusLink": "/api/datasources/proxy/1/graph#%5B%7B%22expr%22%3A%22node_memory_MemFree%7Balias%3D%5C%22%24host%5C%22%7D%20%2B%20node_memory_Buffers%7Balias%3D%5C%22%24host%5C%22%7D%20%2B%20node_memory_Cached%7Balias%3D%5C%22%24host%5C%22%7D%22%2C%22range_input%22%3A%22900s%22%2C%22end_input%22%3A%222015-10-22%2015%3A25%22%2C%22step_input%22%3A%22%22%2C%22stacked%22%3Atrue%2C%22tab%22%3A0%7D%5D", 
                             "refId": "B", 
                             "step": 300, 
                             "target": ""
@@ -301,12 +322,11 @@
                             "calculatedInterval": "2s", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "rate(node_vmstat_pgpgout{alias=\"$host\"}[$interval] offset 1d) * 1024 or irate(node_vmstat_pgpgout{alias=\"$host\"}[5m] offset 1d) * 1024", 
+                            "expr": "rate(node_vmstat_pgpgout{instance=\"$host\"}[$interval] offset 1d) * 1024 or irate(node_vmstat_pgpgout{instance=\"$host\"}[5m] offset 1d) * 1024", 
                             "interval": "$interval", 
                             "intervalFactor": 1, 
                             "legendFormat": "Page Out 1d ago", 
                             "metric": "", 
-                            "prometheusLink": "/api/datasources/proxy/1/graph#%5B%7B%22expr%22%3A%22node_memory_MemFree%7Balias%3D%5C%22%24host%5C%22%7D%20%2B%20node_memory_Buffers%7Balias%3D%5C%22%24host%5C%22%7D%20%2B%20node_memory_Cached%7Balias%3D%5C%22%24host%5C%22%7D%22%2C%22range_input%22%3A%22900s%22%2C%22end_input%22%3A%222015-10-22%2015%3A25%22%2C%22step_input%22%3A%22%22%2C%22stacked%22%3Atrue%2C%22tab%22%3A0%7D%5D", 
                             "refId": "A", 
                             "step": 300, 
                             "target": ""
@@ -315,29 +335,33 @@
                             "calculatedInterval": "2s", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "rate(node_vmstat_pgpgout{alias=\"$host\"}[$interval] offset 1w) * 1024 or irate(node_vmstat_pgpgout{alias=\"$host\"}[5m] offset 1w) * 1024", 
+                            "expr": "rate(node_vmstat_pgpgout{instance=\"$host\"}[$interval] offset 1w) * 1024 or irate(node_vmstat_pgpgout{instance=\"$host\"}[5m] offset 1w) * 1024", 
                             "interval": "$interval", 
                             "intervalFactor": 1, 
                             "legendFormat": "Page Out 1w ago", 
                             "metric": "", 
-                            "prometheusLink": "/api/datasources/proxy/1/graph#%5B%7B%22expr%22%3A%22node_memory_MemFree%7Balias%3D%5C%22%24host%5C%22%7D%20%2B%20node_memory_Buffers%7Balias%3D%5C%22%24host%5C%22%7D%20%2B%20node_memory_Cached%7Balias%3D%5C%22%24host%5C%22%7D%22%2C%22range_input%22%3A%22900s%22%2C%22end_input%22%3A%222015-10-22%2015%3A25%22%2C%22step_input%22%3A%22%22%2C%22stacked%22%3Atrue%2C%22tab%22%3A0%7D%5D", 
                             "refId": "C", 
                             "step": 300, 
                             "target": ""
                         }
                     ], 
+                    "thresholds": [], 
                     "timeFrom": null, 
                     "timeShift": null, 
                     "title": "I/O Write Activity", 
                     "tooltip": {
                         "msResolution": false, 
                         "shared": true, 
+                        "sort": 0, 
                         "value_type": "individual"
                     }, 
                     "transparent": false, 
                     "type": "graph", 
                     "xaxis": {
-                        "show": true
+                        "mode": "time", 
+                        "name": null, 
+                        "show": true, 
+                        "values": []
                     }, 
                     "yaxes": [
                         {
@@ -358,28 +382,26 @@
                     ]
                 }
             ], 
+            "repeat": null, 
+            "repeatIteration": null, 
+            "repeatRowId": null, 
             "showTitle": true, 
-            "title": "System Stats"
+            "title": "System Stats", 
+            "titleSize": "h6"
         }, 
         {
             "collapse": false, 
-            "editable": true, 
             "height": "250px", 
             "panels": [
                 {
                     "aliasColors": {}, 
                     "bars": false, 
                     "datasource": "Prometheus", 
-                    "decimals": 2, 
+                    "decimals": null, 
                     "editable": true, 
                     "error": false, 
                     "fill": 2, 
-                    "grid": {
-                        "threshold1": null, 
-                        "threshold1Color": "rgba(216, 200, 27, 0.27)", 
-                        "threshold2": null, 
-                        "threshold2Color": "rgba(234, 112, 112, 0.22)"
-                    }, 
+                    "grid": {}, 
                     "id": 35, 
                     "legend": {
                         "alignAsTable": true, 
@@ -409,12 +431,11 @@
                             "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "rate(mysql_global_status_questions{alias=\"$host\"}[$interval]) or irate(mysql_global_status_questions{alias=\"$host\"}[5m])", 
+                            "expr": "rate(mysql_global_status_questions{instance=\"$host\"}[$interval]) or irate(mysql_global_status_questions{instance=\"$host\"}[5m])", 
                             "interval": "$interval", 
                             "intervalFactor": 1, 
                             "legendFormat": "Questions", 
                             "metric": "", 
-                            "prometheusLink": "/api/datasources/proxy/1/graph#%5B%7B%22expr%22%3A%22rate(mysql_global_status_innodb_row_ops_total%7Balias%3D%5C%22%24host%5C%22%7D%5B%24interval%5D)%22%2C%22range_input%22%3A%2243200s%22%2C%22end_input%22%3A%222015-8-27%2010%3A30%22%2C%22step_input%22%3A%22%22%2C%22stacked%22%3Afalse%2C%22tab%22%3A0%7D%5D", 
                             "refId": "A", 
                             "step": 300
                         }, 
@@ -422,12 +443,11 @@
                             "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "rate(mysql_global_status_questions{alias=\"$host\"}[$interval] offset 1d) or irate(mysql_global_status_questions{alias=\"$host\"}[5m] offset 1d)", 
+                            "expr": "rate(mysql_global_status_questions{instance=\"$host\"}[$interval] offset 1d) or irate(mysql_global_status_questions{instance=\"$host\"}[5m] offset 1d)", 
                             "interval": "$interval", 
                             "intervalFactor": 1, 
                             "legendFormat": "Questions 1d ago", 
                             "metric": "", 
-                            "prometheusLink": "/api/datasources/proxy/1/graph#%5B%7B%22expr%22%3A%22rate(mysql_global_status_innodb_row_ops_total%7Balias%3D%5C%22%24host%5C%22%7D%5B%24interval%5D)%22%2C%22range_input%22%3A%2243200s%22%2C%22end_input%22%3A%222015-8-27%2010%3A30%22%2C%22step_input%22%3A%22%22%2C%22stacked%22%3Afalse%2C%22tab%22%3A0%7D%5D", 
                             "refId": "B", 
                             "step": 300
                         }, 
@@ -435,27 +455,31 @@
                             "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "rate(mysql_global_status_questions{alias=\"$host\"}[$interval] offset 1w) or irate(mysql_global_status_questions{alias=\"$host\"}[5m] offset 1w)", 
+                            "expr": "rate(mysql_global_status_questions{instance=\"$host\"}[$interval] offset 1w) or irate(mysql_global_status_questions{instance=\"$host\"}[5m] offset 1w)", 
                             "interval": "$interval", 
                             "intervalFactor": 1, 
                             "legendFormat": "Questions 1w ago", 
                             "metric": "", 
-                            "prometheusLink": "/api/datasources/proxy/1/graph#%5B%7B%22expr%22%3A%22rate(mysql_global_status_innodb_row_ops_total%7Balias%3D%5C%22%24host%5C%22%7D%5B%24interval%5D)%22%2C%22range_input%22%3A%2243200s%22%2C%22end_input%22%3A%222015-8-27%2010%3A30%22%2C%22step_input%22%3A%22%22%2C%22stacked%22%3Afalse%2C%22tab%22%3A0%7D%5D", 
                             "refId": "C", 
                             "step": 300
                         }
                     ], 
+                    "thresholds": [], 
                     "timeFrom": null, 
                     "timeShift": null, 
                     "title": "MySQL Questions", 
                     "tooltip": {
                         "msResolution": false, 
                         "shared": true, 
+                        "sort": 0, 
                         "value_type": "individual"
                     }, 
                     "type": "graph", 
                     "xaxis": {
-                        "show": true
+                        "mode": "time", 
+                        "name": null, 
+                        "show": true, 
+                        "values": []
                     }, 
                     "yaxes": [
                         {
@@ -478,16 +502,11 @@
                     "aliasColors": {}, 
                     "bars": false, 
                     "datasource": "Prometheus", 
-                    "decimals": 2, 
+                    "decimals": null, 
                     "editable": true, 
                     "error": false, 
                     "fill": 2, 
-                    "grid": {
-                        "threshold1": null, 
-                        "threshold1Color": "rgba(216, 200, 27, 0.27)", 
-                        "threshold2": null, 
-                        "threshold2Color": "rgba(234, 112, 112, 0.22)"
-                    }, 
+                    "grid": {}, 
                     "id": 34, 
                     "legend": {
                         "alignAsTable": true, 
@@ -517,12 +536,11 @@
                             "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "rate(mysql_global_status_innodb_row_ops_total{alias=\"$host\", operation=\"read\"}[$interval]) or irate(mysql_global_status_innodb_row_ops_total{alias=\"$host\", operation=\"read\"}[5m])", 
+                            "expr": "rate(mysql_global_status_innodb_row_ops_total{instance=\"$host\", operation=\"read\"}[$interval]) or irate(mysql_global_status_innodb_row_ops_total{instance=\"$host\", operation=\"read\"}[5m])", 
                             "interval": "$interval", 
                             "intervalFactor": 1, 
                             "legendFormat": "Rows {{ operation }}", 
                             "metric": "", 
-                            "prometheusLink": "/api/datasources/proxy/1/graph#%5B%7B%22expr%22%3A%22rate(mysql_global_status_innodb_row_ops_total%7Balias%3D%5C%22%24host%5C%22%7D%5B%24interval%5D)%22%2C%22range_input%22%3A%2243200s%22%2C%22end_input%22%3A%222015-8-27%2010%3A30%22%2C%22step_input%22%3A%22%22%2C%22stacked%22%3Afalse%2C%22tab%22%3A0%7D%5D", 
                             "refId": "A", 
                             "step": 300
                         }, 
@@ -530,12 +548,11 @@
                             "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "rate(mysql_global_status_innodb_row_ops_total{alias=\"$host\", operation=\"read\"}[$interval] offset 1d) or irate(mysql_global_status_innodb_row_ops_total{alias=\"$host\", operation=\"read\"}[5m] offset 1d)", 
+                            "expr": "rate(mysql_global_status_innodb_row_ops_total{instance=\"$host\", operation=\"read\"}[$interval] offset 1d) or irate(mysql_global_status_innodb_row_ops_total{instance=\"$host\", operation=\"read\"}[5m] offset 1d)", 
                             "interval": "$interval", 
                             "intervalFactor": 1, 
                             "legendFormat": "Rows {{ operation }} 1d ago", 
                             "metric": "", 
-                            "prometheusLink": "/api/datasources/proxy/1/graph#%5B%7B%22expr%22%3A%22rate(mysql_global_status_innodb_row_ops_total%7Balias%3D%5C%22%24host%5C%22%7D%5B%24interval%5D)%22%2C%22range_input%22%3A%2243200s%22%2C%22end_input%22%3A%222015-8-27%2010%3A30%22%2C%22step_input%22%3A%22%22%2C%22stacked%22%3Afalse%2C%22tab%22%3A0%7D%5D", 
                             "refId": "B", 
                             "step": 300
                         }, 
@@ -543,27 +560,31 @@
                             "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "rate(mysql_global_status_innodb_row_ops_total{alias=\"$host\", operation=\"read\"}[$interval] offset 1w) or irate(mysql_global_status_innodb_row_ops_total{alias=\"$host\", operation=\"read\"}[5m] offset 1w)", 
+                            "expr": "rate(mysql_global_status_innodb_row_ops_total{instance=\"$host\", operation=\"read\"}[$interval] offset 1w) or irate(mysql_global_status_innodb_row_ops_total{instance=\"$host\", operation=\"read\"}[5m] offset 1w)", 
                             "interval": "$interval", 
                             "intervalFactor": 1, 
                             "legendFormat": "Rows {{ operation }} 1w ago", 
                             "metric": "", 
-                            "prometheusLink": "/api/datasources/proxy/1/graph#%5B%7B%22expr%22%3A%22rate(mysql_global_status_innodb_row_ops_total%7Balias%3D%5C%22%24host%5C%22%7D%5B%24interval%5D)%22%2C%22range_input%22%3A%2243200s%22%2C%22end_input%22%3A%222015-8-27%2010%3A30%22%2C%22step_input%22%3A%22%22%2C%22stacked%22%3Afalse%2C%22tab%22%3A0%7D%5D", 
                             "refId": "C", 
                             "step": 300
                         }
                     ], 
+                    "thresholds": [], 
                     "timeFrom": null, 
                     "timeShift": null, 
                     "title": "InnoDB Rows Read", 
                     "tooltip": {
                         "msResolution": false, 
                         "shared": true, 
+                        "sort": 0, 
                         "value_type": "individual"
                     }, 
                     "type": "graph", 
                     "xaxis": {
-                        "show": true
+                        "mode": "time", 
+                        "name": null, 
+                        "show": true, 
+                        "values": []
                     }, 
                     "yaxes": [
                         {
@@ -581,21 +602,28 @@
                             "show": true
                         }
                     ]
-                }, 
+                }
+            ], 
+            "repeat": null, 
+            "repeatIteration": null, 
+            "repeatRowId": null, 
+            "showTitle": true, 
+            "title": "MySQL Stats", 
+            "titleSize": "h6"
+        }, 
+        {
+            "collapse": false, 
+            "height": "250px", 
+            "panels": [
                 {
                     "aliasColors": {}, 
                     "bars": false, 
                     "datasource": "Prometheus", 
-                    "decimals": 2, 
+                    "decimals": null, 
                     "editable": true, 
                     "error": false, 
                     "fill": 2, 
-                    "grid": {
-                        "threshold1": null, 
-                        "threshold1Color": "rgba(216, 200, 27, 0.27)", 
-                        "threshold2": null, 
-                        "threshold2Color": "rgba(234, 112, 112, 0.22)"
-                    }, 
+                    "grid": {}, 
                     "id": 36, 
                     "legend": {
                         "alignAsTable": true, 
@@ -625,12 +653,11 @@
                             "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "sum(rate(mysql_global_status_innodb_row_ops_total{alias=\"$host\", operation!=\"read\"}[$interval])) or sum(irate(mysql_global_status_innodb_row_ops_total{alias=\"$host\", operation!=\"read\"}[5m]))", 
+                            "expr": "sum(rate(mysql_global_status_innodb_row_ops_total{instance=\"$host\", operation!=\"read\"}[$interval])) or sum(irate(mysql_global_status_innodb_row_ops_total{instance=\"$host\", operation!=\"read\"}[5m]))", 
                             "interval": "$interval", 
                             "intervalFactor": 1, 
                             "legendFormat": "Rows inserted+updated+deleted", 
                             "metric": "", 
-                            "prometheusLink": "/api/datasources/proxy/1/graph#%5B%7B%22expr%22%3A%22rate(mysql_global_status_innodb_row_ops_total%7Balias%3D%5C%22%24host%5C%22%7D%5B%24interval%5D)%22%2C%22range_input%22%3A%2243200s%22%2C%22end_input%22%3A%222015-8-27%2010%3A30%22%2C%22step_input%22%3A%22%22%2C%22stacked%22%3Afalse%2C%22tab%22%3A0%7D%5D", 
                             "refId": "A", 
                             "step": 300
                         }, 
@@ -638,12 +665,11 @@
                             "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "sum(rate(mysql_global_status_innodb_row_ops_total{alias=\"$host\", operation!=\"read\"}[$interval] offset 1d)) or sum(irate(mysql_global_status_innodb_row_ops_total{alias=\"$host\", operation!=\"read\"}[5m] offset 1d))", 
+                            "expr": "sum(rate(mysql_global_status_innodb_row_ops_total{instance=\"$host\", operation!=\"read\"}[$interval] offset 1d)) or sum(irate(mysql_global_status_innodb_row_ops_total{instance=\"$host\", operation!=\"read\"}[5m] offset 1d))", 
                             "interval": "$interval", 
                             "intervalFactor": 1, 
                             "legendFormat": "Rows inserted+updated+deleted 1d ago", 
                             "metric": "", 
-                            "prometheusLink": "/api/datasources/proxy/1/graph#%5B%7B%22expr%22%3A%22rate(mysql_global_status_innodb_row_ops_total%7Balias%3D%5C%22%24host%5C%22%7D%5B%24interval%5D)%22%2C%22range_input%22%3A%2243200s%22%2C%22end_input%22%3A%222015-8-27%2010%3A30%22%2C%22step_input%22%3A%22%22%2C%22stacked%22%3Afalse%2C%22tab%22%3A0%7D%5D", 
                             "refId": "B", 
                             "step": 300
                         }, 
@@ -651,27 +677,31 @@
                             "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "sum(rate(mysql_global_status_innodb_row_ops_total{alias=\"$host\", operation!=\"read\"}[$interval] offset 1w)) or sum(irate(mysql_global_status_innodb_row_ops_total{alias=\"$host\", operation!=\"read\"}[5m] offset 1w))", 
+                            "expr": "sum(rate(mysql_global_status_innodb_row_ops_total{instance=\"$host\", operation!=\"read\"}[$interval] offset 1w)) or sum(irate(mysql_global_status_innodb_row_ops_total{instance=\"$host\", operation!=\"read\"}[5m] offset 1w))", 
                             "interval": "$interval", 
                             "intervalFactor": 1, 
                             "legendFormat": "Rows inserted+updated+deleted 1w ago", 
                             "metric": "", 
-                            "prometheusLink": "/api/datasources/proxy/1/graph#%5B%7B%22expr%22%3A%22rate(mysql_global_status_innodb_row_ops_total%7Balias%3D%5C%22%24host%5C%22%7D%5B%24interval%5D)%22%2C%22range_input%22%3A%2243200s%22%2C%22end_input%22%3A%222015-8-27%2010%3A30%22%2C%22step_input%22%3A%22%22%2C%22stacked%22%3Afalse%2C%22tab%22%3A0%7D%5D", 
                             "refId": "C", 
                             "step": 300
                         }
                     ], 
+                    "thresholds": [], 
                     "timeFrom": null, 
                     "timeShift": null, 
                     "title": "InnoDB Rows Changed", 
                     "tooltip": {
                         "msResolution": false, 
                         "shared": true, 
+                        "sort": 0, 
                         "value_type": "individual"
                     }, 
                     "type": "graph", 
                     "xaxis": {
-                        "show": true
+                        "mode": "time", 
+                        "name": null, 
+                        "show": true, 
+                        "values": []
                     }, 
                     "yaxes": [
                         {
@@ -691,17 +721,20 @@
                     ]
                 }
             ], 
-            "showTitle": true, 
-            "title": "MySQL Stats"
+            "repeat": null, 
+            "repeatIteration": null, 
+            "repeatRowId": null, 
+            "showTitle": false, 
+            "title": "New row", 
+            "titleSize": "h6"
         }
     ], 
-    "schemaVersion": 12, 
+    "schemaVersion": 13, 
     "sharedCrosshair": true, 
     "style": "dark", 
     "tags": [
-        "OS", 
         "Percona", 
-        "MySQL"
+        "Insight "
     ], 
     "templating": {
         "list": [
@@ -764,11 +797,12 @@
                     }
                 ], 
                 "query": "1s,5s,1m,5m,1h,6h,1d", 
-                "refresh": 0, 
+                "refresh": 2, 
                 "type": "interval"
             }, 
             {
                 "allFormat": "glob", 
+                "allValue": null, 
                 "datasource": "Prometheus", 
                 "hide": 0, 
                 "includeAll": false, 
@@ -776,11 +810,12 @@
                 "multi": false, 
                 "multiFormat": "regex values", 
                 "name": "host", 
-                "query": "label_values(alias)", 
+                "query": "label_values(instance)", 
                 "refresh": 1, 
                 "refresh_on_load": false, 
                 "regex": "", 
-                "tagValuesQuery": "alias", 
+                "sort": 1, 
+                "tagValuesQuery": "instance", 
                 "tagsQuery": "up", 
                 "type": "query", 
                 "useTags": false
@@ -823,6 +858,6 @@
         "type": "timepicker"
     }, 
     "timezone": "browser", 
-    "title": "Trends Dashboard | Percona App", 
+    "title": "Trends Dashboard", 
     "version": 0
 }

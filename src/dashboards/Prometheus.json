@@ -3,15 +3,16 @@
         "list": []
     }, 
     "editable": true, 
-    "hideControls": false, 
+    "gnetId": null, 
+    "hideControls": true, 
     "id": null, 
     "links": [], 
-    "originalTitle": "Prometheus", 
+    "refresh": false, 
     "rows": [
         {
             "collapse": false, 
             "editable": true, 
-            "height": "250px", 
+            "height": "125px", 
             "panels": [
                 {
                     "cacheTimeout": null, 
@@ -33,11 +34,23 @@
                         "thresholdLabels": false, 
                         "thresholdMarkers": true
                     }, 
-                    "height": "50px", 
+                    "height": "125px", 
+                    "hideTimeOverride": false, 
                     "id": 8, 
                     "interval": "$interval", 
                     "isNew": true, 
                     "links": [], 
+                    "mappingType": 1, 
+                    "mappingTypes": [
+                        {
+                            "name": "value to text", 
+                            "value": 1
+                        }, 
+                        {
+                            "name": "range to text", 
+                            "value": 2
+                        }
+                    ], 
                     "maxDataPoints": 100, 
                     "nullPointMode": "connected", 
                     "nullText": null, 
@@ -45,6 +58,13 @@
                     "postfixFontSize": "50%", 
                     "prefix": "", 
                     "prefixFontSize": "50%", 
+                    "rangeMaps": [
+                        {
+                            "from": "null", 
+                            "text": "N/A", 
+                            "to": "null"
+                        }
+                    ], 
                     "span": 3, 
                     "sparkline": {
                         "fillColor": "rgba(31, 118, 189, 0.18)", 
@@ -62,6 +82,7 @@
                         }
                     ], 
                     "thresholds": "", 
+                    "timeFrom": null, 
                     "title": "Time Series", 
                     "type": "singlestat", 
                     "valueFontSize": "80%", 
@@ -94,11 +115,23 @@
                         "thresholdLabels": false, 
                         "thresholdMarkers": true
                     }, 
-                    "height": "50px", 
+                    "height": "125px", 
+                    "hideTimeOverride": false, 
                     "id": 9, 
                     "interval": "$interval", 
                     "isNew": true, 
                     "links": [], 
+                    "mappingType": 1, 
+                    "mappingTypes": [
+                        {
+                            "name": "value to text", 
+                            "value": 1
+                        }, 
+                        {
+                            "name": "range to text", 
+                            "value": 2
+                        }
+                    ], 
                     "maxDataPoints": 100, 
                     "nullPointMode": "connected", 
                     "nullText": null, 
@@ -106,6 +139,13 @@
                     "postfixFontSize": "50%", 
                     "prefix": "", 
                     "prefixFontSize": "50%", 
+                    "rangeMaps": [
+                        {
+                            "from": "null", 
+                            "text": "N/A", 
+                            "to": "null"
+                        }
+                    ], 
                     "span": 3, 
                     "sparkline": {
                         "fillColor": "rgba(31, 118, 189, 0.18)", 
@@ -123,6 +163,7 @@
                         }
                     ], 
                     "thresholds": "", 
+                    "timeFrom": null, 
                     "title": "Memory Chunks", 
                     "type": "singlestat", 
                     "valueFontSize": "80%", 
@@ -156,11 +197,23 @@
                         "thresholdLabels": false, 
                         "thresholdMarkers": true
                     }, 
-                    "height": "50px", 
+                    "height": "125px", 
+                    "hideTimeOverride": true, 
                     "id": 11, 
                     "interval": "$interval", 
                     "isNew": true, 
                     "links": [], 
+                    "mappingType": 1, 
+                    "mappingTypes": [
+                        {
+                            "name": "value to text", 
+                            "value": 1
+                        }, 
+                        {
+                            "name": "range to text", 
+                            "value": 2
+                        }
+                    ], 
                     "maxDataPoints": 100, 
                     "nullPointMode": "connected", 
                     "nullText": null, 
@@ -168,6 +221,13 @@
                     "postfixFontSize": "50%", 
                     "prefix": "", 
                     "prefixFontSize": "50%", 
+                    "rangeMaps": [
+                        {
+                            "from": "null", 
+                            "text": "N/A", 
+                            "to": "null"
+                        }
+                    ], 
                     "span": 3, 
                     "sparkline": {
                         "fillColor": "rgba(31, 118, 189, 0.18)", 
@@ -186,6 +246,8 @@
                         }
                     ], 
                     "thresholds": "", 
+                    "timeFrom": "12h", 
+                    "timeShift": null, 
                     "title": "HTTP Request Duration", 
                     "type": "singlestat", 
                     "valueFontSize": "80%", 
@@ -219,11 +281,23 @@
                         "thresholdLabels": false, 
                         "thresholdMarkers": true
                     }, 
-                    "height": "50px", 
+                    "height": "125px", 
+                    "hideTimeOverride": true, 
                     "id": 10, 
                     "interval": "$interval", 
                     "isNew": true, 
                     "links": [], 
+                    "mappingType": 1, 
+                    "mappingTypes": [
+                        {
+                            "name": "value to text", 
+                            "value": 1
+                        }, 
+                        {
+                            "name": "range to text", 
+                            "value": 2
+                        }
+                    ], 
                     "maxDataPoints": 100, 
                     "nullPointMode": "connected", 
                     "nullText": null, 
@@ -231,6 +305,13 @@
                     "postfixFontSize": "50%", 
                     "prefix": "", 
                     "prefixFontSize": "50%", 
+                    "rangeMaps": [
+                        {
+                            "from": "null", 
+                            "text": "N/A", 
+                            "to": "null"
+                        }
+                    ], 
                     "span": 3, 
                     "sparkline": {
                         "fillColor": "rgba(31, 118, 189, 0.18)", 
@@ -248,6 +329,7 @@
                         }
                     ], 
                     "thresholds": "", 
+                    "timeFrom": "12h", 
                     "title": "HTTP Response Size", 
                     "type": "singlestat", 
                     "valueFontSize": "80%", 
@@ -259,7 +341,15 @@
                         }
                     ], 
                     "valueName": "current"
-                }, 
+                }
+            ], 
+            "title": "Widgetst"
+        }, 
+        {
+            "collapse": false, 
+            "editable": true, 
+            "height": "250px", 
+            "panels": [
                 {
                     "aliasColors": {}, 
                     "bars": false, 
@@ -276,14 +366,14 @@
                     "id": 2, 
                     "isNew": true, 
                     "legend": {
-                        "alignAsTable": false, 
-                        "avg": false, 
+                        "alignAsTable": true, 
+                        "avg": true, 
                         "current": false, 
-                        "max": false, 
-                        "min": false, 
-                        "show": false, 
+                        "max": true, 
+                        "min": true, 
+                        "show": true, 
                         "total": false, 
-                        "values": false
+                        "values": true
                     }, 
                     "lines": true, 
                     "linewidth": 2, 
@@ -314,6 +404,7 @@
                     "tooltip": {
                         "msResolution": false, 
                         "shared": true, 
+                        "sort": 0, 
                         "value_type": "cumulative"
                     }, 
                     "type": "graph", 
@@ -340,38 +431,40 @@
                     ]
                 }, 
                 {
-                    "aliasColors": {}, 
+                    "aliasColors": {
+                        "Count": "#EAB839"
+                    }, 
                     "bars": false, 
                     "datasource": "Prometheus", 
                     "editable": true, 
                     "error": false, 
-                    "fill": 2, 
+                    "fill": 0, 
                     "grid": {
                         "threshold1": null, 
                         "threshold1Color": "rgba(216, 200, 27, 0.27)", 
                         "threshold2": null, 
-                        "threshold2Color": "rgba(234, 112, 112, 0.22)"
+                        "threshold2Color": "rgba(234, 112, 112, 0.22)", 
+                        "thresholdLine": false
                     }, 
-                    "id": 1, 
+                    "id": 12, 
                     "isNew": true, 
                     "legend": {
-                        "alignAsTable": false, 
-                        "avg": false, 
+                        "alignAsTable": true, 
+                        "avg": true, 
                         "current": false, 
-                        "hideZero": true, 
-                        "max": false, 
-                        "min": false, 
+                        "max": true, 
+                        "min": true, 
                         "rightSide": false, 
                         "show": true, 
                         "total": false, 
-                        "values": false
+                        "values": true
                     }, 
                     "lines": true, 
                     "linewidth": 2, 
                     "links": [], 
                     "nullPointMode": "null", 
                     "percentage": false, 
-                    "pointradius": 5, 
+                    "pointradius": 2, 
                     "points": false, 
                     "renderer": "flot", 
                     "seriesOverrides": [], 
@@ -380,10 +473,10 @@
                     "steppedLine": false, 
                     "targets": [
                         {
-                            "expr": "sum(rate(http_requests_total{job=\"prometheus\"}[$interval])) by (handler) or sum(irate(http_requests_total{job=\"prometheus\"}[5m])) by (handler)", 
+                            "expr": "count(up)", 
                             "interval": "$interval", 
                             "intervalFactor": 1, 
-                            "legendFormat": "{{ handler }}", 
+                            "legendFormat": "Count", 
                             "metric": "", 
                             "refId": "A", 
                             "step": 300
@@ -391,11 +484,12 @@
                     ], 
                     "timeFrom": null, 
                     "timeShift": null, 
-                    "title": "HTTP Requests by Handler", 
+                    "title": "Prometheus Targets", 
                     "tooltip": {
                         "msResolution": false, 
-                        "shared": true, 
-                        "value_type": "cumulative"
+                        "shared": false, 
+                        "sort": 0, 
+                        "value_type": "individual"
                     }, 
                     "type": "graph", 
                     "xaxis": {
@@ -404,7 +498,6 @@
                     "yaxes": [
                         {
                             "format": "short", 
-                            "label": "", 
                             "logBase": 1, 
                             "max": null, 
                             "min": 0, 
@@ -412,14 +505,21 @@
                         }, 
                         {
                             "format": "short", 
-                            "label": "", 
                             "logBase": 1, 
                             "max": null, 
                             "min": 0, 
                             "show": true
                         }
                     ]
-                }, 
+                }
+            ], 
+            "title": "New row"
+        }, 
+        {
+            "collapse": false, 
+            "editable": true, 
+            "height": "250px", 
+            "panels": [
                 {
                     "aliasColors": {}, 
                     "bars": false, 
@@ -436,13 +536,14 @@
                     "id": 3, 
                     "isNew": true, 
                     "legend": {
-                        "avg": false, 
+                        "alignAsTable": true, 
+                        "avg": true, 
                         "current": false, 
-                        "max": false, 
-                        "min": false, 
-                        "show": false, 
+                        "max": true, 
+                        "min": true, 
+                        "show": true, 
                         "total": false, 
-                        "values": false
+                        "values": true
                     }, 
                     "lines": true, 
                     "linewidth": 2, 
@@ -454,7 +555,7 @@
                     "renderer": "flot", 
                     "seriesOverrides": [
                         {
-                            "alias": "cpu", 
+                            "alias": "CPU", 
                             "color": "#E24D42"
                         }
                     ], 
@@ -467,7 +568,7 @@
                             "hide": false, 
                             "interval": "$interval", 
                             "intervalFactor": 1, 
-                            "legendFormat": "cpu", 
+                            "legendFormat": "CPU", 
                             "metric": "", 
                             "refId": "A", 
                             "step": 300
@@ -479,6 +580,7 @@
                     "tooltip": {
                         "msResolution": false, 
                         "shared": true, 
+                        "sort": 0, 
                         "value_type": "cumulative"
                     }, 
                     "type": "graph", 
@@ -520,13 +622,15 @@
                     "id": 5, 
                     "isNew": true, 
                     "legend": {
-                        "avg": false, 
+                        "alignAsTable": true, 
+                        "avg": true, 
                         "current": false, 
-                        "max": false, 
-                        "min": false, 
-                        "show": false, 
+                        "max": true, 
+                        "min": true, 
+                        "rightSide": false, 
+                        "show": true, 
                         "total": false, 
-                        "values": false
+                        "values": true
                     }, 
                     "lines": true, 
                     "linewidth": 2, 
@@ -538,7 +642,7 @@
                     "renderer": "flot", 
                     "seriesOverrides": [
                         {
-                            "alias": "memory", 
+                            "alias": "Memory", 
                             "color": "#EF843C"
                         }
                     ], 
@@ -550,7 +654,7 @@
                             "expr": "process_resident_memory_bytes{job=\"prometheus\"}", 
                             "interval": "$interval", 
                             "intervalFactor": 1, 
-                            "legendFormat": "memory", 
+                            "legendFormat": "Memory", 
                             "metric": "", 
                             "refId": "A", 
                             "step": 300
@@ -562,6 +666,7 @@
                     "tooltip": {
                         "msResolution": false, 
                         "shared": true, 
+                        "sort": 0, 
                         "value_type": "cumulative"
                     }, 
                     "type": "graph", 
@@ -584,36 +689,48 @@
                             "show": true
                         }
                     ]
-                }, 
+                }
+            ], 
+            "showTitle": false, 
+            "title": "Prometheus Statistics"
+        }, 
+        {
+            "collapse": false, 
+            "editable": true, 
+            "height": "250px", 
+            "panels": [
                 {
                     "aliasColors": {}, 
                     "bars": false, 
                     "datasource": "Prometheus", 
                     "editable": true, 
                     "error": false, 
-                    "fill": 0, 
+                    "fill": 2, 
                     "grid": {
                         "threshold1": null, 
                         "threshold1Color": "rgba(216, 200, 27, 0.27)", 
                         "threshold2": null, 
-                        "threshold2Color": "rgba(234, 112, 112, 0.22)", 
-                        "thresholdLine": false
+                        "threshold2Color": "rgba(234, 112, 112, 0.22)"
                     }, 
-                    "id": 12, 
+                    "id": 1, 
                     "isNew": true, 
                     "legend": {
                         "alignAsTable": true, 
-                        "avg": false, 
+                        "avg": true, 
                         "current": false, 
-                        "max": false, 
-                        "min": false, 
+                        "hideEmpty": false, 
+                        "hideZero": true, 
+                        "max": true, 
+                        "min": true, 
                         "rightSide": true, 
                         "show": true, 
+                        "sort": "avg", 
+                        "sortDesc": true, 
                         "total": false, 
-                        "values": false
+                        "values": true
                     }, 
                     "lines": true, 
-                    "linewidth": 1, 
+                    "linewidth": 2, 
                     "links": [], 
                     "nullPointMode": "null", 
                     "percentage": false, 
@@ -622,14 +739,14 @@
                     "renderer": "flot", 
                     "seriesOverrides": [], 
                     "span": 12, 
-                    "stack": true, 
+                    "stack": false, 
                     "steppedLine": false, 
                     "targets": [
                         {
-                            "expr": "up{alias!=\"\"}", 
+                            "expr": "sum(rate(http_requests_total{job=\"prometheus\"}[$interval])) by (handler) or sum(irate(http_requests_total{job=\"prometheus\"}[5m])) by (handler)", 
                             "interval": "$interval", 
                             "intervalFactor": 1, 
-                            "legendFormat": "{{ job }}/{{ alias }}", 
+                            "legendFormat": "{{ handler }}", 
                             "metric": "", 
                             "refId": "A", 
                             "step": 300
@@ -637,11 +754,12 @@
                     ], 
                     "timeFrom": null, 
                     "timeShift": null, 
-                    "title": "Targets Heartbeat by job/alias", 
+                    "title": "HTTP Requests by Handler", 
                     "tooltip": {
                         "msResolution": false, 
                         "shared": true, 
-                        "value_type": "individual"
+                        "sort": 2, 
+                        "value_type": "cumulative"
                     }, 
                     "type": "graph", 
                     "xaxis": {
@@ -650,6 +768,7 @@
                     "yaxes": [
                         {
                             "format": "short", 
+                            "label": "", 
                             "logBase": 1, 
                             "max": null, 
                             "min": 0, 
@@ -657,6 +776,7 @@
                         }, 
                         {
                             "format": "short", 
+                            "label": "", 
                             "logBase": 1, 
                             "max": null, 
                             "min": 0, 
@@ -665,8 +785,95 @@
                     ]
                 }
             ], 
-            "showTitle": true, 
-            "title": "Prometheus Statistics"
+            "title": "New row"
+        }, 
+        {
+            "collapse": false, 
+            "editable": true, 
+            "height": "250px", 
+            "panels": [
+                {
+                    "columns": [
+                        {
+                            "text": "Current", 
+                            "value": "current"
+                        }
+                    ], 
+                    "datasource": "Prometheus", 
+                    "editable": true, 
+                    "error": false, 
+                    "fontSize": "100%", 
+                    "height": "420px", 
+                    "hideTimeOverride": true, 
+                    "id": 13, 
+                    "isNew": true, 
+                    "links": [], 
+                    "pageSize": null, 
+                    "scroll": false, 
+                    "showHeader": true, 
+                    "sort": {
+                        "col": 1, 
+                        "desc": true
+                    }, 
+                    "span": 6, 
+                    "styles": [], 
+                    "targets": [
+                        {
+                            "expr": "topk(10, count({__name__=~\".+\"})  by (__name__))", 
+                            "interval": "5m", 
+                            "intervalFactor": 2, 
+                            "legendFormat": "{{ __name__ }}", 
+                            "refId": "A", 
+                            "step": 600
+                        }
+                    ], 
+                    "timeFrom": "5m", 
+                    "title": "Top 10 metrics by time series count", 
+                    "transform": "timeseries_aggregations", 
+                    "type": "table"
+                }, 
+                {
+                    "columns": [
+                        {
+                            "text": "Current", 
+                            "value": "current"
+                        }
+                    ], 
+                    "datasource": "Prometheus", 
+                    "editable": true, 
+                    "error": false, 
+                    "fontSize": "100%", 
+                    "height": "420px", 
+                    "hideTimeOverride": true, 
+                    "id": 14, 
+                    "isNew": true, 
+                    "links": [], 
+                    "pageSize": null, 
+                    "scroll": false, 
+                    "showHeader": true, 
+                    "sort": {
+                        "col": 1, 
+                        "desc": true
+                    }, 
+                    "span": 6, 
+                    "styles": [], 
+                    "targets": [
+                        {
+                            "expr": "topk(10, count({__name__=~\".+\"})  by (instance))", 
+                            "interval": "5m", 
+                            "intervalFactor": 2, 
+                            "legendFormat": "{{ instance }}", 
+                            "refId": "A", 
+                            "step": 600
+                        }
+                    ], 
+                    "timeFrom": "5m", 
+                    "title": "Top 10 hosts by time series count", 
+                    "transform": "timeseries_aggregations", 
+                    "type": "table"
+                }
+            ], 
+            "title": "New row"
         }
     ], 
     "schemaVersion": 12, 
@@ -683,6 +890,7 @@
                 "auto_count": 200, 
                 "auto_min": "1s", 
                 "current": {
+                    "selected": true, 
                     "text": "auto", 
                     "value": "$__auto_interval"
                 }, 
@@ -772,6 +980,6 @@
         ]
     }, 
     "timezone": "browser", 
-    "title": "Prometheus | Percona App", 
+    "title": "Prometheus", 
     "version": 0
 }

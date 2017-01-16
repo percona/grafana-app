@@ -3,16 +3,52 @@
         "list": []
     }, 
     "editable": true, 
-    "hideControls": false, 
+    "gnetId": null, 
+    "hideControls": true, 
     "id": null, 
-    "links": [], 
-    "originalTitle": "Galera Graphs", 
+    "links": [
+        {
+            "asDropdown": true, 
+            "icon": "external link", 
+            "includeVars": true, 
+            "keepTime": true, 
+            "tags": [
+                "OS"
+            ], 
+            "targetBlank": true, 
+            "title": "OS", 
+            "type": "dashboards"
+        }, 
+        {
+            "asDropdown": true, 
+            "icon": "external link", 
+            "includeVars": true, 
+            "keepTime": true, 
+            "tags": [
+                "MySQL"
+            ], 
+            "targetBlank": true, 
+            "title": "MySQL", 
+            "type": "dashboards"
+        }, 
+        {
+            "asDropdown": true, 
+            "icon": "external link", 
+            "includeVars": true, 
+            "keepTime": true, 
+            "tags": [
+                "HA"
+            ], 
+            "targetBlank": true, 
+            "title": "HA", 
+            "type": "dashboards"
+        }
+    ], 
     "refresh": false, 
     "rows": [
         {
             "collapse": false, 
-            "editable": true, 
-            "height": "270px", 
+            "height": "125px", 
             "panels": [
                 {
                     "aliasColors": {}, 
@@ -21,110 +57,8 @@
                     "decimals": 0, 
                     "editable": true, 
                     "error": false, 
-                    "fill": 2, 
-                    "grid": {
-                        "threshold1": null, 
-                        "threshold1Color": "rgba(216, 200, 27, 0.27)", 
-                        "threshold2": null, 
-                        "threshold2Color": "rgba(234, 112, 112, 0.22)", 
-                        "thresholdLine": false
-                    }, 
-                    "id": 39, 
-                    "legend": {
-                        "alignAsTable": true, 
-                        "avg": true, 
-                        "current": false, 
-                        "max": true, 
-                        "min": true, 
-                        "show": true, 
-                        "total": false, 
-                        "values": true
-                    }, 
-                    "lines": true, 
-                    "linewidth": 2, 
-                    "links": [], 
-                    "nullPointMode": "null", 
-                    "percentage": false, 
-                    "pointradius": 5, 
-                    "points": false, 
-                    "renderer": "flot", 
-                    "seriesOverrides": [], 
-                    "span": 6, 
-                    "stack": false, 
-                    "steppedLine": false, 
-                    "targets": [
-                        {
-                            "calculatedInterval": "2m", 
-                            "datasourceErrors": {}, 
-                            "errors": {}, 
-                            "expr": "mysql_global_status_wsrep_local_recv_queue{alias=\"$host\"}", 
-                            "interval": "$interval", 
-                            "intervalFactor": 1, 
-                            "legendFormat": "Receive Queue", 
-                            "metric": "", 
-                            "prometheusLink": "/api/datasources/proxy/1/graph#%5B%7B%22expr%22%3A%22rate(mysql_global_status_connections%7Balias%3D%5C%22%24host%5C%22%7D%5B%24interval%5D)%22%2C%22range_input%22%3A%2243200s%22%2C%22end_input%22%3A%222015-10-6%207%3A44%22%2C%22step_input%22%3A%22%22%2C%22stacked%22%3Afalse%2C%22tab%22%3A0%7D%5D", 
-                            "refId": "A", 
-                            "step": 300
-                        }, 
-                        {
-                            "calculatedInterval": "2m", 
-                            "datasourceErrors": {}, 
-                            "errors": {}, 
-                            "expr": "mysql_global_status_wsrep_local_send_queue{alias=\"$host\"}", 
-                            "interval": "$interval", 
-                            "intervalFactor": 1, 
-                            "legendFormat": "Send Queue", 
-                            "metric": "", 
-                            "prometheusLink": "/api/datasources/proxy/1/graph#%5B%7B%22expr%22%3A%22mysql_global_status_max_used_connections%7Balias%3D%5C%22%24host%5C%22%7D%22%2C%22range_input%22%3A%2243200s%22%2C%22end_input%22%3A%222015-10-6%207%3A44%22%2C%22step_input%22%3A%22%22%2C%22stacked%22%3Afalse%2C%22tab%22%3A0%7D%5D", 
-                            "refId": "B", 
-                            "step": 300, 
-                            "target": ""
-                        }
-                    ], 
-                    "timeFrom": null, 
-                    "timeShift": null, 
-                    "title": "Galera Replication Queues", 
-                    "tooltip": {
-                        "msResolution": false, 
-                        "shared": true, 
-                        "value_type": "cumulative"
-                    }, 
-                    "type": "graph", 
-                    "xaxis": {
-                        "show": true
-                    }, 
-                    "yaxes": [
-                        {
-                            "format": "short", 
-                            "logBase": 1, 
-                            "max": null, 
-                            "min": 0, 
-                            "show": true
-                        }, 
-                        {
-                            "format": "short", 
-                            "logBase": 1, 
-                            "max": null, 
-                            "min": 0, 
-                            "show": true
-                        }
-                    ]
-                }, 
-                {
-                    "aliasColors": {}, 
-                    "bars": false, 
-                    "datasource": "Prometheus", 
-                    "decimals": 0, 
-                    "editable": true, 
-                    "error": false, 
                     "fill": 0, 
-                    "grid": {
-                        "threshold1": null, 
-                        "threshold1Color": "rgba(216, 200, 27, 0.27)", 
-                        "threshold2": null, 
-                        "threshold2Color": "rgba(234, 112, 112, 0.22)", 
-                        "thresholdLine": false
-                    }, 
+                    "grid": {}, 
                     "id": 42, 
                     "legend": {
                         "alignAsTable": true, 
@@ -132,7 +66,8 @@
                         "current": false, 
                         "max": true, 
                         "min": true, 
-                        "show": true, 
+                        "rightSide": true, 
+                        "show": false, 
                         "total": false, 
                         "values": true
                     }, 
@@ -144,44 +79,55 @@
                     "pointradius": 5, 
                     "points": false, 
                     "renderer": "flot", 
-                    "seriesOverrides": [], 
-                    "span": 6, 
+                    "seriesOverrides": [
+                        {
+                            "alias": "Size", 
+                            "color": "#5195CE"
+                        }
+                    ], 
+                    "span": 12, 
                     "stack": false, 
-                    "steppedLine": false, 
+                    "steppedLine": true, 
                     "targets": [
                         {
                             "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "mysql_global_status_wsrep_cluster_size{alias=\"$host\"}", 
+                            "expr": "min(mysql_global_status_wsrep_cluster_size * on (instance) group_left mysql_galera_variables_info{wsrep_cluster_name=\"$cluster\"})", 
                             "interval": "$interval", 
                             "intervalFactor": 1, 
                             "legendFormat": "Size", 
                             "metric": "", 
-                            "prometheusLink": "/api/datasources/proxy/1/graph#%5B%7B%22expr%22%3A%22mysql_global_status_max_used_connections%7Balias%3D%5C%22%24host%5C%22%7D%22%2C%22range_input%22%3A%2243200s%22%2C%22end_input%22%3A%222015-10-6%207%3A44%22%2C%22step_input%22%3A%22%22%2C%22stacked%22%3Afalse%2C%22tab%22%3A0%7D%5D", 
                             "refId": "C", 
                             "step": 300, 
                             "target": ""
                         }
                     ], 
+                    "thresholds": [], 
                     "timeFrom": null, 
                     "timeShift": null, 
-                    "title": "Galera Cluster Size", 
+                    "title": "Percona XtraDB / Galera Cluster Size", 
                     "tooltip": {
                         "msResolution": false, 
                         "shared": true, 
+                        "sort": 0, 
                         "value_type": "cumulative"
                     }, 
+                    "transparent": true, 
                     "type": "graph", 
                     "xaxis": {
-                        "show": true
+                        "mode": "time", 
+                        "name": null, 
+                        "show": false, 
+                        "values": []
                     }, 
                     "yaxes": [
                         {
                             "format": "short", 
-                            "logBase": 1, 
+                            "label": "", 
+                            "logBase": 2, 
                             "max": null, 
-                            "min": 0, 
+                            "min": 1, 
                             "show": true
                         }, 
                         {
@@ -189,150 +135,32 @@
                             "logBase": 1, 
                             "max": null, 
                             "min": 0, 
-                            "show": true
+                            "show": false
                         }
                     ]
-                }, 
+                }
+            ], 
+            "repeat": null, 
+            "repeatIteration": null, 
+            "repeatRowId": null, 
+            "showTitle": false, 
+            "title": "Size/Queue", 
+            "titleSize": "h6"
+        }, 
+        {
+            "collapse": false, 
+            "height": "250px", 
+            "panels": [
                 {
                     "aliasColors": {}, 
                     "bars": false, 
                     "datasource": "Prometheus", 
-                    "decimals": 0, 
-                    "editable": true, 
-                    "error": false, 
-                    "fill": 0, 
-                    "grid": {
-                        "threshold1": null, 
-                        "threshold1Color": "rgba(216, 200, 27, 0.27)", 
-                        "threshold2": null, 
-                        "threshold2Color": "rgba(234, 112, 112, 0.22)", 
-                        "thresholdLine": false
-                    }, 
-                    "id": 45, 
-                    "legend": {
-                        "alignAsTable": true, 
-                        "avg": true, 
-                        "current": false, 
-                        "max": true, 
-                        "min": true, 
-                        "show": true, 
-                        "total": false, 
-                        "values": true
-                    }, 
-                    "lines": true, 
-                    "linewidth": 2, 
-                    "links": [], 
-                    "nullPointMode": "null", 
-                    "percentage": false, 
-                    "pointradius": 5, 
-                    "points": false, 
-                    "renderer": "flot", 
-                    "seriesOverrides": [], 
-                    "span": 6, 
-                    "stack": false, 
-                    "steppedLine": false, 
-                    "targets": [
-                        {
-                            "calculatedInterval": "2m", 
-                            "datasourceErrors": {}, 
-                            "errors": {}, 
-                            "expr": "mysql_global_status_wsrep_flow_control_recv{alias=\"$host\"}", 
-                            "interval": "$interval", 
-                            "intervalFactor": 1, 
-                            "legendFormat": "FC Messages Received", 
-                            "metric": "", 
-                            "prometheusLink": "/api/datasources/proxy/1/graph#%5B%7B%22expr%22%3A%22rate(mysql_global_status_connections%7Balias%3D%5C%22%24host%5C%22%7D%5B%24interval%5D)%22%2C%22range_input%22%3A%2243200s%22%2C%22end_input%22%3A%222015-10-6%207%3A44%22%2C%22step_input%22%3A%22%22%2C%22stacked%22%3Afalse%2C%22tab%22%3A0%7D%5D", 
-                            "refId": "A", 
-                            "step": 300
-                        }, 
-                        {
-                            "calculatedInterval": "2m", 
-                            "datasourceErrors": {}, 
-                            "errors": {}, 
-                            "expr": "mysql_global_status_wsrep_flow_control_sent{alias=\"$host\"}", 
-                            "interval": "$interval", 
-                            "intervalFactor": 1, 
-                            "legendFormat": "FC Messages Sent", 
-                            "metric": "", 
-                            "prometheusLink": "/api/datasources/proxy/1/graph#%5B%7B%22expr%22%3A%22mysql_global_status_max_used_connections%7Balias%3D%5C%22%24host%5C%22%7D%22%2C%22range_input%22%3A%2243200s%22%2C%22end_input%22%3A%222015-10-6%207%3A44%22%2C%22step_input%22%3A%22%22%2C%22stacked%22%3Afalse%2C%22tab%22%3A0%7D%5D", 
-                            "refId": "B", 
-                            "step": 300, 
-                            "target": ""
-                        }, 
-                        {
-                            "calculatedInterval": "2m", 
-                            "datasourceErrors": {}, 
-                            "errors": {}, 
-                            "expr": "mysql_global_status_wsrep_flow_control_paused{alias=\"$host\"}", 
-                            "interval": "$interval", 
-                            "intervalFactor": 1, 
-                            "legendFormat": "FC Messages Paused", 
-                            "metric": "", 
-                            "prometheusLink": "/api/datasources/proxy/1/graph#%5B%7B%22expr%22%3A%22mysql_global_status_max_used_connections%7Balias%3D%5C%22%24host%5C%22%7D%22%2C%22range_input%22%3A%2243200s%22%2C%22end_input%22%3A%222015-10-6%207%3A44%22%2C%22step_input%22%3A%22%22%2C%22stacked%22%3Afalse%2C%22tab%22%3A0%7D%5D", 
-                            "refId": "C", 
-                            "step": 300, 
-                            "target": ""
-                        }
-                    ], 
-                    "timeFrom": null, 
-                    "timeShift": null, 
-                    "title": "Galera Flow Control", 
-                    "tooltip": {
-                        "msResolution": false, 
-                        "shared": true, 
-                        "value_type": "cumulative"
-                    }, 
-                    "type": "graph", 
-                    "xaxis": {
-                        "show": true
-                    }, 
-                    "yaxes": [
-                        {
-                            "format": "short", 
-                            "logBase": 1, 
-                            "max": null, 
-                            "min": 0, 
-                            "show": true
-                        }, 
-                        {
-                            "format": "short", 
-                            "logBase": 1, 
-                            "max": null, 
-                            "min": 0, 
-                            "show": true
-                        }
-                    ]
-                }, 
-                {
-                    "content": "Galera Flow Control. This graph shows the number of FC_PAUSE events sent/received. They are sent by a node when its replication queue gets too full. If a node is sending out FC messages it indicates the problem.", 
-                    "datasource": "Prometheus", 
-                    "editable": true, 
-                    "error": false, 
-                    "id": 46, 
-                    "isNew": true, 
-                    "links": [], 
-                    "mode": "markdown", 
-                    "span": 6, 
-                    "style": {}, 
-                    "title": "", 
-                    "type": "text"
-                }, 
-                {
-                    "aliasColors": {}, 
-                    "bars": false, 
-                    "datasource": "Prometheus", 
-                    "decimals": 0, 
+                    "decimals": null, 
                     "editable": true, 
                     "error": false, 
                     "fill": 2, 
-                    "grid": {
-                        "threshold1": null, 
-                        "threshold1Color": "rgba(216, 200, 27, 0.27)", 
-                        "threshold2": null, 
-                        "threshold2Color": "rgba(234, 112, 112, 0.22)", 
-                        "thresholdLine": false
-                    }, 
-                    "id": 41, 
+                    "grid": {}, 
+                    "id": 52, 
                     "legend": {
                         "alignAsTable": true, 
                         "avg": true, 
@@ -360,171 +188,37 @@
                             "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "rate(mysql_global_status_wsrep_local_cert_failures{alias=\"$host\"}[$interval]) or irate(mysql_global_status_wsrep_local_cert_failures{alias=\"$host\"}[5m])", 
+                            "expr": "(rate(mysql_global_status_wsrep_flow_control_paused_ns[$interval]) or irate(mysql_global_status_wsrep_flow_control_paused_ns[5m]))/1000000000 * on (instance) group_left mysql_galera_variables_info{wsrep_cluster_name=\"$cluster\"}", 
                             "interval": "$interval", 
                             "intervalFactor": 1, 
-                            "legendFormat": "Local Cert Failures", 
+                            "legendFormat": "{{ instance }}", 
                             "metric": "", 
-                            "prometheusLink": "/api/datasources/proxy/1/graph#%5B%7B%22expr%22%3A%22rate(mysql_global_status_connections%7Balias%3D%5C%22%24host%5C%22%7D%5B%24interval%5D)%22%2C%22range_input%22%3A%2243200s%22%2C%22end_input%22%3A%222015-10-6%207%3A44%22%2C%22step_input%22%3A%22%22%2C%22stacked%22%3Afalse%2C%22tab%22%3A0%7D%5D", 
                             "refId": "A", 
                             "step": 300
-                        }, 
-                        {
-                            "calculatedInterval": "2m", 
-                            "datasourceErrors": {}, 
-                            "errors": {}, 
-                            "expr": "rate(mysql_global_status_wsrep_local_bf_aborts{alias=\"$host\"}[$interval]) or irate(mysql_global_status_wsrep_local_bf_aborts{alias=\"$host\"}[5m])", 
-                            "interval": "$interval", 
-                            "intervalFactor": 1, 
-                            "legendFormat": "Local Bf Aborts", 
-                            "metric": "", 
-                            "prometheusLink": "/api/datasources/proxy/1/graph#%5B%7B%22expr%22%3A%22mysql_global_status_max_used_connections%7Balias%3D%5C%22%24host%5C%22%7D%22%2C%22range_input%22%3A%2243200s%22%2C%22end_input%22%3A%222015-10-6%207%3A44%22%2C%22step_input%22%3A%22%22%2C%22stacked%22%3Afalse%2C%22tab%22%3A0%7D%5D", 
-                            "refId": "B", 
-                            "step": 300, 
-                            "target": ""
                         }
                     ], 
+                    "thresholds": [], 
                     "timeFrom": null, 
                     "timeShift": null, 
-                    "title": "Galera Writing Conflicts", 
+                    "title": "Flow Control Paused Time", 
                     "tooltip": {
                         "msResolution": false, 
                         "shared": true, 
+                        "sort": 0, 
                         "value_type": "cumulative"
                     }, 
                     "type": "graph", 
                     "xaxis": {
-                        "show": true
-                    }, 
-                    "yaxes": [
-                        {
-                            "format": "short", 
-                            "logBase": 1, 
-                            "max": null, 
-                            "min": 0, 
-                            "show": true
-                        }, 
-                        {
-                            "format": "short", 
-                            "logBase": 1, 
-                            "max": null, 
-                            "min": 0, 
-                            "show": true
-                        }
-                    ]
-                }, 
-                {
-                    "content": "Galera Writing Conflicts. This graphs shows the number of local transactions being committed on this node that failed certification (some other node had a commit that conflicted with ours) \u2013 client received deadlock error on commit and also the number of local transactions in flight on this node that were aborted because they locked something an applier thread needed \u2013 deadlock error anywhere in an open transaction. The spikes on the graph may indicate writing to the same table potentially the same rows from 2 nodes.\n", 
-                    "datasource": "Prometheus", 
-                    "editable": true, 
-                    "error": false, 
-                    "id": 43, 
-                    "isNew": true, 
-                    "links": [], 
-                    "mode": "markdown", 
-                    "span": 6, 
-                    "style": {}, 
-                    "title": "", 
-                    "type": "text"
-                }, 
-                {
-                    "aliasColors": {}, 
-                    "bars": false, 
-                    "datasource": "Prometheus", 
-                    "decimals": 0, 
-                    "editable": true, 
-                    "error": false, 
-                    "fill": 0, 
-                    "grid": {
-                        "threshold1": null, 
-                        "threshold1Color": "rgba(216, 200, 27, 0.27)", 
-                        "threshold2": null, 
-                        "threshold2Color": "rgba(234, 112, 112, 0.22)", 
-                        "thresholdLine": false
-                    }, 
-                    "id": 40, 
-                    "legend": {
-                        "alignAsTable": true, 
-                        "avg": true, 
-                        "current": false, 
-                        "max": true, 
-                        "min": true, 
+                        "mode": "time", 
+                        "name": null, 
                         "show": true, 
-                        "total": false, 
-                        "values": true
-                    }, 
-                    "lines": true, 
-                    "linewidth": 2, 
-                    "links": [], 
-                    "nullPointMode": "null", 
-                    "percentage": false, 
-                    "pointradius": 5, 
-                    "points": false, 
-                    "renderer": "flot", 
-                    "seriesOverrides": [], 
-                    "span": 6, 
-                    "stack": false, 
-                    "steppedLine": false, 
-                    "targets": [
-                        {
-                            "calculatedInterval": "2m", 
-                            "datasourceErrors": {}, 
-                            "errors": {}, 
-                            "expr": "mysql_global_status_wsrep_apply_window{alias=\"$host\"}", 
-                            "interval": "$interval", 
-                            "intervalFactor": 1, 
-                            "legendFormat": "Apply Window", 
-                            "metric": "", 
-                            "prometheusLink": "/api/datasources/proxy/1/graph#%5B%7B%22expr%22%3A%22rate(mysql_global_status_connections%7Balias%3D%5C%22%24host%5C%22%7D%5B%24interval%5D)%22%2C%22range_input%22%3A%2243200s%22%2C%22end_input%22%3A%222015-10-6%207%3A44%22%2C%22step_input%22%3A%22%22%2C%22stacked%22%3Afalse%2C%22tab%22%3A0%7D%5D", 
-                            "refId": "A", 
-                            "step": 300
-                        }, 
-                        {
-                            "calculatedInterval": "2m", 
-                            "datasourceErrors": {}, 
-                            "errors": {}, 
-                            "expr": "mysql_global_status_wsrep_commit_window{alias=\"$host\"}", 
-                            "interval": "$interval", 
-                            "intervalFactor": 1, 
-                            "legendFormat": "Commit Window", 
-                            "metric": "", 
-                            "prometheusLink": "/api/datasources/proxy/1/graph#%5B%7B%22expr%22%3A%22mysql_global_status_max_used_connections%7Balias%3D%5C%22%24host%5C%22%7D%22%2C%22range_input%22%3A%2243200s%22%2C%22end_input%22%3A%222015-10-6%207%3A44%22%2C%22step_input%22%3A%22%22%2C%22stacked%22%3Afalse%2C%22tab%22%3A0%7D%5D", 
-                            "refId": "B", 
-                            "step": 300, 
-                            "target": ""
-                        }, 
-                        {
-                            "calculatedInterval": "2m", 
-                            "datasourceErrors": {}, 
-                            "errors": {}, 
-                            "expr": "mysql_global_status_wsrep_cert_deps_distance{alias=\"$host\"}", 
-                            "interval": "$interval", 
-                            "intervalFactor": 1, 
-                            "legendFormat": "Cert Deps Distance", 
-                            "metric": "", 
-                            "prometheusLink": "/api/datasources/proxy/1/graph#%5B%7B%22expr%22%3A%22mysql_global_status_max_used_connections%7Balias%3D%5C%22%24host%5C%22%7D%22%2C%22range_input%22%3A%2243200s%22%2C%22end_input%22%3A%222015-10-6%207%3A44%22%2C%22step_input%22%3A%22%22%2C%22stacked%22%3Afalse%2C%22tab%22%3A0%7D%5D", 
-                            "refId": "C", 
-                            "step": 300, 
-                            "target": ""
-                        }
-                    ], 
-                    "timeFrom": null, 
-                    "timeShift": null, 
-                    "title": "Galera Parallelization Efficiency", 
-                    "tooltip": {
-                        "msResolution": false, 
-                        "shared": true, 
-                        "value_type": "cumulative"
-                    }, 
-                    "type": "graph", 
-                    "xaxis": {
-                        "show": true
+                        "values": []
                     }, 
                     "yaxes": [
                         {
-                            "format": "short", 
+                            "format": "percentunit", 
                             "logBase": 1, 
-                            "max": null, 
+                            "max": 1, 
                             "min": 0, 
                             "show": true
                         }, 
@@ -538,35 +232,15 @@
                     ]
                 }, 
                 {
-                    "content": "Galera Parallelization Efficiency. This graph shows the average distances between highest and lowest seqno that are concurrently applied, commited and can be possibly applied in parallel (potential degree of parallelization).\n", 
-                    "datasource": "Prometheus", 
-                    "editable": true, 
-                    "error": false, 
-                    "id": 44, 
-                    "isNew": true, 
-                    "links": [], 
-                    "mode": "markdown", 
-                    "span": 6, 
-                    "style": {}, 
-                    "title": "", 
-                    "type": "text"
-                }, 
-                {
                     "aliasColors": {}, 
                     "bars": false, 
                     "datasource": "Prometheus", 
-                    "decimals": 0, 
+                    "decimals": null, 
                     "editable": true, 
                     "error": false, 
                     "fill": 2, 
-                    "grid": {
-                        "threshold1": null, 
-                        "threshold1Color": "rgba(216, 200, 27, 0.27)", 
-                        "threshold2": null, 
-                        "threshold2Color": "rgba(234, 112, 112, 0.22)", 
-                        "thresholdLine": false
-                    }, 
-                    "id": 2, 
+                    "grid": {}, 
+                    "id": 53, 
                     "legend": {
                         "alignAsTable": true, 
                         "avg": true, 
@@ -594,140 +268,35 @@
                             "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "rate(mysql_global_status_wsrep_received{alias=\"$host\"}[$interval]) or irate(mysql_global_status_wsrep_received{alias=\"$host\"}[5m])", 
+                            "expr": "(rate(mysql_global_status_wsrep_flow_control_sent[$interval]) or irate(mysql_global_status_wsrep_flow_control_sent[5m])) * on (instance) group_left mysql_galera_variables_info{wsrep_cluster_name=\"$cluster\"}", 
                             "interval": "$interval", 
                             "intervalFactor": 1, 
-                            "legendFormat": "Transactions Received", 
+                            "legendFormat": "{{ instance }}", 
                             "metric": "", 
-                            "prometheusLink": "/api/datasources/proxy/1/graph#%5B%7B%22expr%22%3A%22rate(mysql_global_status_connections%7Balias%3D%5C%22%24host%5C%22%7D%5B%24interval%5D)%22%2C%22range_input%22%3A%2243200s%22%2C%22end_input%22%3A%222015-10-6%207%3A44%22%2C%22step_input%22%3A%22%22%2C%22stacked%22%3Afalse%2C%22tab%22%3A0%7D%5D", 
                             "refId": "A", 
                             "step": 300
-                        }, 
-                        {
-                            "calculatedInterval": "2m", 
-                            "datasourceErrors": {}, 
-                            "errors": {}, 
-                            "expr": "rate(mysql_global_status_wsrep_replicated{alias=\"$host\"}[$interval]) or irate(mysql_global_status_wsrep_replicated{alias=\"$host\"}[5m])", 
-                            "interval": "$interval", 
-                            "intervalFactor": 1, 
-                            "legendFormat": "Transactions Replicated", 
-                            "metric": "", 
-                            "prometheusLink": "/api/datasources/proxy/1/graph#%5B%7B%22expr%22%3A%22mysql_global_status_max_used_connections%7Balias%3D%5C%22%24host%5C%22%7D%22%2C%22range_input%22%3A%2243200s%22%2C%22end_input%22%3A%222015-10-6%207%3A44%22%2C%22step_input%22%3A%22%22%2C%22stacked%22%3Afalse%2C%22tab%22%3A0%7D%5D", 
-                            "refId": "B", 
-                            "step": 300, 
-                            "target": ""
                         }
                     ], 
+                    "thresholds": [], 
                     "timeFrom": null, 
                     "timeShift": null, 
-                    "title": "Galera Writeset Count", 
+                    "title": "Flow Control Messages Sent", 
                     "tooltip": {
                         "msResolution": false, 
                         "shared": true, 
+                        "sort": 0, 
                         "value_type": "cumulative"
                     }, 
                     "type": "graph", 
                     "xaxis": {
-                        "show": true
-                    }, 
-                    "yaxes": [
-                        {
-                            "format": "short", 
-                            "logBase": 1, 
-                            "max": null, 
-                            "min": 0, 
-                            "show": true
-                        }, 
-                        {
-                            "format": "short", 
-                            "logBase": 1, 
-                            "max": null, 
-                            "min": 0, 
-                            "show": true
-                        }
-                    ]
-                }, 
-                {
-                    "aliasColors": {}, 
-                    "bars": false, 
-                    "datasource": "Prometheus", 
-                    "decimals": 2, 
-                    "editable": true, 
-                    "error": false, 
-                    "fill": 2, 
-                    "grid": {
-                        "threshold1": null, 
-                        "threshold1Color": "rgba(216, 200, 27, 0.27)", 
-                        "threshold2": null, 
-                        "threshold2Color": "rgba(234, 112, 112, 0.22)"
-                    }, 
-                    "id": 11, 
-                    "legend": {
-                        "alignAsTable": true, 
-                        "avg": true, 
-                        "current": false, 
-                        "max": true, 
-                        "min": true, 
-                        "rightSide": false, 
+                        "mode": "time", 
+                        "name": null, 
                         "show": true, 
-                        "total": false, 
-                        "values": true
-                    }, 
-                    "lines": true, 
-                    "linewidth": 2, 
-                    "links": [], 
-                    "nullPointMode": "null", 
-                    "percentage": false, 
-                    "pointradius": 5, 
-                    "points": false, 
-                    "renderer": "flot", 
-                    "seriesOverrides": [], 
-                    "span": 6, 
-                    "stack": false, 
-                    "steppedLine": false, 
-                    "targets": [
-                        {
-                            "calculatedInterval": "2m", 
-                            "datasourceErrors": {}, 
-                            "errors": {}, 
-                            "expr": "rate(mysql_global_status_wsrep_received_bytes{alias=\"$host\"}[$interval]) / rate(mysql_global_status_wsrep_received{alias=\"$host\"}[$interval]) or irate(mysql_global_status_wsrep_received_bytes{alias=\"$host\"}[5m]) / irate(mysql_global_status_wsrep_received{alias=\"$host\"}[5m])", 
-                            "interval": "$interval", 
-                            "intervalFactor": 1, 
-                            "legendFormat": "Incoming Transaction Size", 
-                            "metric": "", 
-                            "prometheusLink": "/api/datasources/proxy/1/graph#%5B%7B%22expr%22%3A%22mysql_global_status_threads_cached%7Balias%3D%5C%22%24host%5C%22%7D%22%2C%22range_input%22%3A%2243200s%22%2C%22end_input%22%3A%222015-8-27%208%3A18%22%2C%22step_input%22%3A%22%22%2C%22stacked%22%3Afalse%2C%22tab%22%3A0%7D%5D", 
-                            "refId": "C", 
-                            "step": 300
-                        }, 
-                        {
-                            "calculatedInterval": "2m", 
-                            "datasourceErrors": {}, 
-                            "errors": {}, 
-                            "expr": "rate(mysql_global_status_wsrep_replicated_bytes{alias=\"$host\"}[$interval]) / rate(mysql_global_status_wsrep_replicated{alias=\"$host\"}[$interval]) or irate(mysql_global_status_wsrep_replicated_bytes{alias=\"$host\"}[5m]) / irate(mysql_global_status_wsrep_replicated{alias=\"$host\"}[5m])", 
-                            "interval": "$interval", 
-                            "intervalFactor": 1, 
-                            "legendFormat": "Replicating Transaction Size", 
-                            "metric": "", 
-                            "prometheusLink": "/api/datasources/proxy/1/graph#%5B%7B%22expr%22%3A%22rate(mysql_global_status_threads_created%7Balias%3D%5C%22%24host%5C%22%7D%5B%24interval%5D)%22%2C%22range_input%22%3A%2243201s%22%2C%22end_input%22%3A%222015-8-27%208%3A18%22%2C%22step_input%22%3A%22%22%2C%22stacked%22%3Afalse%2C%22tab%22%3A0%7D%5D", 
-                            "refId": "A", 
-                            "step": 300
-                        }
-                    ], 
-                    "timeFrom": null, 
-                    "timeShift": null, 
-                    "title": "Galera Writeset Size", 
-                    "tooltip": {
-                        "msResolution": false, 
-                        "shared": true, 
-                        "value_type": "individual"
-                    }, 
-                    "type": "graph", 
-                    "xaxis": {
-                        "show": true
+                        "values": []
                     }, 
                     "yaxes": [
                         {
-                            "format": "bytes", 
+                            "format": "short", 
                             "logBase": 1, 
                             "max": null, 
                             "min": 0, 
@@ -741,21 +310,28 @@
                             "show": true
                         }
                     ]
-                }, 
+                }
+            ], 
+            "repeat": null, 
+            "repeatIteration": null, 
+            "repeatRowId": null, 
+            "showTitle": false, 
+            "title": "FC", 
+            "titleSize": "h6"
+        }, 
+        {
+            "collapse": false, 
+            "height": "250px", 
+            "panels": [
                 {
                     "aliasColors": {}, 
                     "bars": false, 
                     "datasource": "Prometheus", 
-                    "decimals": 2, 
+                    "decimals": null, 
                     "editable": true, 
                     "error": false, 
                     "fill": 6, 
-                    "grid": {
-                        "threshold1": null, 
-                        "threshold1Color": "rgba(216, 200, 27, 0.27)", 
-                        "threshold2": null, 
-                        "threshold2Color": "rgba(234, 112, 112, 0.22)"
-                    }, 
+                    "grid": {}, 
                     "id": 9, 
                     "legend": {
                         "alignAsTable": true, 
@@ -785,40 +361,31 @@
                             "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "rate(mysql_global_status_wsrep_received_bytes{alias=\"$host\"}[$interval]) or irate(mysql_global_status_wsrep_received_bytes{alias=\"$host\"}[5m])", 
+                            "expr": "(rate(mysql_global_status_wsrep_received_bytes[$interval]) or irate(mysql_global_status_wsrep_received_bytes[5m])) * on (instance) group_left mysql_galera_variables_info{wsrep_cluster_name=\"$cluster\"}", 
                             "interval": "$interval", 
                             "intervalFactor": 1, 
-                            "legendFormat": "Inbound", 
+                            "legendFormat": "{{ instance }}", 
                             "metric": "", 
-                            "prometheusLink": "/api/datasources/proxy/1/graph#%5B%7B%22expr%22%3A%22rate(mysql_global_status_bytes_received%7Balias%3D%5C%22%24host%5C%22%7D%5B%24interval%5D)%22%2C%22range_input%22%3A%2243200s%22%2C%22end_input%22%3A%222015-9-18%2015%3A34%22%2C%22step_input%22%3A%22%22%2C%22stacked%22%3Atrue%2C%22tab%22%3A0%7D%5D", 
                             "refId": "A", 
-                            "step": 300
-                        }, 
-                        {
-                            "calculatedInterval": "2m", 
-                            "datasourceErrors": {}, 
-                            "errors": {}, 
-                            "expr": "rate(mysql_global_status_wsrep_replicated_bytes{alias=\"$host\"}[$interval]) or irate(mysql_global_status_wsrep_replicated_bytes{alias=\"$host\"}[5m])", 
-                            "interval": "$interval", 
-                            "intervalFactor": 1, 
-                            "legendFormat": "Outbound", 
-                            "metric": "", 
-                            "prometheusLink": "/api/datasources/proxy/1/graph#%5B%7B%22expr%22%3A%22-rate(mysql_global_status_bytes_sent%7Balias%3D%5C%22%24host%5C%22%7D%5B%24interval%5D)%22%2C%22range_input%22%3A%2243200s%22%2C%22end_input%22%3A%222015-9-18%2015%3A34%22%2C%22step_input%22%3A%22%22%2C%22stacked%22%3Atrue%2C%22tab%22%3A0%7D%5D", 
-                            "refId": "B", 
                             "step": 300
                         }
                     ], 
+                    "thresholds": [], 
                     "timeFrom": null, 
                     "timeShift": null, 
-                    "title": "Galera Writeset Traffic", 
+                    "title": "Writeset Inbound Traffic", 
                     "tooltip": {
                         "msResolution": false, 
                         "shared": true, 
+                        "sort": 0, 
                         "value_type": "individual"
                     }, 
                     "type": "graph", 
                     "xaxis": {
-                        "show": true
+                        "mode": "time", 
+                        "name": null, 
+                        "show": true, 
+                        "values": []
                     }, 
                     "yaxes": [
                         {
@@ -839,19 +406,14 @@
                 }, 
                 {
                     "aliasColors": {}, 
-                    "bars": true, 
+                    "bars": false, 
                     "datasource": "Prometheus", 
-                    "decimals": 2, 
+                    "decimals": null, 
                     "editable": true, 
                     "error": false, 
                     "fill": 6, 
-                    "grid": {
-                        "threshold1": null, 
-                        "threshold1Color": "rgba(216, 200, 27, 0.27)", 
-                        "threshold2": null, 
-                        "threshold2Color": "rgba(234, 112, 112, 0.22)"
-                    }, 
-                    "id": 38, 
+                    "grid": {}, 
+                    "id": 47, 
                     "legend": {
                         "alignAsTable": true, 
                         "avg": true, 
@@ -863,7 +425,7 @@
                         "total": false, 
                         "values": true
                     }, 
-                    "lines": false, 
+                    "lines": true, 
                     "linewidth": 2, 
                     "links": [], 
                     "nullPointMode": "null", 
@@ -880,40 +442,31 @@
                             "calculatedInterval": "2m", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "increase(mysql_global_status_wsrep_received_bytes{alias=\"$host\"}[1h])", 
-                            "interval": "1h", 
+                            "expr": "(rate(mysql_global_status_wsrep_replicated_bytes[$interval]) or irate(mysql_global_status_wsrep_replicated_bytes[5m])) * on (instance) group_left mysql_galera_variables_info{wsrep_cluster_name=\"$cluster\"}", 
+                            "interval": "$interval", 
                             "intervalFactor": 1, 
-                            "legendFormat": "Received", 
+                            "legendFormat": "{{ instance }}", 
                             "metric": "", 
-                            "prometheusLink": "/api/datasources/proxy/1/graph#%5B%7B%22expr%22%3A%22rate(mysql_global_status_bytes_received%7Balias%3D%5C%22%24host%5C%22%7D%5B%24interval%5D)%22%2C%22range_input%22%3A%2243200s%22%2C%22end_input%22%3A%222015-9-18%2015%3A34%22%2C%22step_input%22%3A%22%22%2C%22stacked%22%3Atrue%2C%22tab%22%3A0%7D%5D", 
                             "refId": "A", 
-                            "step": 3600
-                        }, 
-                        {
-                            "calculatedInterval": "2m", 
-                            "datasourceErrors": {}, 
-                            "errors": {}, 
-                            "expr": "increase(mysql_global_status_wsrep_replicated_bytes{alias=\"$host\"}[1h])", 
-                            "interval": "1h", 
-                            "intervalFactor": 1, 
-                            "legendFormat": "Replicated", 
-                            "metric": "", 
-                            "prometheusLink": "/api/datasources/proxy/1/graph#%5B%7B%22expr%22%3A%22-rate(mysql_global_status_bytes_sent%7Balias%3D%5C%22%24host%5C%22%7D%5B%24interval%5D)%22%2C%22range_input%22%3A%2243200s%22%2C%22end_input%22%3A%222015-9-18%2015%3A34%22%2C%22step_input%22%3A%22%22%2C%22stacked%22%3Atrue%2C%22tab%22%3A0%7D%5D", 
-                            "refId": "B", 
-                            "step": 3600
+                            "step": 300
                         }
                     ], 
+                    "thresholds": [], 
                     "timeFrom": null, 
                     "timeShift": null, 
-                    "title": "Galera Network Usage Hourly", 
+                    "title": "Writeset Outbound Traffic", 
                     "tooltip": {
                         "msResolution": false, 
                         "shared": true, 
+                        "sort": 0, 
                         "value_type": "individual"
                     }, 
                     "type": "graph", 
                     "xaxis": {
-                        "show": true
+                        "mode": "time", 
+                        "name": null, 
+                        "show": true, 
+                        "values": []
                     }, 
                     "yaxes": [
                         {
@@ -933,16 +486,538 @@
                     ]
                 }
             ], 
+            "repeat": null, 
+            "repeatIteration": null, 
+            "repeatRowId": null, 
             "showTitle": false, 
-            "title": "Galera Graphs"
+            "title": "Traffic", 
+            "titleSize": "h6"
+        }, 
+        {
+            "collapse": false, 
+            "height": "250px", 
+            "panels": [
+                {
+                    "aliasColors": {}, 
+                    "bars": false, 
+                    "datasource": "Prometheus", 
+                    "decimals": null, 
+                    "editable": true, 
+                    "error": false, 
+                    "fill": 2, 
+                    "grid": {}, 
+                    "id": 48, 
+                    "legend": {
+                        "alignAsTable": true, 
+                        "avg": true, 
+                        "current": false, 
+                        "max": true, 
+                        "min": true, 
+                        "show": true, 
+                        "total": false, 
+                        "values": true
+                    }, 
+                    "lines": true, 
+                    "linewidth": 2, 
+                    "links": [], 
+                    "nullPointMode": "null", 
+                    "percentage": false, 
+                    "pointradius": 5, 
+                    "points": false, 
+                    "renderer": "flot", 
+                    "seriesOverrides": [], 
+                    "span": 6, 
+                    "stack": false, 
+                    "steppedLine": false, 
+                    "targets": [
+                        {
+                            "calculatedInterval": "2m", 
+                            "datasourceErrors": {}, 
+                            "errors": {}, 
+                            "expr": "mysql_global_status_wsrep_local_recv_queue * on (instance) group_left mysql_galera_variables_info{wsrep_cluster_name=\"$cluster\"}", 
+                            "interval": "$interval", 
+                            "intervalFactor": 1, 
+                            "legendFormat": "{{ instance }}", 
+                            "metric": "", 
+                            "refId": "A", 
+                            "step": 300
+                        }
+                    ], 
+                    "thresholds": [], 
+                    "timeFrom": null, 
+                    "timeShift": null, 
+                    "title": "Receive Queue", 
+                    "tooltip": {
+                        "msResolution": false, 
+                        "shared": true, 
+                        "sort": 0, 
+                        "value_type": "cumulative"
+                    }, 
+                    "type": "graph", 
+                    "xaxis": {
+                        "mode": "time", 
+                        "name": null, 
+                        "show": true, 
+                        "values": []
+                    }, 
+                    "yaxes": [
+                        {
+                            "format": "short", 
+                            "logBase": 1, 
+                            "max": null, 
+                            "min": 0, 
+                            "show": true
+                        }, 
+                        {
+                            "format": "short", 
+                            "logBase": 1, 
+                            "max": null, 
+                            "min": 0, 
+                            "show": true
+                        }
+                    ]
+                }, 
+                {
+                    "aliasColors": {}, 
+                    "bars": false, 
+                    "datasource": "Prometheus", 
+                    "decimals": null, 
+                    "editable": true, 
+                    "error": false, 
+                    "fill": 2, 
+                    "grid": {}, 
+                    "id": 49, 
+                    "legend": {
+                        "alignAsTable": true, 
+                        "avg": true, 
+                        "current": false, 
+                        "max": true, 
+                        "min": true, 
+                        "show": true, 
+                        "total": false, 
+                        "values": true
+                    }, 
+                    "lines": true, 
+                    "linewidth": 2, 
+                    "links": [], 
+                    "nullPointMode": "null", 
+                    "percentage": false, 
+                    "pointradius": 5, 
+                    "points": false, 
+                    "renderer": "flot", 
+                    "seriesOverrides": [], 
+                    "span": 6, 
+                    "stack": false, 
+                    "steppedLine": false, 
+                    "targets": [
+                        {
+                            "calculatedInterval": "2m", 
+                            "datasourceErrors": {}, 
+                            "errors": {}, 
+                            "expr": "mysql_global_status_wsrep_local_send_queue * on (instance) group_left mysql_galera_variables_info{wsrep_cluster_name=\"$cluster\"}", 
+                            "interval": "$interval", 
+                            "intervalFactor": 1, 
+                            "legendFormat": "{{ instance }}", 
+                            "metric": "", 
+                            "refId": "A", 
+                            "step": 300
+                        }
+                    ], 
+                    "thresholds": [], 
+                    "timeFrom": null, 
+                    "timeShift": null, 
+                    "title": "Send Queue", 
+                    "tooltip": {
+                        "msResolution": false, 
+                        "shared": true, 
+                        "sort": 0, 
+                        "value_type": "cumulative"
+                    }, 
+                    "type": "graph", 
+                    "xaxis": {
+                        "mode": "time", 
+                        "name": null, 
+                        "show": true, 
+                        "values": []
+                    }, 
+                    "yaxes": [
+                        {
+                            "format": "short", 
+                            "logBase": 1, 
+                            "max": null, 
+                            "min": 0, 
+                            "show": true
+                        }, 
+                        {
+                            "format": "short", 
+                            "logBase": 1, 
+                            "max": null, 
+                            "min": 0, 
+                            "show": true
+                        }
+                    ]
+                }
+            ], 
+            "repeat": null, 
+            "repeatIteration": null, 
+            "repeatRowId": null, 
+            "showTitle": false, 
+            "title": "Flow Control", 
+            "titleSize": "h6"
+        }, 
+        {
+            "collapse": false, 
+            "height": "250px", 
+            "panels": [
+                {
+                    "aliasColors": {}, 
+                    "bars": false, 
+                    "datasource": "Prometheus", 
+                    "decimals": null, 
+                    "editable": true, 
+                    "error": false, 
+                    "fill": 2, 
+                    "grid": {}, 
+                    "id": 2, 
+                    "legend": {
+                        "alignAsTable": true, 
+                        "avg": true, 
+                        "current": false, 
+                        "max": true, 
+                        "min": true, 
+                        "show": true, 
+                        "total": false, 
+                        "values": true
+                    }, 
+                    "lines": true, 
+                    "linewidth": 2, 
+                    "links": [], 
+                    "nullPointMode": "null", 
+                    "percentage": false, 
+                    "pointradius": 5, 
+                    "points": false, 
+                    "renderer": "flot", 
+                    "seriesOverrides": [], 
+                    "span": 6, 
+                    "stack": false, 
+                    "steppedLine": false, 
+                    "targets": [
+                        {
+                            "calculatedInterval": "2m", 
+                            "datasourceErrors": {}, 
+                            "errors": {}, 
+                            "expr": "(rate(mysql_global_status_wsrep_received[$interval]) or irate(mysql_global_status_wsrep_received[5m])) * on (instance) group_left mysql_galera_variables_info{wsrep_cluster_name=\"$cluster\"}", 
+                            "interval": "$interval", 
+                            "intervalFactor": 1, 
+                            "legendFormat": "{{ instance }}", 
+                            "metric": "", 
+                            "refId": "A", 
+                            "step": 300
+                        }
+                    ], 
+                    "thresholds": [], 
+                    "timeFrom": null, 
+                    "timeShift": null, 
+                    "title": "Transactions Received", 
+                    "tooltip": {
+                        "msResolution": false, 
+                        "shared": true, 
+                        "sort": 0, 
+                        "value_type": "cumulative"
+                    }, 
+                    "type": "graph", 
+                    "xaxis": {
+                        "mode": "time", 
+                        "name": null, 
+                        "show": true, 
+                        "values": []
+                    }, 
+                    "yaxes": [
+                        {
+                            "format": "short", 
+                            "logBase": 1, 
+                            "max": null, 
+                            "min": 0, 
+                            "show": true
+                        }, 
+                        {
+                            "format": "short", 
+                            "logBase": 1, 
+                            "max": null, 
+                            "min": 0, 
+                            "show": true
+                        }
+                    ]
+                }, 
+                {
+                    "aliasColors": {}, 
+                    "bars": false, 
+                    "datasource": "Prometheus", 
+                    "decimals": null, 
+                    "editable": true, 
+                    "error": false, 
+                    "fill": 2, 
+                    "grid": {}, 
+                    "id": 50, 
+                    "legend": {
+                        "alignAsTable": true, 
+                        "avg": true, 
+                        "current": false, 
+                        "max": true, 
+                        "min": true, 
+                        "show": true, 
+                        "total": false, 
+                        "values": true
+                    }, 
+                    "lines": true, 
+                    "linewidth": 2, 
+                    "links": [], 
+                    "nullPointMode": "null", 
+                    "percentage": false, 
+                    "pointradius": 5, 
+                    "points": false, 
+                    "renderer": "flot", 
+                    "seriesOverrides": [], 
+                    "span": 6, 
+                    "stack": false, 
+                    "steppedLine": false, 
+                    "targets": [
+                        {
+                            "calculatedInterval": "2m", 
+                            "datasourceErrors": {}, 
+                            "errors": {}, 
+                            "expr": "(rate(mysql_global_status_wsrep_replicated[$interval]) or irate(mysql_global_status_wsrep_replicated[5m])) * on (instance) group_left mysql_galera_variables_info{wsrep_cluster_name=\"$cluster\"}", 
+                            "interval": "$interval", 
+                            "intervalFactor": 1, 
+                            "legendFormat": "{{ instance }}", 
+                            "metric": "", 
+                            "refId": "A", 
+                            "step": 300
+                        }
+                    ], 
+                    "thresholds": [], 
+                    "timeFrom": null, 
+                    "timeShift": null, 
+                    "title": "Transactions Replicated", 
+                    "tooltip": {
+                        "msResolution": false, 
+                        "shared": true, 
+                        "sort": 0, 
+                        "value_type": "cumulative"
+                    }, 
+                    "type": "graph", 
+                    "xaxis": {
+                        "mode": "time", 
+                        "name": null, 
+                        "show": true, 
+                        "values": []
+                    }, 
+                    "yaxes": [
+                        {
+                            "format": "short", 
+                            "logBase": 1, 
+                            "max": null, 
+                            "min": 0, 
+                            "show": true
+                        }, 
+                        {
+                            "format": "short", 
+                            "logBase": 1, 
+                            "max": null, 
+                            "min": 0, 
+                            "show": true
+                        }
+                    ]
+                }
+            ], 
+            "repeat": null, 
+            "repeatIteration": null, 
+            "repeatRowId": null, 
+            "showTitle": false, 
+            "title": "Parallelization", 
+            "titleSize": "h6"
+        }, 
+        {
+            "collapse": false, 
+            "height": "250px", 
+            "panels": [
+                {
+                    "aliasColors": {}, 
+                    "bars": false, 
+                    "datasource": "Prometheus", 
+                    "decimals": null, 
+                    "editable": true, 
+                    "error": false, 
+                    "fill": 2, 
+                    "grid": {}, 
+                    "id": 11, 
+                    "legend": {
+                        "alignAsTable": true, 
+                        "avg": true, 
+                        "current": false, 
+                        "max": true, 
+                        "min": true, 
+                        "rightSide": false, 
+                        "show": true, 
+                        "total": false, 
+                        "values": true
+                    }, 
+                    "lines": true, 
+                    "linewidth": 2, 
+                    "links": [], 
+                    "nullPointMode": "null", 
+                    "percentage": false, 
+                    "pointradius": 5, 
+                    "points": false, 
+                    "renderer": "flot", 
+                    "seriesOverrides": [], 
+                    "span": 6, 
+                    "stack": false, 
+                    "steppedLine": false, 
+                    "targets": [
+                        {
+                            "calculatedInterval": "2m", 
+                            "datasourceErrors": {}, 
+                            "errors": {}, 
+                            "expr": "(rate(mysql_global_status_wsrep_received_bytes[$interval]) / rate(mysql_global_status_wsrep_received[$interval]) or irate(mysql_global_status_wsrep_received_bytes[5m]) / irate(mysql_global_status_wsrep_received[5m])) * on (instance) group_left mysql_galera_variables_info{wsrep_cluster_name=\"$cluster\"}", 
+                            "interval": "$interval", 
+                            "intervalFactor": 1, 
+                            "legendFormat": "{{ instance }}", 
+                            "metric": "", 
+                            "refId": "C", 
+                            "step": 300
+                        }
+                    ], 
+                    "thresholds": [], 
+                    "timeFrom": null, 
+                    "timeShift": null, 
+                    "title": "Average Incoming Transaction Size", 
+                    "tooltip": {
+                        "msResolution": false, 
+                        "shared": true, 
+                        "sort": 0, 
+                        "value_type": "individual"
+                    }, 
+                    "type": "graph", 
+                    "xaxis": {
+                        "mode": "time", 
+                        "name": null, 
+                        "show": true, 
+                        "values": []
+                    }, 
+                    "yaxes": [
+                        {
+                            "format": "bytes", 
+                            "logBase": 1, 
+                            "max": null, 
+                            "min": 0, 
+                            "show": true
+                        }, 
+                        {
+                            "format": "short", 
+                            "logBase": 1, 
+                            "max": null, 
+                            "min": 0, 
+                            "show": true
+                        }
+                    ]
+                }, 
+                {
+                    "aliasColors": {}, 
+                    "bars": false, 
+                    "datasource": "Prometheus", 
+                    "decimals": null, 
+                    "editable": true, 
+                    "error": false, 
+                    "fill": 2, 
+                    "grid": {}, 
+                    "id": 51, 
+                    "legend": {
+                        "alignAsTable": true, 
+                        "avg": true, 
+                        "current": false, 
+                        "max": true, 
+                        "min": true, 
+                        "rightSide": false, 
+                        "show": true, 
+                        "total": false, 
+                        "values": true
+                    }, 
+                    "lines": true, 
+                    "linewidth": 2, 
+                    "links": [], 
+                    "nullPointMode": "null", 
+                    "percentage": false, 
+                    "pointradius": 5, 
+                    "points": false, 
+                    "renderer": "flot", 
+                    "seriesOverrides": [], 
+                    "span": 6, 
+                    "stack": false, 
+                    "steppedLine": false, 
+                    "targets": [
+                        {
+                            "calculatedInterval": "2m", 
+                            "datasourceErrors": {}, 
+                            "errors": {}, 
+                            "expr": "(rate(mysql_global_status_wsrep_replicated_bytes[$interval]) / rate(mysql_global_status_wsrep_replicated[$interval]) or irate(mysql_global_status_wsrep_replicated_bytes[5m]) / irate(mysql_global_status_wsrep_replicated[5m])) * on (instance) group_left mysql_galera_variables_info{wsrep_cluster_name=\"$cluster\"}", 
+                            "interval": "$interval", 
+                            "intervalFactor": 1, 
+                            "legendFormat": "{{ instance }}", 
+                            "metric": "", 
+                            "refId": "C", 
+                            "step": 300
+                        }
+                    ], 
+                    "thresholds": [], 
+                    "timeFrom": null, 
+                    "timeShift": null, 
+                    "title": "Average Replicated Transaction Size", 
+                    "tooltip": {
+                        "msResolution": false, 
+                        "shared": true, 
+                        "sort": 0, 
+                        "value_type": "individual"
+                    }, 
+                    "type": "graph", 
+                    "xaxis": {
+                        "mode": "time", 
+                        "name": null, 
+                        "show": true, 
+                        "values": []
+                    }, 
+                    "yaxes": [
+                        {
+                            "format": "bytes", 
+                            "logBase": 1, 
+                            "max": null, 
+                            "min": 0, 
+                            "show": true
+                        }, 
+                        {
+                            "format": "short", 
+                            "logBase": 1, 
+                            "max": null, 
+                            "min": 0, 
+                            "show": true
+                        }
+                    ]
+                }
+            ], 
+            "repeat": null, 
+            "repeatIteration": null, 
+            "repeatRowId": null, 
+            "showTitle": false, 
+            "title": "Writeset", 
+            "titleSize": "h6"
         }
     ], 
-    "schemaVersion": 12, 
+    "schemaVersion": 13, 
     "sharedCrosshair": true, 
     "style": "dark", 
     "tags": [
-        "MySQL", 
-        "Percona"
+        "Percona", 
+        "HA"
     ], 
     "templating": {
         "list": [
@@ -1005,22 +1080,26 @@
                     }
                 ], 
                 "query": "1s,5s,1m,5m,1h,6h,1d", 
-                "refresh": 0, 
+                "refresh": 2, 
                 "type": "interval"
             }, 
             {
                 "allFormat": "glob", 
+                "allValue": null, 
                 "datasource": "Prometheus", 
                 "hide": 0, 
                 "includeAll": false, 
-                "label": "Host", 
+                "label": "Cluster", 
                 "multi": false, 
                 "multiFormat": "regex values", 
-                "name": "host", 
-                "query": "label_values(alias)", 
+                "name": "cluster", 
+                "query": "label_values(mysql_galera_variables_info, wsrep_cluster_name)", 
                 "refresh": 1, 
                 "refresh_on_load": false, 
                 "regex": "", 
+                "sort": 1, 
+                "tagValuesQuery": null, 
+                "tagsQuery": null, 
                 "type": "query"
             }
         ]
@@ -1061,6 +1140,6 @@
         "type": "timepicker"
     }, 
     "timezone": "browser", 
-    "title": "Galera Graphs | Percona App", 
+    "title": "PXC/Galera Cluster Overview", 
     "version": 0
 }

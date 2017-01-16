@@ -6,12 +6,35 @@
     "gnetId": null, 
     "hideControls": true, 
     "id": null, 
-    "links": [], 
-    "refresh": false, 
+    "links": [
+        {
+            "asDropdown": true, 
+            "icon": "external link", 
+            "includeVars": true, 
+            "keepTime": true, 
+            "tags": [
+                "OS"
+            ], 
+            "targetBlank": true, 
+            "title": "OS", 
+            "type": "dashboards"
+        }, 
+        {
+            "asDropdown": true, 
+            "icon": "external link", 
+            "includeVars": true, 
+            "keepTime": true, 
+            "tags": [
+                "MongoDB"
+            ], 
+            "targetBlank": true, 
+            "title": "MongoDB", 
+            "type": "dashboards"
+        }
+    ], 
     "rows": [
         {
             "collapse": false, 
-            "editable": true, 
             "height": "125px", 
             "panels": [
                 {
@@ -24,172 +47,10 @@
                         "rgba(50, 172, 45, 0.97)"
                     ], 
                     "datasource": "Prometheus", 
+                    "decimals": 0, 
                     "editable": true, 
                     "error": false, 
                     "format": "none", 
-                    "gauge": {
-                        "maxValue": 100, 
-                        "minValue": 0, 
-                        "show": false, 
-                        "thresholdLabels": false, 
-                        "thresholdMarkers": true
-                    }, 
-                    "height": "125px", 
-                    "hideTimeOverride": false, 
-                    "id": 8, 
-                    "interval": "$interval", 
-                    "isNew": true, 
-                    "links": [], 
-                    "mappingType": 1, 
-                    "mappingTypes": [
-                        {
-                            "name": "value to text", 
-                            "value": 1
-                        }, 
-                        {
-                            "name": "range to text", 
-                            "value": 2
-                        }
-                    ], 
-                    "maxDataPoints": 100, 
-                    "nullPointMode": "connected", 
-                    "nullText": null, 
-                    "postfix": "", 
-                    "postfixFontSize": "50%", 
-                    "prefix": "", 
-                    "prefixFontSize": "50%", 
-                    "rangeMaps": [
-                        {
-                            "from": "null", 
-                            "text": "N/A", 
-                            "to": "null"
-                        }
-                    ], 
-                    "span": 3, 
-                    "sparkline": {
-                        "fillColor": "rgba(31, 118, 189, 0.18)", 
-                        "full": false, 
-                        "lineColor": "rgb(31, 120, 193)", 
-                        "show": false
-                    }, 
-                    "targets": [
-                        {
-                            "expr": "prometheus_local_storage_memory_series", 
-                            "interval": "5m", 
-                            "intervalFactor": 1, 
-                            "refId": "A", 
-                            "step": 300
-                        }
-                    ], 
-                    "thresholds": "", 
-                    "timeFrom": null, 
-                    "title": "Time Series", 
-                    "type": "singlestat", 
-                    "valueFontSize": "80%", 
-                    "valueMaps": [
-                        {
-                            "op": "=", 
-                            "text": "N/A", 
-                            "value": "null"
-                        }
-                    ], 
-                    "valueName": "current"
-                }, 
-                {
-                    "cacheTimeout": null, 
-                    "colorBackground": false, 
-                    "colorValue": false, 
-                    "colors": [
-                        "rgba(245, 54, 54, 0.9)", 
-                        "rgba(237, 129, 40, 0.89)", 
-                        "rgba(50, 172, 45, 0.97)"
-                    ], 
-                    "datasource": "Prometheus", 
-                    "editable": true, 
-                    "error": false, 
-                    "format": "none", 
-                    "gauge": {
-                        "maxValue": 100, 
-                        "minValue": 0, 
-                        "show": false, 
-                        "thresholdLabels": false, 
-                        "thresholdMarkers": true
-                    }, 
-                    "height": "125px", 
-                    "hideTimeOverride": false, 
-                    "id": 9, 
-                    "interval": "$interval", 
-                    "isNew": true, 
-                    "links": [], 
-                    "mappingType": 1, 
-                    "mappingTypes": [
-                        {
-                            "name": "value to text", 
-                            "value": 1
-                        }, 
-                        {
-                            "name": "range to text", 
-                            "value": 2
-                        }
-                    ], 
-                    "maxDataPoints": 100, 
-                    "nullPointMode": "connected", 
-                    "nullText": null, 
-                    "postfix": "", 
-                    "postfixFontSize": "50%", 
-                    "prefix": "", 
-                    "prefixFontSize": "50%", 
-                    "rangeMaps": [
-                        {
-                            "from": "null", 
-                            "text": "N/A", 
-                            "to": "null"
-                        }
-                    ], 
-                    "span": 3, 
-                    "sparkline": {
-                        "fillColor": "rgba(31, 118, 189, 0.18)", 
-                        "full": false, 
-                        "lineColor": "rgb(31, 120, 193)", 
-                        "show": false
-                    }, 
-                    "targets": [
-                        {
-                            "expr": "prometheus_local_storage_memory_chunks", 
-                            "interval": "5m", 
-                            "intervalFactor": 1, 
-                            "refId": "A", 
-                            "step": 300
-                        }
-                    ], 
-                    "thresholds": "", 
-                    "timeFrom": null, 
-                    "title": "Memory Chunks", 
-                    "type": "singlestat", 
-                    "valueFontSize": "80%", 
-                    "valueMaps": [
-                        {
-                            "op": "=", 
-                            "text": "N/A", 
-                            "value": "null"
-                        }
-                    ], 
-                    "valueName": "current"
-                }, 
-                {
-                    "cacheTimeout": null, 
-                    "colorBackground": false, 
-                    "colorValue": false, 
-                    "colors": [
-                        "rgba(245, 54, 54, 0.9)", 
-                        "rgba(237, 129, 40, 0.89)", 
-                        "rgba(50, 172, 45, 0.97)"
-                    ], 
-                    "datasource": "Prometheus", 
-                    "decimals": 2, 
-                    "editable": true, 
-                    "error": false, 
-                    "format": "\u00b5s", 
                     "gauge": {
                         "maxValue": 100, 
                         "minValue": 0, 
@@ -199,9 +60,8 @@
                     }, 
                     "height": "125px", 
                     "hideTimeOverride": true, 
-                    "id": 11, 
-                    "interval": "$interval", 
-                    "isNew": true, 
+                    "id": 49, 
+                    "interval": null, 
                     "links": [], 
                     "mappingType": 1, 
                     "mappingTypes": [
@@ -215,7 +75,8 @@
                         }
                     ], 
                     "maxDataPoints": 100, 
-                    "nullPointMode": "connected", 
+                    "minSpan": null, 
+                    "nullPointMode": "null", 
                     "nullText": null, 
                     "postfix": "", 
                     "postfixFontSize": "50%", 
@@ -228,34 +89,80 @@
                             "to": "null"
                         }
                     ], 
+                    "repeat": null, 
                     "span": 3, 
                     "sparkline": {
                         "fillColor": "rgba(31, 118, 189, 0.18)", 
-                        "full": true, 
+                        "full": false, 
                         "lineColor": "rgb(31, 120, 193)", 
-                        "show": true
+                        "show": false
                     }, 
                     "targets": [
                         {
-                            "expr": "sum(rate(http_request_duration_microseconds_sum{job=\"prometheus\"}[$interval])) /  sum(rate(http_request_duration_microseconds_count{job=\"prometheus\"}[$interval])) or sum(irate(http_request_duration_microseconds_sum{job=\"prometheus\"}[5m])) /  sum(irate(http_request_duration_microseconds_count{job=\"prometheus\"}[5m]))", 
+                            "expr": "mongodb_mongod_replset_my_state{instance=\"$host\"}", 
                             "interval": "5m", 
                             "intervalFactor": 1, 
                             "legendFormat": "", 
+                            "metric": "", 
                             "refId": "A", 
                             "step": 300
                         }
                     ], 
                     "thresholds": "", 
-                    "timeFrom": "12h", 
-                    "timeShift": null, 
-                    "title": "HTTP Request Duration", 
+                    "timeFrom": "1m", 
+                    "title": "ReplSet State", 
                     "type": "singlestat", 
                     "valueFontSize": "80%", 
                     "valueMaps": [
                         {
                             "op": "=", 
-                            "text": "N/A", 
-                            "value": "null"
+                            "text": "PRIMARY", 
+                            "value": "1"
+                        }, 
+                        {
+                            "op": "=", 
+                            "text": "SECONDARY", 
+                            "value": "2"
+                        }, 
+                        {
+                            "op": "=", 
+                            "text": "STARTUP", 
+                            "value": "0"
+                        }, 
+                        {
+                            "op": "=", 
+                            "text": "RECOVERING", 
+                            "value": "3"
+                        }, 
+                        {
+                            "op": "=", 
+                            "text": "STARTUP2", 
+                            "value": "5"
+                        }, 
+                        {
+                            "op": "=", 
+                            "text": "UNKNOWN", 
+                            "value": "6"
+                        }, 
+                        {
+                            "op": "=", 
+                            "text": "ARBITER", 
+                            "value": "7"
+                        }, 
+                        {
+                            "op": "=", 
+                            "text": "DOWN", 
+                            "value": "8"
+                        }, 
+                        {
+                            "op": "=", 
+                            "text": "ROLLBACK", 
+                            "value": "9"
+                        }, 
+                        {
+                            "op": "=", 
+                            "text": "REMOVED", 
+                            "value": "10"
                         }
                     ], 
                     "valueName": "current"
@@ -270,10 +177,10 @@
                         "rgba(50, 172, 45, 0.97)"
                     ], 
                     "datasource": "Prometheus", 
-                    "decimals": 2, 
+                    "decimals": 0, 
                     "editable": true, 
                     "error": false, 
-                    "format": "bytes", 
+                    "format": "none", 
                     "gauge": {
                         "maxValue": 100, 
                         "minValue": 0, 
@@ -282,10 +189,9 @@
                         "thresholdMarkers": true
                     }, 
                     "height": "125px", 
-                    "hideTimeOverride": true, 
-                    "id": 10, 
-                    "interval": "$interval", 
-                    "isNew": true, 
+                    "hideTimeOverride": false, 
+                    "id": 59, 
+                    "interval": null, 
                     "links": [], 
                     "mappingType": 1, 
                     "mappingTypes": [
@@ -299,7 +205,7 @@
                         }
                     ], 
                     "maxDataPoints": 100, 
-                    "nullPointMode": "connected", 
+                    "nullPointMode": "null", 
                     "nullText": null, 
                     "postfix": "", 
                     "postfixFontSize": "50%", 
@@ -315,56 +221,212 @@
                     "span": 3, 
                     "sparkline": {
                         "fillColor": "rgba(31, 118, 189, 0.18)", 
-                        "full": true, 
+                        "full": false, 
                         "lineColor": "rgb(31, 120, 193)", 
-                        "show": true
+                        "show": false
                     }, 
                     "targets": [
                         {
-                            "expr": "sum(rate(http_response_size_bytes_sum{job=\"prometheus\"}[$interval])) /  sum(rate(http_response_size_bytes_count{job=\"prometheus\"}[$interval])) or sum(irate(http_response_size_bytes_sum{job=\"prometheus\"}[5m])) /  sum(irate(http_response_size_bytes_count{job=\"prometheus\"}[5m]))", 
+                            "expr": "mongodb_mongod_replset_number_of_members{instance=\"$host\"}", 
                             "interval": "5m", 
                             "intervalFactor": 1, 
+                            "legendFormat": "", 
+                            "metric": "", 
                             "refId": "A", 
                             "step": 300
                         }
                     ], 
                     "thresholds": "", 
-                    "timeFrom": "12h", 
-                    "title": "HTTP Response Size", 
+                    "timeFrom": null, 
+                    "title": "ReplSet Members", 
                     "type": "singlestat", 
                     "valueFontSize": "80%", 
-                    "valueMaps": [
+                    "valueMaps": [], 
+                    "valueName": "current"
+                }, 
+                {
+                    "cacheTimeout": null, 
+                    "colorBackground": false, 
+                    "colorValue": false, 
+                    "colors": [
+                        "rgba(245, 54, 54, 0.9)", 
+                        "rgba(237, 129, 40, 0.89)", 
+                        "rgba(50, 172, 45, 0.97)"
+                    ], 
+                    "datasource": "Prometheus", 
+                    "decimals": 1, 
+                    "editable": true, 
+                    "error": false, 
+                    "format": "s", 
+                    "gauge": {
+                        "maxValue": 100, 
+                        "minValue": 0, 
+                        "show": false, 
+                        "thresholdLabels": false, 
+                        "thresholdMarkers": true
+                    }, 
+                    "height": "125px", 
+                    "hideTimeOverride": true, 
+                    "id": 65, 
+                    "interval": null, 
+                    "links": [], 
+                    "mappingType": 1, 
+                    "mappingTypes": [
                         {
-                            "op": "=", 
-                            "text": "N/A", 
-                            "value": "null"
+                            "name": "value to text", 
+                            "value": 1
+                        }, 
+                        {
+                            "name": "range to text", 
+                            "value": 2
                         }
                     ], 
+                    "maxDataPoints": 100, 
+                    "nullPointMode": "null", 
+                    "nullText": null, 
+                    "postfix": "s", 
+                    "postfixFontSize": "80%", 
+                    "prefix": "", 
+                    "prefixFontSize": "50%", 
+                    "rangeMaps": [
+                        {
+                            "from": "null", 
+                            "text": "N/A", 
+                            "to": "null"
+                        }
+                    ], 
+                    "span": 3, 
+                    "sparkline": {
+                        "fillColor": "rgba(31, 118, 189, 0.18)", 
+                        "full": false, 
+                        "lineColor": "rgb(31, 120, 193)", 
+                        "show": false
+                    }, 
+                    "targets": [
+                        {
+                            "expr": "time() - mongodb_mongod_replset_member_election_date{instance=\"$host\"}", 
+                            "interval": "5m", 
+                            "intervalFactor": 1, 
+                            "legendFormat": "", 
+                            "metric": "", 
+                            "refId": "A", 
+                            "step": 300
+                        }
+                    ], 
+                    "thresholds": "", 
+                    "timeFrom": "1m", 
+                    "title": "ReplSet Last Election", 
+                    "type": "singlestat", 
+                    "valueFontSize": "80%", 
+                    "valueMaps": [], 
+                    "valueName": "current"
+                }, 
+                {
+                    "cacheTimeout": null, 
+                    "colorBackground": false, 
+                    "colorValue": false, 
+                    "colors": [
+                        "rgba(245, 54, 54, 0.9)", 
+                        "rgba(237, 129, 40, 0.89)", 
+                        "rgba(50, 172, 45, 0.97)"
+                    ], 
+                    "datasource": "Prometheus", 
+                    "decimals": 1, 
+                    "editable": true, 
+                    "error": false, 
+                    "format": "s", 
+                    "gauge": {
+                        "maxValue": 100, 
+                        "minValue": 0, 
+                        "show": false, 
+                        "thresholdLabels": false, 
+                        "thresholdMarkers": true
+                    }, 
+                    "height": "125px", 
+                    "hideTimeOverride": true, 
+                    "id": 77, 
+                    "interval": null, 
+                    "links": [], 
+                    "mappingType": 1, 
+                    "mappingTypes": [
+                        {
+                            "name": "value to text", 
+                            "value": 1
+                        }, 
+                        {
+                            "name": "range to text", 
+                            "value": 2
+                        }
+                    ], 
+                    "maxDataPoints": 100, 
+                    "nullPointMode": "null", 
+                    "nullText": null, 
+                    "postfix": "", 
+                    "postfixFontSize": "80%", 
+                    "prefix": "", 
+                    "prefixFontSize": "50%", 
+                    "rangeMaps": [
+                        {
+                            "from": "null", 
+                            "text": "N/A", 
+                            "to": "null"
+                        }
+                    ], 
+                    "span": 3, 
+                    "sparkline": {
+                        "fillColor": "rgba(31, 118, 189, 0.18)", 
+                        "full": false, 
+                        "lineColor": "rgb(31, 120, 193)", 
+                        "show": false
+                    }, 
+                    "targets": [
+                        {
+                            "expr": "(max(mongodb_mongod_replset_member_optime_date{state=\"PRIMARY\", set=\"$replset\"}) - min(mongodb_mongod_replset_member_optime_date{state=\"SECONDARY\"} * on (name) group_left mongodb_mongod_replset_my_name{instance=\"$host\"})) or vector(0)", 
+                            "interval": "5m", 
+                            "intervalFactor": 1, 
+                            "legendFormat": "", 
+                            "metric": "", 
+                            "refId": "A", 
+                            "step": 300
+                        }
+                    ], 
+                    "thresholds": "", 
+                    "timeFrom": "1m", 
+                    "title": "ReplSet Lag", 
+                    "type": "singlestat", 
+                    "valueFontSize": "80%", 
+                    "valueMaps": [], 
                     "valueName": "current"
                 }
             ], 
-            "title": "Widgetst"
+            "repeat": null, 
+            "repeatIteration": null, 
+            "repeatRowId": null, 
+            "showTitle": false, 
+            "title": "New row", 
+            "titleSize": "h6"
         }, 
         {
             "collapse": false, 
-            "editable": true, 
             "height": "250px", 
             "panels": [
                 {
                     "aliasColors": {}, 
                     "bars": false, 
                     "datasource": "Prometheus", 
+                    "decimals": null, 
                     "editable": true, 
                     "error": false, 
                     "fill": 2, 
                     "grid": {
-                        "threshold1": null, 
-                        "threshold1Color": "rgba(216, 200, 27, 0.27)", 
-                        "threshold2": null, 
-                        "threshold2Color": "rgba(234, 112, 112, 0.22)"
+                        "leftLogBase": 1, 
+                        "leftMax": null, 
+                        "leftMin": 0, 
+                        "rightLogBase": 1, 
+                        "rightMax": null, 
+                        "rightMin": null
                     }, 
-                    "id": 2, 
-                    "isNew": true, 
+                    "id": 63, 
                     "legend": {
                         "alignAsTable": true, 
                         "avg": true, 
@@ -389,18 +451,18 @@
                     "steppedLine": false, 
                     "targets": [
                         {
-                            "expr": "rate(prometheus_local_storage_ingested_samples_total[$interval]) or irate(prometheus_local_storage_ingested_samples_total[5m])", 
+                            "expr": "rate(mongodb_mongod_metrics_repl_oplog_insert_total_milliseconds{instance=\"$host\"}[$interval]) or irate(mongodb_mongod_metrics_repl_oplog_insert_total_milliseconds{instance=\"$host\"}[5m])", 
                             "interval": "$interval", 
                             "intervalFactor": 1, 
-                            "legendFormat": "Samples", 
-                            "metric": "", 
+                            "legendFormat": "Time", 
                             "refId": "A", 
                             "step": 300
                         }
                     ], 
+                    "thresholds": [], 
                     "timeFrom": null, 
                     "timeShift": null, 
-                    "title": "Samples Ingested", 
+                    "title": "Oplog Insert Time", 
                     "tooltip": {
                         "msResolution": false, 
                         "shared": true, 
@@ -408,12 +470,21 @@
                         "value_type": "cumulative"
                     }, 
                     "type": "graph", 
+                    "x-axis": true, 
                     "xaxis": {
-                        "show": true
+                        "mode": "time", 
+                        "name": null, 
+                        "show": true, 
+                        "values": []
                     }, 
+                    "y-axis": true, 
+                    "y_formats": [
+                        "short", 
+                        "short"
+                    ], 
                     "yaxes": [
                         {
-                            "format": "short", 
+                            "format": "ms", 
                             "label": "", 
                             "logBase": 1, 
                             "max": null, 
@@ -422,32 +493,144 @@
                         }, 
                         {
                             "format": "short", 
-                            "label": "", 
                             "logBase": 1, 
                             "max": null, 
-                            "min": 0, 
+                            "min": null, 
                             "show": true
                         }
                     ]
                 }, 
                 {
-                    "aliasColors": {
-                        "Count": "#EAB839"
-                    }, 
+                    "aliasColors": {}, 
                     "bars": false, 
                     "datasource": "Prometheus", 
+                    "decimals": null, 
                     "editable": true, 
                     "error": false, 
-                    "fill": 0, 
+                    "fill": 2, 
                     "grid": {
-                        "threshold1": null, 
-                        "threshold1Color": "rgba(216, 200, 27, 0.27)", 
-                        "threshold2": null, 
-                        "threshold2Color": "rgba(234, 112, 112, 0.22)", 
-                        "thresholdLine": false
+                        "leftLogBase": 1, 
+                        "leftMax": null, 
+                        "leftMin": 0, 
+                        "rightLogBase": 1, 
+                        "rightMax": null, 
+                        "rightMin": null
                     }, 
-                    "id": 12, 
-                    "isNew": true, 
+                    "id": 27, 
+                    "legend": {
+                        "alignAsTable": true, 
+                        "avg": true, 
+                        "current": false, 
+                        "max": true, 
+                        "min": true, 
+                        "show": true, 
+                        "total": false, 
+                        "values": true
+                    }, 
+                    "lines": true, 
+                    "linewidth": 2, 
+                    "links": [], 
+                    "nullPointMode": "null", 
+                    "percentage": false, 
+                    "pointradius": 5, 
+                    "points": false, 
+                    "renderer": "flot", 
+                    "seriesOverrides": [], 
+                    "span": 6, 
+                    "stack": false, 
+                    "steppedLine": false, 
+                    "targets": [
+                        {
+                            "expr": "time()-mongodb_mongod_replset_oplog_tail_timestamp{instance=\"$host\"}", 
+                            "hide": false, 
+                            "interval": "$interval", 
+                            "intervalFactor": 1, 
+                            "legendFormat": "Now to End", 
+                            "metric": "", 
+                            "refId": "J", 
+                            "step": 300
+                        }, 
+                        {
+                            "expr": "mongodb_mongod_replset_oplog_head_timestamp{instance=\"$host\"}-mongodb_mongod_replset_oplog_tail_timestamp{instance=\"$host\"}", 
+                            "hide": false, 
+                            "interval": "$interval", 
+                            "intervalFactor": 1, 
+                            "legendFormat": "Oplog Range", 
+                            "metric": "", 
+                            "refId": "A", 
+                            "step": 300
+                        }
+                    ], 
+                    "thresholds": [], 
+                    "timeFrom": null, 
+                    "timeShift": null, 
+                    "title": "Oplog Recovery Window", 
+                    "tooltip": {
+                        "msResolution": false, 
+                        "shared": true, 
+                        "sort": 0, 
+                        "value_type": "cumulative"
+                    }, 
+                    "type": "graph", 
+                    "x-axis": true, 
+                    "xaxis": {
+                        "mode": "time", 
+                        "name": null, 
+                        "show": true, 
+                        "values": []
+                    }, 
+                    "y-axis": true, 
+                    "y_formats": [
+                        "s", 
+                        "short"
+                    ], 
+                    "yaxes": [
+                        {
+                            "format": "s", 
+                            "label": "", 
+                            "logBase": 1, 
+                            "max": null, 
+                            "min": 0, 
+                            "show": true
+                        }, 
+                        {
+                            "format": "short", 
+                            "logBase": 1, 
+                            "max": null, 
+                            "min": null, 
+                            "show": true
+                        }
+                    ]
+                }
+            ], 
+            "repeat": null, 
+            "repeatIteration": null, 
+            "repeatRowId": null, 
+            "showTitle": false, 
+            "title": "New row", 
+            "titleSize": "h6"
+        }, 
+        {
+            "collapse": false, 
+            "height": "250px", 
+            "panels": [
+                {
+                    "aliasColors": {}, 
+                    "bars": false, 
+                    "datasource": "Prometheus", 
+                    "decimals": null, 
+                    "editable": true, 
+                    "error": false, 
+                    "fill": 2, 
+                    "grid": {
+                        "leftLogBase": 1, 
+                        "leftMax": null, 
+                        "leftMin": 0, 
+                        "rightLogBase": 1, 
+                        "rightMax": null, 
+                        "rightMin": null
+                    }, 
+                    "id": 14, 
                     "legend": {
                         "alignAsTable": true, 
                         "avg": true, 
@@ -464,7 +647,7 @@
                     "links": [], 
                     "nullPointMode": "null", 
                     "percentage": false, 
-                    "pointradius": 2, 
+                    "pointradius": 5, 
                     "points": false, 
                     "renderer": "flot", 
                     "seriesOverrides": [], 
@@ -473,31 +656,41 @@
                     "steppedLine": false, 
                     "targets": [
                         {
-                            "expr": "count(up)", 
+                            "expr": "(max(mongodb_mongod_replset_member_optime_date{state=\"PRIMARY\", set=\"$replset\"}) - min(mongodb_mongod_replset_member_optime_date{state=\"SECONDARY\"} * on (name) group_left mongodb_mongod_replset_my_name{instance=\"$host\"})) or vector(0)", 
                             "interval": "$interval", 
                             "intervalFactor": 1, 
-                            "legendFormat": "Count", 
-                            "metric": "", 
+                            "legendFormat": "Lag", 
                             "refId": "A", 
                             "step": 300
                         }
                     ], 
+                    "thresholds": [], 
                     "timeFrom": null, 
                     "timeShift": null, 
-                    "title": "Prometheus Targets", 
+                    "title": "Replication Lag", 
                     "tooltip": {
                         "msResolution": false, 
-                        "shared": false, 
+                        "shared": true, 
                         "sort": 0, 
-                        "value_type": "individual"
+                        "value_type": "cumulative"
                     }, 
                     "type": "graph", 
+                    "x-axis": true, 
                     "xaxis": {
-                        "show": true
+                        "mode": "time", 
+                        "name": null, 
+                        "show": true, 
+                        "values": []
                     }, 
+                    "y-axis": true, 
+                    "y_formats": [
+                        "s", 
+                        "short"
+                    ], 
                     "yaxes": [
                         {
-                            "format": "short", 
+                            "format": "s", 
+                            "label": "", 
                             "logBase": 1, 
                             "max": null, 
                             "min": 0, 
@@ -507,34 +700,28 @@
                             "format": "short", 
                             "logBase": 1, 
                             "max": null, 
-                            "min": 0, 
+                            "min": null, 
                             "show": true
                         }
                     ]
-                }
-            ], 
-            "title": "New row"
-        }, 
-        {
-            "collapse": false, 
-            "editable": true, 
-            "height": "250px", 
-            "panels": [
+                }, 
                 {
                     "aliasColors": {}, 
                     "bars": false, 
                     "datasource": "Prometheus", 
+                    "decimals": null, 
                     "editable": true, 
                     "error": false, 
                     "fill": 2, 
                     "grid": {
-                        "threshold1": null, 
-                        "threshold1Color": "rgba(216, 200, 27, 0.27)", 
-                        "threshold2": null, 
-                        "threshold2Color": "rgba(234, 112, 112, 0.22)"
+                        "leftLogBase": 1, 
+                        "leftMax": null, 
+                        "leftMin": 0, 
+                        "rightLogBase": 1, 
+                        "rightMax": null, 
+                        "rightMin": null
                     }, 
-                    "id": 3, 
-                    "isNew": true, 
+                    "id": 12, 
                     "legend": {
                         "alignAsTable": true, 
                         "avg": true, 
@@ -553,30 +740,24 @@
                     "pointradius": 5, 
                     "points": false, 
                     "renderer": "flot", 
-                    "seriesOverrides": [
-                        {
-                            "alias": "CPU", 
-                            "color": "#E24D42"
-                        }
-                    ], 
+                    "seriesOverrides": [], 
                     "span": 6, 
                     "stack": false, 
                     "steppedLine": false, 
                     "targets": [
                         {
-                            "expr": "rate(process_cpu_seconds_total{job=\"prometheus\"}[$interval]) or irate(process_cpu_seconds_total{job=\"prometheus\"}[5m])", 
-                            "hide": false, 
+                            "expr": "max(changes(mongodb_mongod_replset_member_election_date{instance=\"$host\"}[$interval]))", 
                             "interval": "$interval", 
                             "intervalFactor": 1, 
-                            "legendFormat": "CPU", 
-                            "metric": "", 
+                            "legendFormat": "Count", 
                             "refId": "A", 
                             "step": 300
                         }
                     ], 
+                    "thresholds": [], 
                     "timeFrom": null, 
                     "timeShift": null, 
-                    "title": "Process CPU Usage", 
+                    "title": "Elections", 
                     "tooltip": {
                         "msResolution": false, 
                         "shared": true, 
@@ -584,9 +765,18 @@
                         "value_type": "cumulative"
                     }, 
                     "type": "graph", 
+                    "x-axis": true, 
                     "xaxis": {
-                        "show": true
+                        "mode": "time", 
+                        "name": null, 
+                        "show": true, 
+                        "values": []
                     }, 
+                    "y-axis": true, 
+                    "y_formats": [
+                        "short", 
+                        "short"
+                    ], 
                     "yaxes": [
                         {
                             "format": "none", 
@@ -598,29 +788,42 @@
                         }, 
                         {
                             "format": "short", 
-                            "label": "", 
                             "logBase": 1, 
                             "max": null, 
-                            "min": 0, 
+                            "min": null, 
                             "show": true
                         }
                     ]
-                }, 
+                }
+            ], 
+            "repeat": null, 
+            "repeatIteration": null, 
+            "repeatRowId": null, 
+            "showTitle": false, 
+            "title": "New row", 
+            "titleSize": "h6"
+        }, 
+        {
+            "collapse": false, 
+            "height": "250px", 
+            "panels": [
                 {
                     "aliasColors": {}, 
                     "bars": false, 
                     "datasource": "Prometheus", 
+                    "decimals": null, 
                     "editable": true, 
                     "error": false, 
                     "fill": 2, 
                     "grid": {
-                        "threshold1": null, 
-                        "threshold1Color": "rgba(216, 200, 27, 0.27)", 
-                        "threshold2": null, 
-                        "threshold2Color": "rgba(234, 112, 112, 0.22)"
+                        "leftLogBase": 1, 
+                        "leftMax": null, 
+                        "leftMin": null, 
+                        "rightLogBase": 1, 
+                        "rightMax": null, 
+                        "rightMin": null
                     }, 
-                    "id": 5, 
-                    "isNew": true, 
+                    "id": 76, 
                     "legend": {
                         "alignAsTable": true, 
                         "avg": true, 
@@ -628,101 +831,6 @@
                         "max": true, 
                         "min": true, 
                         "rightSide": false, 
-                        "show": true, 
-                        "total": false, 
-                        "values": true
-                    }, 
-                    "lines": true, 
-                    "linewidth": 2, 
-                    "links": [], 
-                    "nullPointMode": "null", 
-                    "percentage": false, 
-                    "pointradius": 5, 
-                    "points": false, 
-                    "renderer": "flot", 
-                    "seriesOverrides": [
-                        {
-                            "alias": "Memory", 
-                            "color": "#EF843C"
-                        }
-                    ], 
-                    "span": 6, 
-                    "stack": false, 
-                    "steppedLine": false, 
-                    "targets": [
-                        {
-                            "expr": "process_resident_memory_bytes{job=\"prometheus\"}", 
-                            "interval": "$interval", 
-                            "intervalFactor": 1, 
-                            "legendFormat": "Memory", 
-                            "metric": "", 
-                            "refId": "A", 
-                            "step": 300
-                        }
-                    ], 
-                    "timeFrom": null, 
-                    "timeShift": null, 
-                    "title": "Process Resident Memory", 
-                    "tooltip": {
-                        "msResolution": false, 
-                        "shared": true, 
-                        "sort": 0, 
-                        "value_type": "cumulative"
-                    }, 
-                    "type": "graph", 
-                    "xaxis": {
-                        "show": true
-                    }, 
-                    "yaxes": [
-                        {
-                            "format": "bytes", 
-                            "logBase": 1, 
-                            "max": null, 
-                            "min": 0, 
-                            "show": true
-                        }, 
-                        {
-                            "format": "short", 
-                            "logBase": 1, 
-                            "max": null, 
-                            "min": 0, 
-                            "show": true
-                        }
-                    ]
-                }
-            ], 
-            "showTitle": false, 
-            "title": "Prometheus Statistics"
-        }, 
-        {
-            "collapse": false, 
-            "editable": true, 
-            "height": "250px", 
-            "panels": [
-                {
-                    "aliasColors": {}, 
-                    "bars": false, 
-                    "datasource": "Prometheus", 
-                    "editable": true, 
-                    "error": false, 
-                    "fill": 2, 
-                    "grid": {
-                        "threshold1": null, 
-                        "threshold1Color": "rgba(216, 200, 27, 0.27)", 
-                        "threshold2": null, 
-                        "threshold2Color": "rgba(234, 112, 112, 0.22)"
-                    }, 
-                    "id": 1, 
-                    "isNew": true, 
-                    "legend": {
-                        "alignAsTable": true, 
-                        "avg": true, 
-                        "current": false, 
-                        "hideEmpty": false, 
-                        "hideZero": true, 
-                        "max": true, 
-                        "min": true, 
-                        "rightSide": true, 
                         "show": true, 
                         "sort": "avg", 
                         "sortDesc": true, 
@@ -738,36 +846,141 @@
                     "points": false, 
                     "renderer": "flot", 
                     "seriesOverrides": [], 
-                    "span": 12, 
+                    "span": 6, 
                     "stack": false, 
                     "steppedLine": false, 
                     "targets": [
                         {
-                            "expr": "sum(rate(http_requests_total{job=\"prometheus\"}[$interval])) by (handler) or sum(irate(http_requests_total{job=\"prometheus\"}[5m])) by (handler)", 
+                            "expr": "mongodb_mongod_replset_member_uptime{instance=\"$host\"} * on (name) group_right(state) mongodb_mongod_replset_my_name", 
+                            "hide": false, 
                             "interval": "$interval", 
                             "intervalFactor": 1, 
-                            "legendFormat": "{{ handler }}", 
+                            "legendFormat": "{{ instance }} - {{state}}", 
                             "metric": "", 
-                            "refId": "A", 
+                            "refId": "J", 
                             "step": 300
                         }
                     ], 
+                    "thresholds": [], 
                     "timeFrom": null, 
                     "timeShift": null, 
-                    "title": "HTTP Requests by Handler", 
+                    "title": "Member State Uptime", 
                     "tooltip": {
                         "msResolution": false, 
                         "shared": true, 
-                        "sort": 2, 
+                        "sort": 0, 
                         "value_type": "cumulative"
                     }, 
                     "type": "graph", 
+                    "x-axis": true, 
                     "xaxis": {
-                        "show": true
+                        "mode": "time", 
+                        "name": null, 
+                        "show": true, 
+                        "values": []
                     }, 
+                    "y-axis": true, 
+                    "y_formats": [
+                        "short", 
+                        "short"
+                    ], 
                     "yaxes": [
                         {
+                            "format": "s", 
+                            "label": "", 
+                            "logBase": 10, 
+                            "max": null, 
+                            "min": 0, 
+                            "show": true
+                        }, 
+                        {
                             "format": "short", 
+                            "logBase": 1, 
+                            "max": null, 
+                            "min": null, 
+                            "show": true
+                        }
+                    ]
+                }, 
+                {
+                    "aliasColors": {}, 
+                    "bars": false, 
+                    "datasource": "Prometheus", 
+                    "decimals": null, 
+                    "editable": true, 
+                    "error": false, 
+                    "fill": 2, 
+                    "grid": {
+                        "leftLogBase": 1, 
+                        "leftMax": null, 
+                        "leftMin": 0, 
+                        "rightLogBase": 1, 
+                        "rightMax": null, 
+                        "rightMin": null
+                    }, 
+                    "id": 75, 
+                    "legend": {
+                        "alignAsTable": true, 
+                        "avg": true, 
+                        "current": false, 
+                        "max": true, 
+                        "min": true, 
+                        "show": true, 
+                        "sort": "avg", 
+                        "sortDesc": true, 
+                        "total": false, 
+                        "values": true
+                    }, 
+                    "lines": true, 
+                    "linewidth": 2, 
+                    "links": [], 
+                    "nullPointMode": "null", 
+                    "percentage": false, 
+                    "pointradius": 5, 
+                    "points": false, 
+                    "renderer": "flot", 
+                    "seriesOverrides": [], 
+                    "span": 6, 
+                    "stack": false, 
+                    "steppedLine": false, 
+                    "targets": [
+                        {
+                            "expr": "time() - max(mongodb_mongod_replset_member_last_heartbeat{instance=\"$host\"}) by (name) * on (name) group_right mongodb_mongod_replset_my_name", 
+                            "hide": false, 
+                            "interval": "$interval", 
+                            "intervalFactor": 1, 
+                            "legendFormat": "{{instance}}", 
+                            "metric": "", 
+                            "refId": "J", 
+                            "step": 300
+                        }
+                    ], 
+                    "thresholds": [], 
+                    "timeFrom": null, 
+                    "timeShift": null, 
+                    "title": "Max Heartbeat Time", 
+                    "tooltip": {
+                        "msResolution": false, 
+                        "shared": true, 
+                        "sort": 0, 
+                        "value_type": "cumulative"
+                    }, 
+                    "type": "graph", 
+                    "x-axis": true, 
+                    "xaxis": {
+                        "mode": "time", 
+                        "name": null, 
+                        "show": true, 
+                        "values": []
+                    }, 
+                    "y-axis": true, 
+                    "y_formats": [
+                        "s", 
+                        "short"
+                    ], 
+                    "yaxes": [
+                        {
+                            "format": "s", 
                             "label": "", 
                             "logBase": 1, 
                             "max": null, 
@@ -776,110 +989,131 @@
                         }, 
                         {
                             "format": "short", 
-                            "label": "", 
                             "logBase": 1, 
                             "max": null, 
-                            "min": 0, 
+                            "min": null, 
                             "show": true
                         }
                     ]
                 }
             ], 
-            "title": "New row"
+            "repeat": null, 
+            "repeatIteration": null, 
+            "repeatRowId": null, 
+            "showTitle": false, 
+            "title": "New row", 
+            "titleSize": "h6"
         }, 
         {
             "collapse": false, 
-            "editable": true, 
             "height": "250px", 
             "panels": [
                 {
-                    "columns": [
-                        {
-                            "text": "Current", 
-                            "value": "current"
-                        }
-                    ], 
+                    "aliasColors": {}, 
+                    "bars": false, 
                     "datasource": "Prometheus", 
+                    "decimals": null, 
                     "editable": true, 
                     "error": false, 
-                    "fontSize": "100%", 
-                    "height": "420px", 
-                    "hideTimeOverride": true, 
+                    "fill": 2, 
+                    "grid": {
+                        "leftLogBase": 1, 
+                        "leftMax": null, 
+                        "leftMin": 0, 
+                        "rightLogBase": 1, 
+                        "rightMax": null, 
+                        "rightMin": null
+                    }, 
                     "id": 13, 
-                    "isNew": true, 
-                    "links": [], 
-                    "pageSize": null, 
-                    "scroll": false, 
-                    "showHeader": true, 
-                    "sort": {
-                        "col": 1, 
-                        "desc": true
+                    "legend": {
+                        "alignAsTable": true, 
+                        "avg": true, 
+                        "current": false, 
+                        "max": true, 
+                        "min": true, 
+                        "show": true, 
+                        "sort": "avg", 
+                        "sortDesc": true, 
+                        "total": false, 
+                        "values": true
                     }, 
+                    "lines": true, 
+                    "linewidth": 2, 
+                    "links": [], 
+                    "nullPointMode": "null", 
+                    "percentage": false, 
+                    "pointradius": 5, 
+                    "points": false, 
+                    "renderer": "flot", 
+                    "seriesOverrides": [], 
                     "span": 6, 
-                    "styles": [], 
+                    "stack": false, 
+                    "steppedLine": false, 
                     "targets": [
                         {
-                            "expr": "topk(10, count({__name__=~\".+\"})  by (__name__))", 
-                            "interval": "5m", 
-                            "intervalFactor": 2, 
-                            "legendFormat": "{{ __name__ }}", 
+                            "expr": "mongodb_mongod_replset_member_ping_ms{instance=\"$host\"} * on (name) group_right mongodb_mongod_replset_my_name", 
+                            "interval": "$interval", 
+                            "intervalFactor": 1, 
+                            "legendFormat": "{{instance}}", 
                             "refId": "A", 
-                            "step": 600
+                            "step": 300
                         }
                     ], 
-                    "timeFrom": "5m", 
-                    "title": "Top 10 metrics by time series count", 
-                    "transform": "timeseries_aggregations", 
-                    "type": "table"
-                }, 
-                {
-                    "columns": [
-                        {
-                            "text": "Current", 
-                            "value": "current"
-                        }
-                    ], 
-                    "datasource": "Prometheus", 
-                    "editable": true, 
-                    "error": false, 
-                    "fontSize": "100%", 
-                    "height": "420px", 
-                    "hideTimeOverride": true, 
-                    "id": 14, 
-                    "isNew": true, 
-                    "links": [], 
-                    "pageSize": null, 
-                    "scroll": false, 
-                    "showHeader": true, 
-                    "sort": {
-                        "col": 1, 
-                        "desc": true
+                    "thresholds": [], 
+                    "timeFrom": null, 
+                    "timeShift": null, 
+                    "title": "Max Member Ping Time", 
+                    "tooltip": {
+                        "msResolution": false, 
+                        "shared": true, 
+                        "sort": 0, 
+                        "value_type": "cumulative"
                     }, 
-                    "span": 6, 
-                    "styles": [], 
-                    "targets": [
-                        {
-                            "expr": "topk(10, count({__name__=~\".+\"})  by (instance))", 
-                            "interval": "5m", 
-                            "intervalFactor": 2, 
-                            "legendFormat": "{{ instance }}", 
-                            "refId": "A", 
-                            "step": 600
-                        }
+                    "type": "graph", 
+                    "x-axis": true, 
+                    "xaxis": {
+                        "mode": "time", 
+                        "name": null, 
+                        "show": true, 
+                        "values": []
+                    }, 
+                    "y-axis": true, 
+                    "y_formats": [
+                        "ms", 
+                        "short"
                     ], 
-                    "timeFrom": "5m", 
-                    "title": "Top 10 hosts by time series count", 
-                    "transform": "timeseries_aggregations", 
-                    "type": "table"
+                    "yaxes": [
+                        {
+                            "format": "ms", 
+                            "label": "", 
+                            "logBase": 1, 
+                            "max": null, 
+                            "min": 0, 
+                            "show": true
+                        }, 
+                        {
+                            "format": "short", 
+                            "logBase": 1, 
+                            "max": null, 
+                            "min": null, 
+                            "show": true
+                        }
+                    ]
                 }
             ], 
-            "title": "New row"
+            "repeat": null, 
+            "repeatIteration": null, 
+            "repeatRowId": null, 
+            "showTitle": false, 
+            "title": "New row", 
+            "titleSize": "h6"
         }
     ], 
-    "schemaVersion": 12, 
+    "schemaVersion": 13, 
     "sharedCrosshair": true, 
     "style": "dark", 
     "tags": [
+        "MongoDB", 
         "Percona"
     ], 
     "templating": {
@@ -890,7 +1124,6 @@
                 "auto_count": 200, 
                 "auto_min": "1s", 
                 "current": {
-                    "selected": true, 
                     "text": "auto", 
                     "value": "$__auto_interval"
                 }, 
@@ -944,8 +1177,63 @@
                     }
                 ], 
                 "query": "1s,5s,1m,5m,1h,6h,1d", 
-                "refresh": 0, 
+                "refresh": 2, 
                 "type": "interval"
+            }, 
+            {
+                "allFormat": "blob", 
+                "allValue": null, 
+                "datasource": "Prometheus", 
+                "hide": 0, 
+                "includeAll": true, 
+                "label": "Cluster", 
+                "multi": false, 
+                "multiFormat": "glob", 
+                "name": "cluster", 
+                "query": "label_values(cluster)", 
+                "refresh": 1, 
+                "regex": "", 
+                "sort": 1, 
+                "tagValuesQuery": null, 
+                "tagsQuery": null, 
+                "type": "query"
+            }, 
+            {
+                "allFormat": "glob", 
+                "allValue": null, 
+                "datasource": "Prometheus", 
+                "hide": 0, 
+                "includeAll": false, 
+                "label": "Replica Set", 
+                "multi": false, 
+                "multiFormat": "glob", 
+                "name": "replset", 
+                "query": "label_values(mongodb_mongod_replset_my_state{cluster=~\"$cluster\"}, set)", 
+                "refresh": 1, 
+                "regex": "", 
+                "sort": 1, 
+                "tagValuesQuery": null, 
+                "tagsQuery": null, 
+                "type": "query"
+            }, 
+            {
+                "allFormat": "glob", 
+                "allValue": null, 
+                "datasource": "Prometheus", 
+                "hide": 0, 
+                "includeAll": false, 
+                "label": "Instance", 
+                "multi": false, 
+                "multiFormat": "glob", 
+                "name": "host", 
+                "query": "label_values(mongodb_mongod_replset_my_state{cluster=~\"$cluster\", set=\"$replset\"}, instance)", 
+                "refresh": 1, 
+                "regex": "", 
+                "sort": 1, 
+                "tagValuesQuery": null, 
+                "tagsQuery": "", 
+                "type": "query", 
+                "useTags": false
             }
         ]
     }, 
@@ -980,6 +1268,6 @@
         ]
     }, 
     "timezone": "browser", 
-    "title": "Prometheus", 
+    "title": "MongoDB ReplSet", 
     "version": 0
 }
