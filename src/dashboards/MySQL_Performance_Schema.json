@@ -16,7 +16,7 @@
                 {
                     "aliasColors": {}, 
                     "bars": false, 
-                    "datasource": "Prometheus", 
+                    "datasource": null, 
                     "decimals": 2, 
                     "editable": true, 
                     "error": false, 
@@ -56,7 +56,7 @@
                     "steppedLine": false, 
                     "targets": [
                         {
-                            "expr": "topk(10, rate(mysql_perf_schema_file_events_total{alias=\"$host\"}[$interval])>0) or topk(10, irate(mysql_perf_schema_file_events_total{alias=\"$host\"}[5m])>0)", 
+                            "expr": "topk(10, rate(mysql_perf_schema_file_events_total{instance=\"$host\"}[$interval])>0) or topk(10, irate(mysql_perf_schema_file_events_total{instance=\"$host\"}[5m])>0)", 
                             "interval": "$interval", 
                             "intervalFactor": 1, 
                             "legendFormat": "{{event_name}} {{mode}}", 
@@ -96,7 +96,7 @@
                 {
                     "aliasColors": {}, 
                     "bars": false, 
-                    "datasource": "Prometheus", 
+                    "datasource": null, 
                     "decimals": 2, 
                     "editable": true, 
                     "error": false, 
@@ -138,7 +138,7 @@
                     "steppedLine": false, 
                     "targets": [
                         {
-                            "expr": "topk(10, rate(mysql_perf_schema_file_events_seconds_total{alias=\"$host\"}[$interval])>0) or topk(10, irate(mysql_perf_schema_file_events_seconds_total{alias=\"$host\"}[5m])>0)", 
+                            "expr": "topk(10, rate(mysql_perf_schema_file_events_seconds_total{instance=\"$host\"}[$interval])>0) or topk(10, irate(mysql_perf_schema_file_events_seconds_total{instance=\"$host\"}[5m])>0)", 
                             "interval": "$interval", 
                             "intervalFactor": 1, 
                             "legendFormat": "{{event_name}} {{mode}}", 
@@ -178,7 +178,7 @@
                 {
                     "aliasColors": {}, 
                     "bars": false, 
-                    "datasource": "Prometheus", 
+                    "datasource": null, 
                     "decimals": 2, 
                     "editable": true, 
                     "error": false, 
@@ -220,7 +220,7 @@
                     "steppedLine": false, 
                     "targets": [
                         {
-                            "expr": "topk(10, rate(mysql_perf_schema_file_events_bytes_total{alias=\"$host\"}[$interval])>0) or topk(10, irate(mysql_perf_schema_file_events_bytes_total{alias=\"$host\"}[5m])>0)", 
+                            "expr": "topk(10, rate(mysql_perf_schema_file_events_bytes_total{instance=\"$host\"}[$interval])>0) or topk(10, irate(mysql_perf_schema_file_events_bytes_total{instance=\"$host\"}[5m])>0)", 
                             "interval": "$interval", 
                             "intervalFactor": 1, 
                             "legendFormat": "{{event_name}} {{mode}}", 
@@ -260,7 +260,7 @@
                 {
                     "aliasColors": {}, 
                     "bars": false, 
-                    "datasource": "Prometheus", 
+                    "datasource": null, 
                     "decimals": 2, 
                     "editable": true, 
                     "error": false, 
@@ -302,7 +302,7 @@
                     "steppedLine": false, 
                     "targets": [
                         {
-                            "expr": "topk(5, rate(mysql_perf_schema_events_waits_total{alias=\"$host\"}[$interval])>0) or topk(5, irate(mysql_perf_schema_events_waits_total{alias=\"$host\"}[5m])>0)", 
+                            "expr": "topk(5, rate(mysql_perf_schema_events_waits_total{instance=\"$host\"}[$interval])>0) or topk(5, irate(mysql_perf_schema_events_waits_total{instance=\"$host\"}[5m])>0)", 
                             "interval": "$interval", 
                             "intervalFactor": 1, 
                             "legendFormat": "{{event_name}} ", 
@@ -342,7 +342,7 @@
                 {
                     "aliasColors": {}, 
                     "bars": false, 
-                    "datasource": "Prometheus", 
+                    "datasource": null, 
                     "decimals": 2, 
                     "editable": true, 
                     "error": false, 
@@ -384,7 +384,7 @@
                     "steppedLine": true, 
                     "targets": [
                         {
-                            "expr": "topk(5, rate(mysql_perf_schema_events_waits_seconds_total{alias=\"$host\",event_name!='idle',event_name!='wait/io/table/sql/handler'}[$interval])>0) or topk(5, irate(mysql_perf_schema_events_waits_seconds_total{alias=\"$host\",event_name!='idle',event_name!='wait/io/table/sql/handler'}[5m])>0)", 
+                            "expr": "topk(5, rate(mysql_perf_schema_events_waits_seconds_total{instance=\"$host\",event_name!='idle',event_name!='wait/io/table/sql/handler'}[$interval])>0) or topk(5, irate(mysql_perf_schema_events_waits_seconds_total{instance=\"$host\",event_name!='idle',event_name!='wait/io/table/sql/handler'}[5m])>0)", 
                             "hide": false, 
                             "interval": "$interval", 
                             "intervalFactor": 1, 
@@ -425,7 +425,7 @@
                 {
                     "aliasColors": {}, 
                     "bars": false, 
-                    "datasource": "Prometheus", 
+                    "datasource": null, 
                     "decimals": 2, 
                     "editable": true, 
                     "error": false, 
@@ -467,7 +467,7 @@
                     "steppedLine": true, 
                     "targets": [
                         {
-                            "expr": "topk(5, rate(mysql_perf_schema_index_io_waits_seconds_total{alias=\"$host\"}[$interval])>0) or topk(5, irate(mysql_perf_schema_index_io_waits_seconds_total{alias=\"$host\"}[5m])>0)", 
+                            "expr": "topk(5, rate(mysql_perf_schema_index_io_waits_seconds_total{instance=\"$host\"}[$interval])>0) or topk(5, irate(mysql_perf_schema_index_io_waits_seconds_total{instance=\"$host\"}[5m])>0)", 
                             "hide": false, 
                             "interval": "$interval", 
                             "intervalFactor": 1, 
@@ -508,7 +508,7 @@
                 {
                     "aliasColors": {}, 
                     "bars": false, 
-                    "datasource": "Prometheus", 
+                    "datasource": null, 
                     "decimals": 2, 
                     "editable": true, 
                     "error": false, 
@@ -550,7 +550,7 @@
                     "steppedLine": true, 
                     "targets": [
                         {
-                            "expr": "topk(5, rate(mysql_perf_schema_table_io_waits_seconds_total{alias=\"$host\"}[$interval])>0) or topk(5, irate(mysql_perf_schema_table_io_waits_seconds_total{alias=\"$host\"}[5m])>0)", 
+                            "expr": "topk(5, rate(mysql_perf_schema_table_io_waits_seconds_total{instance=\"$host\"}[$interval])>0) or topk(5, irate(mysql_perf_schema_table_io_waits_seconds_total{instance=\"$host\"}[5m])>0)", 
                             "hide": false, 
                             "interval": "$interval", 
                             "intervalFactor": 1, 
@@ -610,7 +610,7 @@
                     "text": "auto", 
                     "value": "$__auto_interval"
                 }, 
-                "datasource": "Prometheus", 
+                "datasource": null, 
                 "hide": 0, 
                 "includeAll": false, 
                 "label": "Interval", 
@@ -665,14 +665,14 @@
             }, 
             {
                 "allFormat": "glob", 
-                "datasource": "Prometheus", 
+                "datasource": null, 
                 "hide": 0, 
                 "includeAll": false, 
                 "label": "Host", 
                 "multi": false, 
                 "multiFormat": "regex values", 
                 "name": "host", 
-                "query": "label_values(alias)", 
+                "query": "label_values(mysql_version_info, instance)", 
                 "refresh": 1, 
                 "refresh_on_load": false, 
                 "regex": "", 
