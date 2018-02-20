@@ -307,7 +307,7 @@
                             "calculatedInterval": "2s", 
                             "datasourceErrors": {}, 
                             "errors": {}, 
-                            "expr": "sum(rate(node_cpu{alias=\"$host\"}[$interval])) by (mode) * 100 / count_scalar(node_cpu{mode=\"user\", alias=\"$host\"}) or sum(irate(node_cpu{alias=\"$host\"}[5m])) by (mode) * 100 / count_scalar(node_cpu{mode=\"user\", alias=\"$host\"})", 
+                            "expr": "sum(rate(node_cpu{alias=\"$host\"}[$interval])) by (mode) * 100 / scalar(count(node_cpu{mode=\"user\", alias=\"$host\"})) or sum(irate(node_cpu{alias=\"$host\"}[5m])) by (mode) * 100 / scalar(count(node_cpu{mode=\"user\", alias=\"$host\"}))", 
                             "interval": "$interval", 
                             "intervalFactor": 1, 
                             "legendFormat": "{{ mode }}", 
