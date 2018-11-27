@@ -1,3 +1,9 @@
+# DEPRECATED
+
+Please note this repo is _*deprecated*_, users should refer to (percona/grafana-dashboards)[https://github.com/percona/grafana-dashboards/] for updates, thank you.
+
+
+
 ### About
 
 This app provides a set of dashboards for MySQL performance and system monitoring with Prometheus datasource.
