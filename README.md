@@ -1,6 +1,6 @@
 # DEPRECATED
 
-Please note this repo is _*deprecated*_, users should refer to (percona/grafana-dashboards)[https://github.com/percona/grafana-dashboards/] for updates, thank you.
+Please note this repo is _*deprecated*_, users should refer to [percona/grafana-dashboards](https://github.com/percona/grafana-dashboards/) for updates, thank you.
 
 
 
